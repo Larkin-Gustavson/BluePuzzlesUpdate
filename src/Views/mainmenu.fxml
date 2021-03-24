@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 20px;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.MainMenuController">
+   <children>
+      <MenuBar layoutX="-14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Close" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Edit">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Delete" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <Button layoutX="313.0" layoutY="250.0" mnemonicParsing="false" onAction="#play" style="-fx-background-color: #44c767; -fx-background-radius: 45px; -fx-content-display: inline-block; -fx-cursor: pointer; -fx-padding: 12px 24px;" text="Play" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="282.0" layoutY="308.0" mnemonicParsing="false" style="-fx-background-color: #e5b319; -fx-background-radius: 45px; -fx-content-display: inline-block; -fx-cursor: pointer; -fx-padding: 12px 24px;" text="Leaderboards" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="313.0" layoutY="368.0" mnemonicParsing="false" style="-fx-background-color: #e4685d; -fx-background-radius: 45px; -fx-content-display: inline-block; -fx-cursor: pointer; -fx-padding: 12px 24px;" text="Quit" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="188.0" fitWidth="447.0" layoutX="149.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/title.png" />
+         </image>
+      </ImageView>
+      <Button id="backbutton" layoutX="23.0" layoutY="49.0" mnemonicParsing="false" style="-fx-background-color: #e4685d; -fx-background-radius: 45px; -fx-content-display: inline-block; -fx-cursor: pointer; -fx-padding: 12px 24px;" text="Back" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
