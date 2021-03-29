@@ -16,6 +16,7 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 700, 500));
         primaryStage.show();
         //test comment
+        //test comment 2
     }
 
     public static void main(String[] args) {launch(args); }
