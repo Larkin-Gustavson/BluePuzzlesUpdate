@@ -9,9 +9,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -19,9 +21,12 @@ import java.util.ResourceBundle;
 public class MainMenuController implements Initializable {
 
     @FXML
-    AnchorPane anchorpane;
+    AnchorPane anchorPaneMM;
     @FXML
     Button leaderboardButton;
+    @FXML
+    ImageView leftImage, rightImage;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -37,6 +42,15 @@ public class MainMenuController implements Initializable {
 
     public void test(MouseEvent mouseEvent) {
 
+    }
 
+    public void showImage(MouseEvent mouseEvent) {
+        leftImage.setVisible(true);
+        rightImage.setVisible(true);
+    }
+
+    public void hideImage(MouseEvent mouseEvent) {
+        leftImage.setVisible(false);
+        rightImage.setVisible(false);
     }
 }
