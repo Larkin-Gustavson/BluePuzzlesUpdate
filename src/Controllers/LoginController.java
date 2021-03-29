@@ -20,7 +20,7 @@ public class LoginController implements Initializable {
     @FXML
     public void login(ActionEvent event) throws Exception{
         Parent page = FXMLLoader.load(getClass().getResource("/Views/mainmenu.fxml"));
-        Scene scene = new Scene(page,700,500);
+        Scene scene = new Scene(page,900,600);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();

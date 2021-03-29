@@ -13,10 +13,9 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("/Views/login.fxml"));
         primaryStage.setTitle("Blue Puzzles");
-        primaryStage.setScene(new Scene(root, 700, 500));
+        primaryStage.setScene(new Scene(root, 900, 600));
         primaryStage.show();
-        //test comment
-        //test comment 2
+        primaryStage.setResizable(false);
     }
 
     public static void main(String[] args) {launch(args); }

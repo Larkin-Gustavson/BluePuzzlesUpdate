@@ -46,7 +46,6 @@ public class SudokuGame implements Initializable {
 
     //Sudoku Board
     private Label mat[][] = new Label[9][9];
-    private int arr[][] = new int[9][9];
     private Label[][] key = new Label[9][9];
     private int difficulty;
     private int hints;
@@ -238,7 +237,7 @@ public class SudokuGame implements Initializable {
 
     public void goBack(ActionEvent event) throws Exception {
         Parent page = FXMLLoader.load(getClass().getResource("/Views/mainmenu.fxml"));
-        Scene scene = new Scene(page, 700, 500);
+        Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
