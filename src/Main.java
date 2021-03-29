@@ -15,7 +15,7 @@ public class Main extends Application {
         primaryStage.setTitle("Blue Puzzles");
         primaryStage.setScene(new Scene(root, 700, 500));
         primaryStage.show();
-
+        //test comment
     }
 
     public static void main(String[] args) {launch(args); }

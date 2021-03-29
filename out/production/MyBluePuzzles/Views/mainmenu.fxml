@@ -28,17 +28,17 @@
             </Menu>
          </menus>
       </MenuBar>
-      <Button layoutX="313.0" layoutY="250.0" mnemonicParsing="false" onAction="#play" style="-fx-background-color: #44c767; -fx-background-radius: 45px; -fx-content-display: inline-block; -fx-cursor: pointer; -fx-padding: 12px 24px;" text="Play" textAlignment="CENTER" textFill="WHITE">
+      <Button layoutX="313.0" layoutY="250.0" mnemonicParsing="false" onAction="#play" style="-fx-background-color: #44c767; -fx-background-radius: 45px; -fx-cursor: pointer; -fx-padding: 12px 24px;" text="Play" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="282.0" layoutY="308.0" mnemonicParsing="false" style="-fx-background-color: #e5b319; -fx-background-radius: 45px; -fx-content-display: inline-block; -fx-cursor: pointer; -fx-padding: 12px 24px;" text="Leaderboards" textAlignment="CENTER" textFill="WHITE">
+      <Button layoutX="282.0" layoutY="308.0" mnemonicParsing="false" style="-fx-background-color: #e5b319; -fx-background-radius: 45px; -fx-cursor: pointer; -fx-padding: 12px 24px;" text="Leaderboards" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="313.0" layoutY="368.0" mnemonicParsing="false" style="-fx-background-color: #e4685d; -fx-background-radius: 45px; -fx-content-display: inline-block; -fx-cursor: pointer; -fx-padding: 12px 24px;" text="Quit" textAlignment="CENTER" textFill="WHITE">
+      <Button layoutX="313.0" layoutY="368.0" mnemonicParsing="false" style="-fx-background-color: #e4685d; -fx-background-radius: 45px; -fx-cursor: pointer; -fx-padding: 12px 24px;" text="Quit" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
@@ -48,7 +48,7 @@
             <Image url="@../images/title.png" />
          </image>
       </ImageView>
-      <Button id="backbutton" layoutX="23.0" layoutY="49.0" mnemonicParsing="false" style="-fx-background-color: #e4685d; -fx-background-radius: 45px; -fx-content-display: inline-block; -fx-cursor: pointer; -fx-padding: 12px 24px;" text="Back" textAlignment="CENTER" textFill="WHITE">
+      <Button id="backbutton" layoutX="23.0" layoutY="49.0" mnemonicParsing="false" style="-fx-background-color: #e4685d; -fx-background-radius: 45px; -fx-cursor: pointer; -fx-padding: 12px 24px;" text="Back" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
