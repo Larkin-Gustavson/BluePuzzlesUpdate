@@ -37,7 +37,7 @@
       <Label layoutX="202.0" layoutY="291.0" text="Password" textFill="#3d94f6" />
       <TextField layoutX="293.0" layoutY="252.0" />
       <PasswordField layoutX="293.0" layoutY="286.0" />
-      <Button id="loginbtn" fx:id="loginbtn" layoutX="317.0" layoutY="367.0" mnemonicParsing="false" onAction="#login" style="-fx-background-color: #3D94F6; -fx-font-size: 25px; -fx-padding: 10px; -fx-text-alignment: center; -fx-content-display: inline-block; -fx-cursor: pointer; -fx-border-color: #337FED;" text="Login" textFill="#101ac2">
+      <Button id="loginbtn" fx:id="loginbtn" layoutX="317.0" layoutY="367.0" mnemonicParsing="false" onAction="#login" style="-fx-background-color: #3D94F6; -fx-font-size: 25px; -fx-padding: 10px; -fx-text-alignment: center; -fx-cursor: pointer; -fx-border-color: #337FED;" text="Login" textFill="#101ac2">
          <effect>
             <DropShadow />
          </effect></Button>

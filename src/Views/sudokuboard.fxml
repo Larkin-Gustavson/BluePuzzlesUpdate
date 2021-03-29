@@ -11,14 +11,14 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.SudokuGame">
+<AnchorPane fx:id="anchorpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.SudokuGame">
    <children>
       <ImageView fitHeight="332.0" fitWidth="341.0" layoutX="184.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/emptysudoku.png" />
          </image>
       </ImageView>
-      <Label fx:id="box" alignment="CENTER" layoutX="184.0" layoutY="68.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box47" alignment="CENTER" layoutX="184.0" layoutY="69.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
@@ -33,395 +33,410 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box5" alignment="CENTER" layoutX="370.0" layoutY="70.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box471" alignment="CENTER" layoutX="295.0" layoutY="68.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box4" alignment="CENTER" layoutX="332.0" layoutY="68.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box472" alignment="CENTER" layoutX="332.0" layoutY="68.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box3" alignment="CENTER" layoutX="295.0" layoutY="68.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box473" alignment="CENTER" layoutX="369.0" layoutY="68.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box6" alignment="CENTER" layoutX="406.0" layoutY="68.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box474" alignment="CENTER" layoutX="406.0" layoutY="68.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box7" alignment="CENTER" layoutX="443.0" layoutY="68.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box475" alignment="CENTER" layoutX="443.0" layoutY="68.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box8" alignment="CENTER" layoutX="480.0" layoutY="68.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box476" alignment="CENTER" layoutX="479.0" layoutY="68.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box17" alignment="CENTER" layoutX="480.0" layoutY="105.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box477" alignment="CENTER" layoutX="184.0" layoutY="105.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box16" alignment="CENTER" layoutX="443.0" layoutY="105.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box478" alignment="CENTER" layoutX="221.0" layoutY="105.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box15" alignment="CENTER" layoutX="406.0" layoutY="105.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box479" alignment="CENTER" layoutX="258.0" layoutY="105.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box12" alignment="CENTER" layoutX="295.0" layoutY="105.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4710" alignment="CENTER" layoutX="295.0" layoutY="105.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box13" alignment="CENTER" layoutX="332.0" layoutY="105.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4711" alignment="CENTER" layoutX="332.0" layoutY="105.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box14" alignment="CENTER" layoutX="369.0" layoutY="105.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4712" alignment="CENTER" layoutX="369.0" layoutY="105.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box11" alignment="CENTER" layoutX="258.0" layoutY="105.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4713" alignment="CENTER" layoutX="406.0" layoutY="105.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box10" alignment="CENTER" layoutX="221.0" layoutY="105.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4714" alignment="CENTER" layoutX="443.0" layoutY="105.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box9" alignment="CENTER" layoutX="184.0" layoutY="105.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4715" alignment="CENTER" layoutX="479.0" layoutY="105.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box26" alignment="CENTER" layoutX="480.0" layoutY="142.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4716" alignment="CENTER" layoutX="184.0" layoutY="142.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box25" alignment="CENTER" layoutX="443.0" layoutY="142.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4717" alignment="CENTER" layoutX="221.0" layoutY="142.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box24" alignment="CENTER" layoutX="406.0" layoutY="142.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4718" alignment="CENTER" layoutX="258.0" layoutY="142.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box21" alignment="CENTER" layoutX="295.0" layoutY="142.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4719" alignment="CENTER" layoutX="295.0" layoutY="142.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box22" alignment="CENTER" layoutX="332.0" layoutY="142.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4720" alignment="CENTER" layoutX="332.0" layoutY="142.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box23" alignment="CENTER" layoutX="369.0" layoutY="142.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4721" alignment="CENTER" layoutX="369.0" layoutY="142.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box20" alignment="CENTER" layoutX="258.0" layoutY="142.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4722" alignment="CENTER" layoutX="406.0" layoutY="142.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box19" alignment="CENTER" layoutX="221.0" layoutY="142.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4723" alignment="CENTER" layoutX="443.0" layoutY="142.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box18" alignment="CENTER" layoutX="184.0" layoutY="142.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4724" alignment="CENTER" layoutX="479.0" layoutY="142.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box35" alignment="CENTER" layoutX="480.0" layoutY="179.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4725" alignment="CENTER" layoutX="184.0" layoutY="179.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box34" alignment="CENTER" layoutX="443.0" layoutY="179.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4726" alignment="CENTER" layoutX="221.0" layoutY="179.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box33" alignment="CENTER" layoutX="406.0" layoutY="179.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4727" alignment="CENTER" layoutX="258.0" layoutY="179.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box30" alignment="CENTER" layoutX="295.0" layoutY="179.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4728" alignment="CENTER" layoutX="295.0" layoutY="179.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box31" alignment="CENTER" layoutX="332.0" layoutY="179.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4729" alignment="CENTER" layoutX="332.0" layoutY="179.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box32" alignment="CENTER" layoutX="369.0" layoutY="179.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4730" alignment="CENTER" layoutX="369.0" layoutY="179.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box29" alignment="CENTER" layoutX="258.0" layoutY="179.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4731" alignment="CENTER" layoutX="406.0" layoutY="179.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box28" alignment="CENTER" layoutX="221.0" layoutY="179.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4732" alignment="CENTER" layoutX="442.0" layoutY="179.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box27" alignment="CENTER" layoutX="184.0" layoutY="179.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4733" alignment="CENTER" layoutX="479.0" layoutY="179.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box45" alignment="CENTER" layoutX="480.0" layoutY="216.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4734" alignment="CENTER" layoutX="184.0" layoutY="216.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box44" alignment="CENTER" layoutX="443.0" layoutY="216.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4735" alignment="CENTER" layoutX="221.0" layoutY="216.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box43" alignment="CENTER" layoutX="406.0" layoutY="216.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4736" alignment="CENTER" layoutX="258.0" layoutY="216.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box40" alignment="CENTER" layoutX="295.0" layoutY="216.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4737" alignment="CENTER" layoutX="295.0" layoutY="216.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box41" alignment="CENTER" layoutX="332.0" layoutY="216.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4738" alignment="CENTER" layoutX="332.0" layoutY="216.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box42" alignment="CENTER" layoutX="369.0" layoutY="216.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4739" alignment="CENTER" layoutX="369.0" layoutY="216.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box39" alignment="CENTER" layoutX="258.0" layoutY="216.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4740" alignment="CENTER" layoutX="406.0" layoutY="216.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box38" alignment="CENTER" layoutX="221.0" layoutY="216.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4741" alignment="CENTER" layoutX="442.0" layoutY="216.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box37" alignment="CENTER" layoutX="184.0" layoutY="216.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4742" alignment="CENTER" layoutX="479.0" layoutY="216.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box54" alignment="CENTER" layoutX="480.0" layoutY="250.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4743" alignment="CENTER" layoutX="184.0" layoutY="250.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box53" alignment="CENTER" layoutX="443.0" layoutY="250.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4744" alignment="CENTER" layoutX="221.0" layoutY="250.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box52" alignment="CENTER" layoutX="406.0" layoutY="250.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4745" alignment="CENTER" layoutX="258.0" layoutY="250.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box49" alignment="CENTER" layoutX="295.0" layoutY="250.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4746" alignment="CENTER" layoutX="295.0" layoutY="250.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box50" alignment="CENTER" layoutX="332.0" layoutY="250.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4747" alignment="CENTER" layoutX="332.0" layoutY="253.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box51" alignment="CENTER" layoutX="369.0" layoutY="250.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4748" alignment="CENTER" layoutX="369.0" layoutY="250.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box48" alignment="CENTER" layoutX="258.0" layoutY="250.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4749" alignment="CENTER" layoutX="406.0" layoutY="253.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box47" alignment="CENTER" layoutX="221.0" layoutY="250.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4750" alignment="CENTER" layoutX="443.0" layoutY="253.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box46" alignment="CENTER" layoutX="184.0" layoutY="250.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4751" alignment="CENTER" layoutX="479.0" layoutY="253.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box63" alignment="CENTER" layoutX="480.0" layoutY="287.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4752" alignment="CENTER" layoutX="184.0" layoutY="287.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box62" alignment="CENTER" layoutX="443.0" layoutY="287.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4753" alignment="CENTER" layoutX="221.0" layoutY="290.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box61" alignment="CENTER" layoutX="406.0" layoutY="287.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box4754" alignment="CENTER" layoutX="258.0" layoutY="290.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box58" alignment="CENTER" layoutX="295.0" layoutY="287.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box47541" alignment="CENTER" layoutX="295.0" layoutY="290.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box59" alignment="CENTER" layoutX="332.0" layoutY="287.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box47542" alignment="CENTER" layoutX="332.0" layoutY="290.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box60" alignment="CENTER" layoutX="369.0" layoutY="287.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box47543" alignment="CENTER" layoutX="369.0" layoutY="290.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box57" alignment="CENTER" layoutX="258.0" layoutY="287.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box47544" alignment="CENTER" layoutX="406.0" layoutY="290.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box56" alignment="CENTER" layoutX="221.0" layoutY="287.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box47545" alignment="CENTER" layoutX="442.0" layoutY="290.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box55" alignment="CENTER" layoutX="184.0" layoutY="287.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box47546" alignment="CENTER" layoutX="479.0" layoutY="287.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box72" alignment="CENTER" layoutX="480.0" layoutY="324.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box47547" alignment="CENTER" layoutX="184.0" layoutY="324.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box71" alignment="CENTER" layoutX="443.0" layoutY="324.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box47548" alignment="CENTER" layoutX="221.0" layoutY="324.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box70" alignment="CENTER" layoutX="406.0" layoutY="324.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box47549" alignment="CENTER" layoutX="258.0" layoutY="324.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box67" alignment="CENTER" layoutX="295.0" layoutY="324.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box475410" alignment="CENTER" layoutX="295.0" layoutY="324.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box68" alignment="CENTER" layoutX="332.0" layoutY="324.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box475411" alignment="CENTER" layoutX="332.0" layoutY="324.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box69" alignment="CENTER" layoutX="369.0" layoutY="324.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box475412" alignment="CENTER" layoutX="369.0" layoutY="324.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box66" alignment="CENTER" layoutX="258.0" layoutY="324.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box475413" alignment="CENTER" layoutX="406.0" layoutY="324.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box65" alignment="CENTER" layoutX="221.0" layoutY="324.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box475414" alignment="CENTER" layoutX="442.0" layoutY="324.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box64" alignment="CENTER" layoutX="184.0" layoutY="324.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box475415" alignment="CENTER" layoutX="479.0" layoutY="324.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box81" alignment="CENTER" layoutX="480.0" layoutY="361.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box475416" alignment="CENTER" layoutX="184.0" layoutY="361.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box80" alignment="CENTER" layoutX="443.0" layoutY="361.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box475417" alignment="CENTER" layoutX="221.0" layoutY="361.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box79" alignment="CENTER" layoutX="406.0" layoutY="361.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box475418" alignment="CENTER" layoutX="258.0" layoutY="361.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box76" alignment="CENTER" layoutX="295.0" layoutY="361.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box475419" alignment="CENTER" layoutX="295.0" layoutY="361.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box77" alignment="CENTER" layoutX="332.0" layoutY="361.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box475420" alignment="CENTER" layoutX="332.0" layoutY="361.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box78" alignment="CENTER" layoutX="369.0" layoutY="361.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box475421" alignment="CENTER" layoutX="369.0" layoutY="361.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box75" alignment="CENTER" layoutX="258.0" layoutY="361.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box475422" alignment="CENTER" layoutX="406.0" layoutY="361.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box74" alignment="CENTER" layoutX="221.0" layoutY="361.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box475423" alignment="CENTER" layoutX="443.0" layoutY="361.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="box73" alignment="CENTER" layoutX="184.0" layoutY="361.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+      <Label fx:id="box475424" alignment="CENTER" layoutX="479.0" layoutY="361.0" onMouseClicked="#changeNumber" prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
+      <Button layoutX="59.0" layoutY="35.0" mnemonicParsing="false" onAction="#goBack" text="Back" />
+      <Button layoutX="184.0" layoutY="409.0" mnemonicParsing="false" onAction="#resetBoard" text="Reset" />
+      <Button fx:id="hintButn" disable="true" layoutX="469.0" layoutY="409.0" mnemonicParsing="false" onAction="#giveHint" text="Hint" />
+      <Pane fx:id="difficultyPane" layoutX="250.0" layoutY="135.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: RED;" visible="false">
+         <children>
+            <Button layoutX="73.0" layoutY="44.0" mnemonicParsing="false" onAction="#setEasy" text="Easy" />
+            <Button layoutX="64.0" layoutY="87.0" mnemonicParsing="false" onAction="#setMedium" text="Medium" />
+            <Button layoutX="73.0" layoutY="129.0" mnemonicParsing="false" onAction="#setHard" text="Hard" />
+         </children>
+      </Pane>
+      <Text fx:id="numHints" layoutX="400.0" layoutY="429.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="62.63037109375">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
