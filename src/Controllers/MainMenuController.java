@@ -34,8 +34,8 @@ public class MainMenuController implements Initializable {
     }
 
     public void play(ActionEvent event) throws Exception{
-        Parent page = FXMLLoader.load(getClass().getResource("/Views/sudokuboard.fxml"));
-        Scene scene = new Scene(page,900,600);
+        Parent page = FXMLLoader.load(getClass().getResource("/Views/game_select.fxml"));
+        Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();

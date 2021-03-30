@@ -228,7 +228,7 @@ public class SudokuGame implements Initializable {
     }
 
     public void goBack(ActionEvent event) throws Exception {
-        Parent page = FXMLLoader.load(getClass().getResource("/Views/mainmenu.fxml"));
+        Parent page = FXMLLoader.load(getClass().getResource("/Views/game_select.fxml"));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
