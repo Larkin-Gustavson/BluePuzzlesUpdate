@@ -4,11 +4,21 @@ import javafx.scene.control.Label;
 
 public class myLabel extends Label {
 
-    char letter;
+    private char letter;
 
-    public myLabel(char letter){
-        this.setText("_");
+    public myLabel(char letter) {
+        if (letter != ' ')
+            this.setText("_");
         this.letter = letter;
     }
+
+    public char getLetter() {
+        return letter;
+    }
+
+    public void showLetter() {
+        this.setText(letter + "");
+    }
+
 
 }
