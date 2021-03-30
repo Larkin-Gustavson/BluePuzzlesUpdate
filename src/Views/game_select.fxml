@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -7,37 +8,21 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="Controllers.GameSelectController">
     <children>
-        <Text fill="#0074e1" layoutX="171.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Game Select"
-              textAlignment="CENTER" wrappingWidth="557.21630859375">
-            <font>
-                <Font name="Silom" size="82.0"/>
-            </font>
-        </Text>
-        <Pane layoutX="211.0" layoutY="176.0" prefHeight="308.0" prefWidth="460.0">
-            <children>
-                <Button layoutX="76.0" layoutY="63.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="95.0"
-                        text="Hangman"/>
-                <Button layoutX="76.0" layoutY="110.0" mnemonicParsing="false" onAction="#playSudoku"
-                        onMouseEntered="#showImage" onMouseExited="#hideImage" prefHeight="27.0" prefWidth="95.0"
-                        text="Sudoku"/>
-                <Button layoutX="76.0" layoutY="157.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="95.0"
-                        text="Jigsaw"/>
-                <Button layoutX="76.0" layoutY="204.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="95.0"
-                        text="Slitherlink"/>
-                <Button layoutX="305.0" layoutY="63.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="95.0"
-                        text="Nonogram"/>
-                <Button layoutX="305.0" layoutY="110.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="95.0"
-                        text="Game"/>
-                <Button layoutX="305.0" layoutY="157.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="95.0"
-                        text="Game"/>
-                <Button layoutX="305.0" layoutY="204.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="95.0"
-                        text="Game"/>
-            </children>
-        </Pane>
+        <ImageView fx:id="sudokuImage2" fitHeight="308.0" fitWidth="248.0" layoutX="627.0" layoutY="188.0"
+                   pickOnBounds="true" preserveRatio="true" visible="false">
+            <image>
+                <Image url="@../images/sudokuimage.png"/>
+            </image>
+        </ImageView>
+        <ImageView fx:id="sudokuImage" fitHeight="308.0" fitWidth="248.0" layoutX="25.0" layoutY="188.0"
+                   pickOnBounds="true" preserveRatio="true" visible="false">
+            <image>
+                <Image url="@../images/sudokuimage.png"/>
+            </image>
+        </ImageView>
         <MenuBar layoutX="372.0" layoutY="7.0" AnchorPane.bottomAnchor="571.0" AnchorPane.leftAnchor="0.0"
                  AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <menus>
@@ -58,5 +43,32 @@
                 </Menu>
             </menus>
         </MenuBar>
+        <Text fill="#0074e1" layoutX="171.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Game Select"
+              textAlignment="CENTER" wrappingWidth="557.21630859375">
+            <font>
+                <Font name="Silom" size="82.0"/>
+            </font>
+        </Text>
+        <Pane layoutX="211.0" layoutY="176.0" prefHeight="308.0" prefWidth="460.0">
+            <children>
+                <Button layoutX="76.0" layoutY="63.0" mnemonicParsing="false" onAction="#playHangman" prefHeight="27.0"
+                        prefWidth="95.0" text="Hangman"/>
+                <Button layoutX="76.0" layoutY="110.0" mnemonicParsing="false" onAction="#playSudoku"
+                        onMouseEntered="#showImage" onMouseExited="#hideImage" prefHeight="27.0" prefWidth="95.0"
+                        text="Sudoku"/>
+                <Button layoutX="76.0" layoutY="157.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="95.0"
+                        text="Jigsaw"/>
+                <Button layoutX="76.0" layoutY="204.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="95.0"
+                        text="Slitherlink"/>
+                <Button layoutX="305.0" layoutY="63.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="95.0"
+                        text="Nonogram"/>
+                <Button layoutX="305.0" layoutY="110.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="95.0"
+                        text="Game"/>
+                <Button layoutX="305.0" layoutY="157.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="95.0"
+                        text="Game"/>
+                <Button layoutX="305.0" layoutY="204.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="95.0"
+                        text="Game"/>
+            </children>
+        </Pane>
     </children>
 </AnchorPane>
