@@ -428,15 +428,35 @@
       <Button fx:id="hintButn" disable="true" layoutX="566.0" layoutY="457.0" mnemonicParsing="false" onAction="#giveHint" text="Hint" />
       <Pane fx:id="difficultyPane" layoutX="347.0" layoutY="183.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: RED;" visible="false">
          <children>
-            <Button layoutX="73.0" layoutY="44.0" mnemonicParsing="false" onAction="#setEasy" text="Easy" />
-            <Button layoutX="64.0" layoutY="87.0" mnemonicParsing="false" onAction="#setMedium" text="Medium" />
-            <Button layoutX="73.0" layoutY="129.0" mnemonicParsing="false" onAction="#setHard" text="Hard" />
+             <Button layoutX="73.0" layoutY="44.0" mnemonicParsing="false" onAction="#setEasy" text="Easy"/>
+             <Button layoutX="64.0" layoutY="87.0" mnemonicParsing="false" onAction="#setMedium" text="Medium"/>
+             <Button layoutX="73.0" layoutY="129.0" mnemonicParsing="false" onAction="#setHard" text="Hard"/>
          </children>
       </Pane>
-      <Text fx:id="numHints" layoutX="497.0" layoutY="477.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="62.63037109375">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Text>
+       <Text fx:id="numHints" layoutX="497.0" layoutY="477.0" strokeType="OUTSIDE" strokeWidth="0.0"
+             wrappingWidth="62.63037109375">
+           <font>
+               <Font size="18.0"/>
+           </font>
+       </Text>
+       <MenuBar layoutX="397.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+           <menus>
+               <Menu mnemonicParsing="false" text="File">
+                   <items>
+                       <MenuItem mnemonicParsing="false" text="Close"/>
+                   </items>
+               </Menu>
+               <Menu mnemonicParsing="false" text="Edit">
+                   <items>
+                       <MenuItem mnemonicParsing="false" text="Delete"/>
+                   </items>
+               </Menu>
+               <Menu mnemonicParsing="false" text="Help">
+                   <items>
+                       <MenuItem mnemonicParsing="false" text="About"/>
+                   </items>
+               </Menu>
+           </menus>
+       </MenuBar>
    </children>
 </AnchorPane>
