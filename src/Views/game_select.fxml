@@ -51,22 +51,22 @@
         </Text>
         <Pane layoutX="211.0" layoutY="176.0" prefHeight="308.0" prefWidth="460.0">
             <children>
-                <Button layoutX="76.0" layoutY="63.0" mnemonicParsing="false" onAction="#playHangman" prefHeight="27.0"
+                <Button layoutX="107.0" layoutY="63.0" mnemonicParsing="false" onAction="#playHangman" prefHeight="27.0"
                         prefWidth="95.0" text="Hangman"/>
-                <Button layoutX="76.0" layoutY="110.0" mnemonicParsing="false" onAction="#playSudoku"
+                <Button layoutX="107.0" layoutY="110.0" mnemonicParsing="false" onAction="#playSudoku"
                         onMouseEntered="#showImage" onMouseExited="#hideImage" prefHeight="27.0" prefWidth="95.0"
                         text="Sudoku"/>
-                <Button layoutX="76.0" layoutY="157.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="95.0"
+                <Button layoutX="107.0" layoutY="157.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="95.0"
                         text="Jigsaw"/>
-                <Button layoutX="76.0" layoutY="204.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="95.0"
+                <Button layoutX="107.0" layoutY="204.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="95.0"
                         text="Slitherlink"/>
-                <Button layoutX="305.0" layoutY="63.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="95.0"
+                <Button layoutX="269.0" layoutY="63.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="95.0"
                         text="Nonogram"/>
-                <Button layoutX="305.0" layoutY="110.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="95.0"
+                <Button layoutX="269.0" layoutY="110.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="95.0"
                         text="Game"/>
-                <Button layoutX="305.0" layoutY="157.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="95.0"
+                <Button layoutX="269.0" layoutY="157.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="95.0"
                         text="Game"/>
-                <Button layoutX="305.0" layoutY="204.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="95.0"
+                <Button layoutX="269.0" layoutY="204.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="95.0"
                         text="Game"/>
             </children>
         </Pane>
