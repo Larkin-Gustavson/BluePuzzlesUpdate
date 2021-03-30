@@ -48,7 +48,7 @@
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="402.0" layoutY="448.0" mnemonicParsing="false" style="-fx-background-color: #e4685d; -fx-background-radius: 45px; -fx-cursor: pointer; -fx-padding: 12px 24px;" text="Quit" textAlignment="CENTER" textFill="WHITE">
+      <Button layoutX="402.0" layoutY="448.0" mnemonicParsing="false" onAction="#closeApp" style="-fx-background-color: #e4685d; -fx-background-radius: 45px; -fx-cursor: pointer; -fx-padding: 12px 24px;" text="Quit" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>

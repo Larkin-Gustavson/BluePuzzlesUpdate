@@ -1,5 +1,6 @@
 package Controllers;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -52,5 +53,10 @@ public class MainMenuController implements Initializable {
     public void hideImage(MouseEvent mouseEvent) {
         leftImage.setVisible(false);
         rightImage.setVisible(false);
+    }
+
+    @FXML
+    void closeApp(ActionEvent event) {
+        Platform.exit();
     }
 }
