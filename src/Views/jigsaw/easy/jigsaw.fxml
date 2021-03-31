@@ -93,5 +93,20 @@
             </font>
         </Text>
         <Text layoutX="604.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Press 'R' Key to rotate"/>
+        <AnchorPane fx:id="winScreen" layoutX="185.0" layoutY="115.0" prefHeight="385.0" prefWidth="592.0"
+                    style="-fx-background-color: skyblue; -fx-border-color: black; -fx-border-width: 5;"
+                    visible="false">
+            <children>
+                <Text fx:id="winorlose" fill="#136dd3" layoutX="113.0" layoutY="104.0" strokeType="OUTSIDE"
+                      strokeWidth="0.0" text="You Won!">
+                    <font>
+                        <Font name="Silom" size="72.0"/>
+                    </font>
+                </Text>
+                <Button layoutX="258.0" layoutY="147.0" mnemonicParsing="false" onAction="#playAgain"
+                        text="Play Again"/>
+                <Button layoutX="273.0" layoutY="193.0" mnemonicParsing="false" onAction="#goBack" text="Back"/>
+            </children>
+        </AnchorPane>
     </children>
 </AnchorPane>

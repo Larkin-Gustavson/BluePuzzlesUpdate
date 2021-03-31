@@ -17,7 +17,7 @@ import java.util.ResourceBundle;
 public class GameSelectController implements Initializable {
 
     @FXML
-    ImageView sudokuImage, sudokuImage2, hangmanImage, hangmanImage2;
+    ImageView sudokuImage, sudokuImage2, hangmanImage, hangmanImage2, shyguy1, shyguy2;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -70,4 +70,15 @@ public class GameSelectController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+
+    public void showJigsaw(MouseEvent mouseEvent) {
+        shyguy1.setVisible(true);
+        shyguy2.setVisible(true);
+    }
+
+    public void hideJigsaw(MouseEvent mouseEvent) {
+        shyguy1.setVisible(false);
+        shyguy2.setVisible(false);
+    }
+
 }

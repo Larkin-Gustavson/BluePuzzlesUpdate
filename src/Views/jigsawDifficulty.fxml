@@ -7,7 +7,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="Controllers.JigsawDifficultyController">
     <children>
@@ -23,7 +22,8 @@
                 prefHeight="38.0" prefWidth="121.0" text="Medium"/>
         <Button focusTraversable="false" layoutX="392.0" layoutY="324.0" mnemonicParsing="false" onAction="#playHard"
                 prefHeight="38.0" prefWidth="121.0" text="Hard"/>
-        <Button focusTraversable="false" layoutX="39.0" layoutY="49.0" mnemonicParsing="false" text="Back"/>
+        <Button focusTraversable="false" layoutX="39.0" layoutY="49.0" mnemonicParsing="false" onAction="#goBack"
+                text="Back"/>
         <MenuBar layoutX="436.0" layoutY="14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
                  AnchorPane.topAnchor="0.0">
             <menus>
