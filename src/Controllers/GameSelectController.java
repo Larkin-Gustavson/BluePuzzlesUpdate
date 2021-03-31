@@ -64,7 +64,7 @@ public class GameSelectController implements Initializable {
 
     /*Jigsaw Methods*/
     public void playJigsaw(ActionEvent actionEvent) throws Exception {
-        Parent page = FXMLLoader.load(getClass().getResource("/Views/jigsaw.fxml"));
+        Parent page = FXMLLoader.load(getClass().getResource("/Views/jigsawDifficulty.fxml"));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);

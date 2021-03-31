@@ -2,8 +2,11 @@ package Controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -11,13 +14,16 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
+import javafx.stage.Stage;
 import javafx.util.Pair;
 
 import java.net.URL;
 import java.util.Collections;
 import java.util.ResourceBundle;
 import java.util.Stack;
+import java.util.concurrent.TimeUnit;
 
 public class JigsawController implements Initializable {
 
@@ -30,15 +36,21 @@ public class JigsawController implements Initializable {
     @FXML
     Button button;
 
-    Pane selected;
+
+    Pane selected; //Current selected pane
+    Stack<Pair> original = new Stack<>(); //Winning positions
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //Scramble pics
         Stack<Pane> stack = new Stack<>();
+
         for (Node node : anchorpane.getChildren())
-            if (node instanceof Pane)
+            if (node instanceof Pane) {
                 stack.push((Pane) node);
+                Pair<Double, Double> coords = new Pair<Double, Double>(node.getLayoutX(), node.getLayoutY());
+                original.push(coords);
+            }
 
         Collections.shuffle(stack);
         int rand = randomGenerator(3);
@@ -52,7 +64,7 @@ public class JigsawController implements Initializable {
 
     }
 
-
+    //Select a pane
     public void select(MouseEvent mouseEvent) {
         Pane source = (Pane) mouseEvent.getSource();
         if (source.focusTraversableProperty().getValue() == true) {
@@ -68,6 +80,7 @@ public class JigsawController implements Initializable {
         }
     }
 
+    //Checks if any panes are selected, returns false if none
     public boolean isSelected() {
         for (Node node : anchorpane.getChildren()) {
             if (node instanceof Pane)
@@ -77,7 +90,8 @@ public class JigsawController implements Initializable {
         return false;
     }
 
-    public void rotate(KeyEvent keyEvent) {
+    //Rotate if 'r' key is pressed
+    public void rotate(KeyEvent keyEvent) throws InterruptedException {
         if (isSelected()) {
             if (keyEvent.getCode() == KeyCode.R)
                 selected.setRotate(selected.getRotate() + 90);
@@ -97,6 +111,33 @@ public class JigsawController implements Initializable {
 
     int randomGenerator(int num) {
         return (int) Math.floor((Math.random() * num + 1));
+    }
+
+    public void checkWin(ActionEvent actionEvent) {
+        Stack<Pair> stack = new Stack<>();
+        for (Node node : anchorpane.getChildren()) {
+            if (node instanceof Pane) {
+                Pair<Double, Double> coords = new Pair<Double, Double>(node.getLayoutX(), node.getLayoutY());
+                stack.push(coords);
+                if (node.getRotate() % 360 != 0) {
+                    System.out.println("Not yet!");
+                    return;
+                }
+            }
+        }
+        if (!stack.equals(original)) {
+            System.out.println("Not yet!!!");
+            return;
+        }
+        System.out.println("You Win!");
+    }
+
+    public void goBack(ActionEvent actionEvent) throws Exception {
+        Parent page = FXMLLoader.load(getClass().getResource("/Views/jigsawDifficulty.fxml"));
+        Scene scene = new Scene(page, 900, 600);
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
     }
 
 
