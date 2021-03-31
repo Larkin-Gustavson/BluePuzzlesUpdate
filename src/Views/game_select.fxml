@@ -70,7 +70,8 @@
                         onAction="#playSudoku" onMouseEntered="#showImage" onMouseExited="#hideImage" prefHeight="27.0"
                         prefWidth="95.0" text="Sudoku"/>
                 <Button focusTraversable="false" layoutX="107.0" layoutY="157.0" mnemonicParsing="false"
-                        onAction="#playJigsaw" prefHeight="27.0" prefWidth="95.0" text="Jigsaw"/>
+                        onAction="#playJigsaw" onMouseEntered="#showJigsaw" onMouseExited="#hideJigsaw"
+                        prefHeight="27.0" prefWidth="95.0" text="Jigsaw"/>
                 <Button focusTraversable="false" layoutX="107.0" layoutY="204.0" mnemonicParsing="false"
                         prefHeight="27.0" prefWidth="95.0" text="Slitherlink"/>
                 <Button focusTraversable="false" layoutX="269.0" layoutY="63.0" mnemonicParsing="false"
@@ -83,5 +84,17 @@
                         prefHeight="27.0" prefWidth="95.0" text="Game"/>
             </children>
         </Pane>
+        <ImageView fx:id="shyguy1" fitHeight="193.0" fitWidth="217.0" layoutX="55.0" layoutY="225.0" opacity="0.5"
+                   pickOnBounds="true" preserveRatio="true" visible="false">
+            <image>
+                <Image url="@../images/shyguyImage.png"/>
+            </image>
+        </ImageView>
+        <ImageView fx:id="shyguy2" fitHeight="193.0" fitWidth="217.0" layoutX="649.0" layoutY="225.0" opacity="0.5"
+                   pickOnBounds="true" preserveRatio="true" visible="false">
+            <image>
+                <Image url="@../images/shyguyImage.png"/>
+            </image>
+        </ImageView>
     </children>
 </AnchorPane>

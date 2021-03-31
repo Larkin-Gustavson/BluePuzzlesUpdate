@@ -8,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -30,11 +31,11 @@ public class HangmanController implements Initializable {
     @FXML
     AnchorPane hangmanAnchorPane;
     @FXML
-    Pane hangmanBody, guessWordPane, wordPane;
+    Pane hangmanBody, guessWordPane, wordPane, winScreen;
     @FXML
     TextField guessWordField;
     @FXML
-    Text livesText;
+    Text livesText, winorlose;
 
     int lives = 6;
     String[] words = {"School", "Laundry", "House", "Gameboy Advanced", "Amazing", "Educational", "Puzzle",
@@ -97,6 +98,7 @@ public class HangmanController implements Initializable {
                     return false;
             }
         }
+        showWinScreen(true);
         System.out.println("You won!");
         return true;
     }
@@ -110,6 +112,7 @@ public class HangmanController implements Initializable {
         guessWordPane.setVisible(false);
         if (guessWordField.getText().toUpperCase().equals(word)) {
             System.out.println("You win!");
+            showWinScreen(true);
             for (Node node : wordPane.getChildren()) {
                 if (node instanceof myLabel) {
                     ((myLabel) node).showLetter();
@@ -119,11 +122,22 @@ public class HangmanController implements Initializable {
             wrongGuess();
     }
 
+    public void showWinScreen(boolean win) {
+        if (win)
+            winorlose.setText("You Won!");
+        else
+            winorlose.setText("You lost!");
+        winScreen.setVisible(true);
+        for (Node node : hangmanAnchorPane.getChildren())
+            if (node instanceof Button)
+                node.setDisable(true);
+    }
+
     public void wrongGuess() {
         lives--;
         livesText.setText(lives + "");
         if (lives == 0)
-            System.out.println("You Lose!");
+            showWinScreen(false);
         for (Node body : hangmanBody.getChildren()) {
             if (!body.isVisible()) {
                 body.setVisible(true);
@@ -134,6 +148,14 @@ public class HangmanController implements Initializable {
 
     public void goBack(ActionEvent actionEvent) throws Exception {
         Parent page = FXMLLoader.load(getClass().getResource("/Views/game_select.fxml"));
+        Scene scene = new Scene(page, 900, 600);
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void playAgain(ActionEvent actionEvent) throws Exception {
+        Parent page = FXMLLoader.load(getClass().getResource("/Views/hangman.fxml"));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);

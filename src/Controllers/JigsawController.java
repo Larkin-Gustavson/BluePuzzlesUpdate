@@ -16,6 +16,7 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Pair;
 
@@ -32,9 +33,11 @@ public class JigsawController implements Initializable {
     @FXML
     Pane gamePane, pane1;
     @FXML
-    AnchorPane anchorpane;
+    AnchorPane anchorpane, winScreen;
     @FXML
     Button button;
+    @FXML
+    Text winorlose;
 
 
     Pane selected; //Current selected pane
@@ -46,7 +49,7 @@ public class JigsawController implements Initializable {
         Stack<Pane> stack = new Stack<>();
 
         for (Node node : anchorpane.getChildren())
-            if (node instanceof Pane) {
+            if (node instanceof Pane && !(node instanceof AnchorPane)) {
                 stack.push((Pane) node);
                 Pair<Double, Double> coords = new Pair<Double, Double>(node.getLayoutX(), node.getLayoutY());
                 original.push(coords);
@@ -56,7 +59,7 @@ public class JigsawController implements Initializable {
         int rand = randomGenerator(3);
 
         for (Node node : anchorpane.getChildren()) {
-            if (node instanceof Pane) {
+            if (node instanceof Pane && !(node instanceof AnchorPane)) {
                 node.setRotate(node.getRotate() + (90 * rand));
                 swapPanes(stack.pop(), (Pane) node);
             }
@@ -113,10 +116,22 @@ public class JigsawController implements Initializable {
         return (int) Math.floor((Math.random() * num + 1));
     }
 
+    /*Show win screen*/
+    public void showWinScreen(boolean win) {
+        if (win)
+            winorlose.setText("You Won!");
+        else
+            winorlose.setText("You lost!");
+        winScreen.setVisible(true);
+        for (Node node : anchorpane.getChildren())
+            if (node instanceof Button)
+                node.setDisable(true);
+    }
+
     public void checkWin(ActionEvent actionEvent) {
         Stack<Pair> stack = new Stack<>();
         for (Node node : anchorpane.getChildren()) {
-            if (node instanceof Pane) {
+            if (node instanceof Pane && !(node instanceof AnchorPane)) {
                 Pair<Double, Double> coords = new Pair<Double, Double>(node.getLayoutX(), node.getLayoutY());
                 stack.push(coords);
                 if (node.getRotate() % 360 != 0) {
@@ -129,7 +144,7 @@ public class JigsawController implements Initializable {
             System.out.println("Not yet!!!");
             return;
         }
-        System.out.println("You Win!");
+        showWinScreen(true);
     }
 
     public void goBack(ActionEvent actionEvent) throws Exception {
@@ -141,4 +156,15 @@ public class JigsawController implements Initializable {
     }
 
 
+    public void playAgain(ActionEvent actionEvent) throws Exception {
+        //Pick a game at random
+        String[] easyGames = {"/Views/jigsaw/medium/jigsawShyGuy.fxml"};
+        int rand = randomGenerator(1) - 1;
+        //Load the game
+        Parent page = FXMLLoader.load(getClass().getResource(easyGames[rand]));
+        Scene scene = new Scene(page, 900, 600);
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
 }
