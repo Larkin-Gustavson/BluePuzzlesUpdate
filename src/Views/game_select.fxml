@@ -23,6 +23,18 @@
                 <Image url="@../images/sudokuimage.png"/>
             </image>
         </ImageView>
+        <ImageView fx:id="hangmanImage" fitHeight="240.0" fitWidth="289.0" layoutX="19.0" layoutY="225.0"
+                   pickOnBounds="true" preserveRatio="true" visible="false">
+            <image>
+                <Image url="@../images/hangman_image.png"/>
+            </image>
+        </ImageView>
+        <ImageView fx:id="hangmanImage2" fitHeight="240.0" fitWidth="289.0" layoutX="601.0" layoutY="225.0"
+                   pickOnBounds="true" preserveRatio="true" visible="false">
+            <image>
+                <Image url="@../images/hangman_image.png"/>
+            </image>
+        </ImageView>
         <MenuBar layoutX="372.0" layoutY="7.0" AnchorPane.bottomAnchor="571.0" AnchorPane.leftAnchor="0.0"
                  AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <menus>
@@ -51,7 +63,8 @@
         </Text>
         <Pane layoutX="211.0" layoutY="176.0" prefHeight="308.0" prefWidth="460.0">
             <children>
-                <Button layoutX="107.0" layoutY="63.0" mnemonicParsing="false" onAction="#playHangman" prefHeight="27.0"
+                <Button layoutX="107.0" layoutY="63.0" mnemonicParsing="false" onAction="#playHangman"
+                        onMouseEntered="#showHangManImage" onMouseExited="#hideHangManImage" prefHeight="27.0"
                         prefWidth="95.0" text="Hangman"/>
                 <Button layoutX="107.0" layoutY="110.0" mnemonicParsing="false" onAction="#playSudoku"
                         onMouseEntered="#showImage" onMouseExited="#hideImage" prefHeight="27.0" prefWidth="95.0"
