@@ -81,6 +81,7 @@ public class HangmanController implements Initializable {
                 if (guess == label.getLetter()) {
                     label.showLetter();
                     guessRight = true;
+                    gameWon();
                 }
             }
         }
@@ -99,6 +100,18 @@ public class HangmanController implements Initializable {
         }
     } //End of Method
 
+    /*Determins if the game is won*/
+    public boolean gameWon() {
+        for (Node node : wordPane.getChildren()) {
+            if (node instanceof myLabel) {
+                if (((myLabel) node).getText() == "_")
+                    return false;
+            }
+        }
+        System.out.println("You won!");
+        return true;
+    }
+
 
     public void guessWord(ActionEvent actionEvent) {
         guessWordPane.setVisible(true);
@@ -108,6 +121,11 @@ public class HangmanController implements Initializable {
         guessWordPane.setVisible(false);
         if (guessWordField.getText().toUpperCase().equals(word))
             System.out.println("You win!");
+        for (Node node : wordPane.getChildren()) {
+            if (node instanceof myLabel) {
+                ((myLabel) node).showLetter();
+            }
+        }
     }
 
     public void goBack(ActionEvent actionEvent) throws Exception {
