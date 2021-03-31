@@ -61,4 +61,13 @@ public class GameSelectController implements Initializable {
         hangmanImage.setVisible(false);
         hangmanImage2.setVisible(false);
     }
+
+    /*Jigsaw Methods*/
+    public void playJigsaw(ActionEvent actionEvent) throws Exception {
+        Parent page = FXMLLoader.load(getClass().getResource("/Views/jigsaw.fxml"));
+        Scene scene = new Scene(page, 900, 600);
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
 }
