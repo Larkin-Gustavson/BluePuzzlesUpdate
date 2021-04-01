@@ -40,6 +40,11 @@ public class HangmanController implements Initializable {
     int lives = 6;
     String[] words = {"School", "Laundry", "House", "Gameboy Advanced", "Amazing", "Educational", "Puzzle",
             "Blue Puzzles", "Smoke", "Maple Syrup"};
+
+    String[] hints = {"Hint 1", "Hint 2", "Hint 3", "Hint 4", "Hint 5", "Hint 6", "Hint 7",
+            "Hint 8", "Hint 9", "Hint 10"};
+
+
     String word;
 
     @Override
