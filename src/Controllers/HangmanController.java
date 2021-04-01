@@ -41,8 +41,6 @@ public class HangmanController implements Initializable {
     String[] words = {"School", "Laundry", "House", "Gameboy Advanced", "Amazing", "Educational", "Puzzle",
             "Blue Puzzles", "Smoke", "Maple Syrup"};
 
-    String[] hints = {"Hint 1", "Hint 2", "Hint 3", "Hint 4", "Hint 5", "Hint 6", "Hint 7",
-            "Hint 8", "Hint 9", "Hint 10"};
 
 
     String word;
@@ -108,7 +106,6 @@ public class HangmanController implements Initializable {
         return true;
     }
 
-
     public void guessWord(ActionEvent actionEvent) {
         guessWordPane.setVisible(true);
     }
@@ -166,6 +163,7 @@ public class HangmanController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+
 }
 
 
