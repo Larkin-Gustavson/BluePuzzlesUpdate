@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="MyBluePuzzles_jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/MyBluePuzzles_jar</output-path>
+    <root id="archive" name="MyBluePuzzles_jar.jar">
+      <element id="archive" name="MyBluePuzzles.jar">
+        <element id="module-output" name="MyBluePuzzles" />
+      </element>
+    </root>
+  </artifact>
+</component>

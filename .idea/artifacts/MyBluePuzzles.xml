@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="MyBluePuzzles">
+    <output-path>$PROJECT_DIR$/out/artifacts/MyBluePuzzles</output-path>
+    <root id="root">
+      <element id="artifact" artifact-name="MyBluePuzzles_jar" />
+    </root>
+  </artifact>
+</component>
