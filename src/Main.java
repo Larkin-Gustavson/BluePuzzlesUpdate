@@ -21,6 +21,8 @@ public class Main extends Application {
 
         // hello world
 
+        // adding comment
+
     }
 
     public static void main(String[] args) {launch(args); }
