@@ -2,6 +2,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,6 +17,7 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 900, 600));
         primaryStage.show();
         primaryStage.setResizable(false);
+        primaryStage.getIcons().add(new Image("https://image.flaticon.com/icons/png/512/417/417752.png"));
         //Test comment for Chris
 
 

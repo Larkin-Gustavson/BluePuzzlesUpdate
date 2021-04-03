@@ -45,7 +45,7 @@ public class GameSelectController implements Initializable {
 
     /*Hangman methods*/
     public void playHangman(ActionEvent actionEvent) throws Exception {
-        Parent page = FXMLLoader.load(getClass().getResource("/Views/hangman.fxml"));
+        Parent page = FXMLLoader.load(getClass().getResource("/Views/hangmanDifficulty.fxml"));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
