@@ -167,7 +167,7 @@ public class HangmanController implements Initializable {
 
     @FXML
     void hintButtonClicked(MouseEvent event) throws Exception {
-        System.out.println("Hint button was clicked");
+        System.out.println("Hint button clicked");
     }
 
 }
