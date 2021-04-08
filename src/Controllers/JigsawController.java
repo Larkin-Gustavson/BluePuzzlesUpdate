@@ -8,23 +8,20 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
-import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Pair;
+import misc.GameTimer;
+
+import java.util.*;
 
 import java.net.URL;
-import java.util.Collections;
-import java.util.ResourceBundle;
-import java.util.Stack;
-import java.util.concurrent.TimeUnit;
 
 public class JigsawController implements Initializable {
 
@@ -37,11 +34,14 @@ public class JigsawController implements Initializable {
     @FXML
     Button button;
     @FXML
-    Text winorlose;
+    Text winorlose, finishTime;
+    @FXML
+    Label gameTime;
 
 
     Pane selected; //Current selected pane
     Stack<Pair> original = new Stack<>(); //Winning positions
+    GameTimer gt;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -64,6 +64,10 @@ public class JigsawController implements Initializable {
                 swapPanes(stack.pop(), (Pane) node);
             }
         }
+
+        //Game Timer
+        gt = new GameTimer(gameTime);
+        gt.start();
 
     }
 
@@ -123,9 +127,13 @@ public class JigsawController implements Initializable {
         else
             winorlose.setText("You lost!");
         winScreen.setVisible(true);
+        finishTime.setText(gameTime.getText());
+        gt.stop();
+        gameTime.setDisable(true);
         for (Node node : anchorpane.getChildren())
             if (node instanceof Button)
                 node.setDisable(true);
+
     }
 
     public void checkWin(ActionEvent actionEvent) {

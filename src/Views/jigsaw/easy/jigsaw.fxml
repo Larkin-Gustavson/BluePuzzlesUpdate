@@ -106,7 +106,24 @@
                 <Button layoutX="258.0" layoutY="147.0" mnemonicParsing="false" onAction="#playAgain"
                         text="Play Again"/>
                 <Button layoutX="273.0" layoutY="193.0" mnemonicParsing="false" onAction="#goBack" text="Back"/>
+                <Text layoutX="160.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Time:">
+                    <font>
+                        <Font name="Silom" size="34.0"/>
+                    </font>
+                </Text>
+                <Text fx:id="finishTime" layoutX="360.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      textAlignment="CENTER" wrappingWidth="143.853515625">
+                    <font>
+                        <Font name="Silom" size="34.0"/>
+                    </font>
+                </Text>
             </children>
         </AnchorPane>
+        <Label fx:id="gameTime" layoutX="808.0" layoutY="533.0" prefHeight="29.0" prefWidth="63.0" text="00:00"
+               textAlignment="CENTER">
+            <font>
+                <Font size="20.0"/>
+            </font>
+        </Label>
     </children>
 </AnchorPane>

@@ -1,4 +1,4 @@
-package Controllers;
+package misc;
 
 import javafx.scene.control.Label;
 

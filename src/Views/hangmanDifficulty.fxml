@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controllers.HangmanDifficultyController">
+    <children>
+        <Text fill="#1b56e1" layoutX="219.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              text="Select a Difficulty ">
+            <font>
+                <Font size="54.0"/>
+            </font>
+        </Text>
+        <Button fx:id="easyButton" layoutX="392.0" layoutY="225.0" mnemonicParsing="false"
+                onMouseClicked="#clickEasyButton" prefHeight="38.0" prefWidth="121.0" text="Easy"/>
+        <Button fx:id="mediumButton" layoutX="392.0" layoutY="274.0" mnemonicParsing="false"
+                onMouseClicked="#clickMediumButton" prefHeight="38.0" prefWidth="121.0" text="Medium"/>
+        <Button fx:id="hardButton" layoutX="392.0" layoutY="324.0" mnemonicParsing="false"
+                onMouseClicked="#clickHardButton" prefHeight="38.0" prefWidth="121.0" text="Hard"/>
+        <Button fx:id="backButton" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#backButtonClick" text="Back"/>
+    </children>
+</AnchorPane>

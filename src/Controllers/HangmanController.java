@@ -1,7 +1,6 @@
 package Controllers;
 
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -9,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -18,13 +18,11 @@ import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import misc.GameTimer;
+import misc.myLabel;
 
-import java.awt.*;
 import java.net.URL;
-import java.util.Collections;
-import java.util.Locale;
-import java.util.ResourceBundle;
-import java.util.Stack;
+import java.util.*;
 
 public class HangmanController implements Initializable {
 
@@ -35,15 +33,18 @@ public class HangmanController implements Initializable {
     @FXML
     TextField guessWordField;
     @FXML
-    Text livesText, winorlose;
+    Text livesText, winorlose, finishTime;
+    @FXML
+    private Button hintButton;
+    @FXML
+    Label gameTime;
+
 
     int lives = 6;
     String[] words = {"School", "Laundry", "House", "Gameboy Advanced", "Amazing", "Educational", "Puzzle",
             "Blue Puzzles", "Smoke", "Maple Syrup"};
-
-
-
     String word;
+    GameTimer gt; //Timer
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -61,6 +62,9 @@ public class HangmanController implements Initializable {
             label.relocate(10 + pos, 5);
             pos += 40;
         }
+        gt = new GameTimer(gameTime);
+        gt.start();
+
     }
 
 
@@ -93,11 +97,11 @@ public class HangmanController implements Initializable {
             wrongGuess();
     } //End of Method
 
-    /*Determins if the game is won*/
+    /*Determines if the game is won*/
     public boolean gameWon() {
         for (Node node : wordPane.getChildren()) {
             if (node instanceof myLabel) {
-                if (((myLabel) node).getText() == "_")
+                if (((myLabel) node).getText().equals("_"))
                     return false;
             }
         }
@@ -120,8 +124,11 @@ public class HangmanController implements Initializable {
                     ((myLabel) node).showLetter();
                 }
             }
-        } else
+        } else {
             wrongGuess();
+            guessWordField.clear();
+        }
+
     }
 
     public void showWinScreen(boolean win) {
@@ -130,6 +137,8 @@ public class HangmanController implements Initializable {
         else
             winorlose.setText("You lost!");
         winScreen.setVisible(true);
+        finishTime.setText(gt.toString());
+        gt.stop();
         for (Node node : hangmanAnchorPane.getChildren())
             if (node instanceof Button)
                 node.setDisable(true);
@@ -149,7 +158,7 @@ public class HangmanController implements Initializable {
     }
 
     public void goBack(ActionEvent actionEvent) throws Exception {
-        Parent page = FXMLLoader.load(getClass().getResource("/Views/game_select.fxml"));
+        Parent page = FXMLLoader.load(getClass().getResource("/Views/hangmanDifficulty.fxml"));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -162,6 +171,11 @@ public class HangmanController implements Initializable {
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
+    }
+
+    @FXML
+    void hintButtonClicked(MouseEvent event) throws Exception {
+        System.out.println("Hint button clicked");
     }
 
 }
