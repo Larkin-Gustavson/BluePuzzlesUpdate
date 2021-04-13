@@ -161,6 +161,7 @@ public class JigsawController implements Initializable {
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
+        gt.stop();
     }
 
 
