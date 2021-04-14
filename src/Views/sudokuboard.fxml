@@ -458,5 +458,11 @@
                </Menu>
            </menus>
        </MenuBar>
+       <Text fx:id="gameTime" layoutX="747.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0"
+             textAlignment="CENTER" wrappingWidth="69.21630859375">
+           <font>
+               <Font size="22.0"/>
+           </font>
+       </Text>
    </children>
 </AnchorPane>

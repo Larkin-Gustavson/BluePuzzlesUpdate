@@ -15,6 +15,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import misc.GameTimer;
 
 
 import java.net.URL;
@@ -35,12 +36,15 @@ public class SudokuGame implements Initializable {
     Text numHints;
     @FXML
     Button hintButn;
+    @FXML
+    Text gameTime;
 
     //Sudoku Board
     private Label mat[][] = new Label[9][9];
     private Label[][] key = new Label[9][9];
     private int difficulty;
     private int hints;
+    GameTimer gt;
 
     //Sets up the board
     @Override
@@ -63,6 +67,8 @@ public class SudokuGame implements Initializable {
 
             }
         }
+        gt = new GameTimer(gameTime);
+        gt.start();
 
     }
 

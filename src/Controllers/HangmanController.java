@@ -40,6 +40,7 @@ public class HangmanController implements Initializable {
     Label gameTime;
 
 
+
     int lives = 6;
     String[] words = {"School", "Laundry", "House", "Gameboy Advanced", "Amazing", "Educational", "Puzzle",
             "Blue Puzzles", "Smoke", "Maple Syrup"};
@@ -64,6 +65,7 @@ public class HangmanController implements Initializable {
         }
         gt = new GameTimer(gameTime);
         gt.start();
+        System.out.println(LoginController.user);
 
     }
 

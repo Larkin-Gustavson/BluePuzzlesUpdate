@@ -1,5 +1,6 @@
 package Controllers;
 
+import DB.JigsawLeaderboard;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,6 +20,7 @@ import javafx.stage.Stage;
 import javafx.util.Pair;
 import misc.GameTimer;
 
+import java.sql.SQLException;
 import java.util.*;
 
 import java.net.URL;
@@ -121,14 +123,16 @@ public class JigsawController implements Initializable {
     }
 
     /*Show win screen*/
-    public void showWinScreen(boolean win) {
+    public void showWinScreen(boolean win) throws SQLException {
         if (win)
             winorlose.setText("You Won!");
         else
             winorlose.setText("You lost!");
-        winScreen.setVisible(true);
-        finishTime.setText(gameTime.getText());
-        gt.stop();
+        winScreen.setVisible(true); //set win screen visible
+        finishTime.setText(gameTime.getText()); //reveal finshing game time
+        JigsawLeaderboard.insertNewUser(LoginController.user, gameTime.getText(),
+                JigsawDifficultyController.difficulty);
+        gt.stop(); // stop game timer
         gameTime.setDisable(true);
         for (Node node : anchorpane.getChildren())
             if (node instanceof Button)
@@ -136,7 +140,7 @@ public class JigsawController implements Initializable {
 
     }
 
-    public void checkWin(ActionEvent actionEvent) {
+    public void checkWin(ActionEvent actionEvent) throws SQLException {
         Stack<Pair> stack = new Stack<>();
         for (Node node : anchorpane.getChildren()) {
             if (node instanceof Pane && !(node instanceof AnchorPane)) {

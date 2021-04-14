@@ -12,12 +12,16 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class JigsawDifficultyController implements Initializable {
+
+    public static String difficulty;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
 
     public void playEasy(ActionEvent actionEvent) throws Exception {
+        difficulty = "easy";
         //Pick a game at random
         String[] easyGames = {"/Views/jigsaw/easy/jigsaw.fxml"};
         int rand = randomGenerator(1) - 1;
@@ -30,6 +34,7 @@ public class JigsawDifficultyController implements Initializable {
     }
 
     public void playMedium(ActionEvent actionEvent) throws Exception {
+        difficulty = "medium";
         //Pick a game at random
         String[] mediumGames = {"/Views/jigsaw/medium/jigsawShyGuy.fxml"};
         int rand = randomGenerator(1) - 1;
@@ -42,6 +47,7 @@ public class JigsawDifficultyController implements Initializable {
     }
 
     public void playHard(ActionEvent actionEvent) throws Exception {
+        difficulty = "hard";
         //Pick a game at random
         String[] hardGames = {"/Views/jigsaw/hard/jigsawEagle.fxml"};
         int rand = randomGenerator(1) - 1;

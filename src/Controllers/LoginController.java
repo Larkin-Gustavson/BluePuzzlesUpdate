@@ -31,6 +31,8 @@ public class LoginController implements Initializable {
     @FXML
     Label outputLabel, loginMessage;
 
+    //Stores the user in here for the program
+    public static String user;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -46,6 +48,7 @@ public class LoginController implements Initializable {
     @FXML /*Move onto main menu*/
     public void login(ActionEvent event) throws Exception {
         if (UserAccount.userExist(loginUser.getText()) && UserAccount.correctPassword(loginUser.getText(), loginPassword.getText())) {
+            user = loginUser.getText(); //Stores username
             Parent page = FXMLLoader.load(getClass().getResource("/Views/mainmenu.fxml"));
             Scene scene = new Scene(page, 900, 600);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -71,7 +74,7 @@ public class LoginController implements Initializable {
     public void signUpUser(ActionEvent actionEvent) throws SQLException {
         if (validatePassword(passwordField.getText()) && validateUserName(userField.getText()))
             UserAccount.insertNewUser(userField.getText(), passwordField.getText());
-
+        signUpPane.setVisible(false);
     }
 
     /*Password validation*/
