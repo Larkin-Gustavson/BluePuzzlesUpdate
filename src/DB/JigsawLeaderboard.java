@@ -23,20 +23,21 @@ public class JigsawLeaderboard {
             statement.setString(3, Difficulty);
             statement.executeUpdate();
         } catch (SQLException e) {
+            System.out.println("gotta update");
             Connection connection = DriverManager.getConnection(url, username, password); //Establishing connection
             String update = "Update JigsawLeaderboard SET Time=?" +
-                    "WHERE UserName=? AND Time >= ? AND DIFFICULTY=?";
+                    "WHERE UserName=? AND Time >=? AND DIFFICULTY=?";
             PreparedStatement statement = connection.prepareStatement(update);
             statement.setString(1, newTime);
             statement.setString(2, newUser);
-            statement.setString(3, getTime(newUser));
+            statement.setString(3, getTime(newUser, Difficulty));
             statement.setString(4, JigsawDifficultyController.difficulty);
             statement.executeUpdate();
             //e.printStackTrace();
         }
     }
 
-    public static String getTime(String user) throws SQLException {
+    public static String getTime(String user, String difficulty) throws SQLException {
         try {
             ArrayList<String> records = new ArrayList<>();
             Connection connection = DriverManager.getConnection(url, username, password); //Establishing connection
@@ -44,7 +45,26 @@ public class JigsawLeaderboard {
             PreparedStatement statement = connection.prepareStatement(select); //Prepared Statement
             ResultSet result = statement.executeQuery(); //Initializing all users into result
             while (result.next()) {
-                if (result.getString("UserName").equals(user))
+                if (result.getString("UserName").equals(user) && result.getString("Difficulty").equals(difficulty))
+                    return result.getString("Time");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+
+    public static String getBestTime(String user, String difficulty) throws SQLException {
+        try {
+            ArrayList<String> records = new ArrayList<>();
+            Connection connection = DriverManager.getConnection(url, username, password); //Establishing connection
+            String select = "SELECT * FROM JigsawLeaderboard " +
+                    "WHERE UserName=\"" + user + "\" AND Difficulty=\"" + difficulty + "\""; //Select statment
+            PreparedStatement statement = connection.prepareStatement(select); //Prepared Statement
+            ResultSet result = statement.executeQuery(); //Initializing all users into result
+            while (result.next()) {
+                if (result.getString("UserName").equals(user) &&
+                        result.getString("Difficulty").equals(difficulty))
                     return result.getString("Time");
             }
         } catch (SQLException e) {

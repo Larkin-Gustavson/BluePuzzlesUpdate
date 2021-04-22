@@ -125,5 +125,11 @@
                 <Font size="20.0"/>
             </font>
         </Label>
+        <Text fx:id="bestTime" layoutX="72.0" layoutY="509.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              textAlignment="CENTER" wrappingWidth="257.0">
+            <font>
+                <Font size="20.0"/>
+            </font>
+        </Text>
     </children>
 </AnchorPane>

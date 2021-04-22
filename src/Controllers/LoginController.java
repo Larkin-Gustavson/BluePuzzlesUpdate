@@ -13,6 +13,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 
@@ -72,9 +73,11 @@ public class LoginController implements Initializable {
 
     /*Create new account if password and username are valid*/
     public void signUpUser(ActionEvent actionEvent) throws SQLException {
-        if (validatePassword(passwordField.getText()) && validateUserName(userField.getText()))
+        if (validatePassword(passwordField.getText()) && validateUserName(userField.getText())) {
             UserAccount.insertNewUser(userField.getText(), passwordField.getText());
-        signUpPane.setVisible(false);
+            signUpPane.setVisible(false);
+        }
+
     }
 
     /*Password validation*/
@@ -112,6 +115,7 @@ public class LoginController implements Initializable {
         }
 
         outputLabel.setText(output);
+        outputLabel.setTextFill(Color.RED);
         passwordField.setText("");
         rePassword.setText("");
         return false;

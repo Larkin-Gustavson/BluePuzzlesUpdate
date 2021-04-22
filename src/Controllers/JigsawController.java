@@ -36,7 +36,7 @@ public class JigsawController implements Initializable {
     @FXML
     Button button;
     @FXML
-    Text winorlose, finishTime;
+    Text winorlose, finishTime, bestTime;
     @FXML
     Label gameTime;
 
@@ -70,6 +70,11 @@ public class JigsawController implements Initializable {
         //Game Timer
         gt = new GameTimer(gameTime);
         gt.start();
+        try {
+            bestTime.setText("Best Time: " + JigsawLeaderboard.getBestTime(LoginController.user, JigsawDifficultyController.difficulty));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 

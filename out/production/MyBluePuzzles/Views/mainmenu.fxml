@@ -58,10 +58,6 @@
             <Image url="@../images/title.png" />
          </image>
       </ImageView>
-      <Button id="backbutton" layoutX="23.0" layoutY="49.0" mnemonicParsing="false" style="-fx-background-color: #e4685d; -fx-background-radius: 45px; -fx-cursor: pointer; -fx-padding: 12px 24px;" text="Back" textAlignment="CENTER" textFill="WHITE">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Button>
+      <Button fx:id="logOut" layoutX="31.0" layoutY="54.0" mnemonicParsing="false" onAction="#logOut" prefHeight="35.0" prefWidth="75.0" text="Log Out" />
    </children>
 </AnchorPane>

@@ -59,4 +59,12 @@ public class MainMenuController implements Initializable {
     void closeApp(ActionEvent event) {
         Platform.exit();
     }
+
+    public void logOut(ActionEvent actionEvent) throws Exception {
+        Parent page = FXMLLoader.load(getClass().getResource("/Views/login.fxml"));
+        Scene scene = new Scene(page, 900, 600);
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
 }
