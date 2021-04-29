@@ -73,4 +73,21 @@ public class JigsawLeaderboard {
         return "";
     }
 
+    public static ArrayList<String> getAllRecords() throws SQLException {
+        ArrayList<String> al = new ArrayList<>();
+        Connection connection = DriverManager.getConnection(url, username, password); //Establishing connection
+        String select = "SELECT * FROM JigsawLeaderboard ORDER BY Difficulty, Time"; //Select statment
+        PreparedStatement statement = connection.prepareStatement(select); //Prepared Statement
+        ResultSet result = statement.executeQuery(); //Initializing all users into result
+
+        while (result.next()) {
+            al.add(result.getString("UserName"));
+            al.add(result.getString("Difficulty"));
+            al.add(result.getString("Time"));
+        }
+
+        return al;
+
+    }
+
 }

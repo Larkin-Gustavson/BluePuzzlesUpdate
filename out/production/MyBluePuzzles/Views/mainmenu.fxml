@@ -43,7 +43,7 @@
             <Font size="15.0" />
          </font>
       </Button>
-      <Button fx:id="leaderboardButton" layoutX="371.0" layoutY="381.0" mnemonicParsing="false" onMouseEntered="#test" style="-fx-background-color: #e5b319; -fx-background-radius: 45px; -fx-cursor: pointer; -fx-padding: 12px 24px;" text="Leaderboards" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="leaderboardButton" layoutX="371.0" layoutY="381.0" mnemonicParsing="false" onAction="#showLeaderboard" onMouseEntered="#test" style="-fx-background-color: #e5b319; -fx-background-radius: 45px; -fx-cursor: pointer; -fx-padding: 12px 24px;" text="Leaderboards" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>

@@ -67,4 +67,12 @@ public class MainMenuController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+
+    public void showLeaderboard(ActionEvent actionEvent) throws Exception {
+        Parent page = FXMLLoader.load(getClass().getResource("/Views/leaderboards.fxml"));
+        Scene scene = new Scene(page, 900, 600);
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
 }
