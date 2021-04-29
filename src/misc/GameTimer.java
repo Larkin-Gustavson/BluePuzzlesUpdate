@@ -7,6 +7,7 @@ import javafx.scene.text.Text;
 import java.util.Timer;
 import java.util.TimerTask;
 
+//
 public class GameTimer extends TimerTask {
 
     Timer timer;

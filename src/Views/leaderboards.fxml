@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
-<AnchorPane fx:id="mainAnchor" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.LeaderboardsController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controllers.LeaderboardsController">
     <children>
         <TabPane layoutX="106.0" layoutY="56.0" prefHeight="449.0" prefWidth="538.0" tabClosingPolicy="UNAVAILABLE">
             <tabs>
@@ -78,64 +75,40 @@
                         </ScrollPane>
                     </content>
                 </Tab>
-                <Tab text="Tents">
+                <Tab text="Slitherlink">
                     <content>
                         <ScrollPane prefHeight="403.0" prefWidth="518.0">
                             <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="351.0" prefWidth="503.0">
                                     <children>
-                                        <TableView fx:id="tentsTable" layoutY="47.0" prefHeight="415.0"
-                                                   prefWidth="538.0" AnchorPane.bottomAnchor="-64.0"
-                                                   AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-35.0"
-                                                   AnchorPane.topAnchor="0.0">
-                                            <columns>
-                                                <TableColumn fx:id="tentsUser" prefWidth="75.0" text="UserName"/>
-                                                <TableColumn fx:id="tentsDifficulty" prefWidth="75.0"
-                                                             text="Difficulty"/>
-                                                <TableColumn fx:id="tentsTime" prefWidth="75.0" text="Time"/>
-                                            </columns>
-                                        </TableView>
-                                    </children>
-                                </AnchorPane>
-                            </content>
-                        </ScrollPane>
-                    </content>
-                </Tab>
-                <Tab text="Memory">
-                    <content>
-                        <ScrollPane prefHeight="403.0" prefWidth="518.0">
-                            <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="351.0" prefWidth="503.0">
-                                    <children>
-                                        <TableView fx:id="memoryTable" layoutY="47.0" prefHeight="415.0"
-                                                   prefWidth="538.0" AnchorPane.bottomAnchor="-64.0"
-                                                   AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-35.0"
-                                                   AnchorPane.topAnchor="0.0">
-                                            <columns>
-                                                <TableColumn fx:id="memoryUser" prefWidth="75.0" text="UserName"/>
-                                                <TableColumn fx:id="memoryDifficulty" prefWidth="75.0"
-                                                             text="Difficulty"/>
-                                                <TableColumn fx:id="memoryTime" prefWidth="75.0" text="Time"/>
-                                            </columns>
-                                        </TableView>
-                                    </children>
-                                </AnchorPane>
-                            </content>
-                        </ScrollPane>
-                    </content>
-                </Tab>
-                <Tab text="TimeAttack">
-                    <content>
-                        <ScrollPane prefHeight="403.0" prefWidth="518.0">
-                            <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="351.0" prefWidth="503.0">
-                                    <children>
-                                        <TableView fx:id="TATable" layoutY="47.0" prefHeight="415.0" prefWidth="538.0"
+                                        <TableView layoutY="47.0" prefHeight="415.0" prefWidth="538.0"
                                                    AnchorPane.bottomAnchor="-64.0" AnchorPane.leftAnchor="0.0"
                                                    AnchorPane.rightAnchor="-35.0" AnchorPane.topAnchor="0.0">
                                             <columns>
-                                                <TableColumn fx:id="TAUser" prefWidth="75.0" text="UserName"/>
-                                                <TableColumn fx:id="TAPoints" prefWidth="75.0" text="Points"/>
+                                                <TableColumn prefWidth="75.0" text="UserName"/>
+                                                <TableColumn prefWidth="75.0" text="Difficulty"/>
+                                                <TableColumn prefWidth="75.0" text="Time"/>
+                                            </columns>
+                                        </TableView>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </ScrollPane>
+                    </content>
+                </Tab>
+                <Tab text="Wires">
+                    <content>
+                        <ScrollPane prefHeight="403.0" prefWidth="518.0">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="351.0" prefWidth="503.0">
+                                    <children>
+                                        <TableView layoutY="47.0" prefHeight="415.0" prefWidth="538.0"
+                                                   AnchorPane.bottomAnchor="-64.0" AnchorPane.leftAnchor="0.0"
+                                                   AnchorPane.rightAnchor="-35.0" AnchorPane.topAnchor="0.0">
+                                            <columns>
+                                                <TableColumn prefWidth="75.0" text="UserName"/>
+                                                <TableColumn prefWidth="75.0" text="Difficulty"/>
+                                                <TableColumn prefWidth="75.0" text="Time"/>
                                             </columns>
                                         </TableView>
                                     </children>

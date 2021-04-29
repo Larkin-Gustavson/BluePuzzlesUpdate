@@ -14,10 +14,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-
-
 import java.net.URL;
 import java.util.ResourceBundle;
+//
 
 public class MainMenuController implements Initializable {
 
