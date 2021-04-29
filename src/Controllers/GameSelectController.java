@@ -29,7 +29,7 @@ public class GameSelectController implements Initializable {
 
     }
 
-    /*Sudoku Methods*/
+    /* Sudoku Methods */
     public void playSudoku(ActionEvent actionEvent) throws Exception {
         Parent page = FXMLLoader.load(getClass().getResource("/Views/sudokuboard.fxml"));
         Scene scene = new Scene(page, 900, 600);
@@ -50,7 +50,7 @@ public class GameSelectController implements Initializable {
         sudokuText.setVisible(false);
     }
 
-    /*Hangman methods*/
+    /* Hangman methods */
     public void playHangman(ActionEvent actionEvent) throws Exception {
 
         Parent page = FXMLLoader.load(getClass().getResource("/Views/hangmanDifficulty.fxml"));
@@ -73,7 +73,7 @@ public class GameSelectController implements Initializable {
         hangmanText.setVisible(false);
     }
 
-    /*Jigsaw Methods*/
+    /* Jigsaw Methods */
     public void playJigsaw(ActionEvent actionEvent) throws Exception {
         Parent page = FXMLLoader.load(getClass().getResource("/Views/jigsawDifficulty.fxml"));
         Scene scene = new Scene(page, 900, 600);

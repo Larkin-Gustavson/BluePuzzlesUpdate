@@ -1,4 +1,4 @@
-/*AES class courtesy of howtodoinjava.com*/
+/* AES class courtesy of howtodoinjava.com */
 package DB;
 
 import java.io.UnsupportedEncodingException;

@@ -12,10 +12,10 @@ public class GameTimer extends TimerTask {
     Timer timer;
     Label gameTime; // Label that changes
     Text gameTimeText;
-    int timePassed = 0; //Actual seconds
-    int seconds = timePassed % 60; //Calculated seconds 0-60
+    int timePassed = 0; // Actual seconds
+    int seconds = timePassed % 60; // Calculated seconds 0-60
     String secondsString = String.format("%02d", seconds);// Double Digit format
-    int minutes = timePassed / 60; //Calculated minutes
+    int minutes = timePassed / 60; // Calculated minutes
     String minutesString = String.format("%02d", seconds); // Double Digit format
 
 
@@ -27,7 +27,7 @@ public class GameTimer extends TimerTask {
         gameTimeText = time;
     }
 
-    /*Run function that changes label text with the time*/
+    /* Run function that changes label text with the time */
     @Override
     public void run() {
         Platform.runLater(new Runnable() {
@@ -45,7 +45,7 @@ public class GameTimer extends TimerTask {
         });
     }
 
-    /*Performs the task*/
+    /* Performs the task */
     public void start() {
         timer = new Timer();
 
