@@ -53,7 +53,7 @@ public class LeaderboardsController implements Initializable {
         ArrayList<String> record = JigsawLeaderboard.getAllRecords();
         Record jr = null;
         for (int i = 0; i < JigsawLeaderboard.getAllRecords().size(); i += 3) {
-            jr = new Record(record.get(i), record.get(i + 1), record.get(i + 2));
+            jr  = new Record(record.get(i), record.get(i + 1), record.get(i + 2));
             records.add(jr);
         }
 
