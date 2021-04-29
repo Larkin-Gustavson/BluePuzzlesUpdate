@@ -7,7 +7,7 @@ import java.util.*;
 
 
 public class JigsawLeaderboard {
-
+    //
     private final static String URL = "jdbc:mysql://bluepuzzles.c6g1bhjsrnsm.us-east-2.rds.amazonaws.com/BLUE_PUZZLES";
     private final static String USERNAME = "bluepuzzles";
     private final static String PASSWORD = "bluepuzzles123";

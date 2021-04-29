@@ -17,14 +17,11 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import misc.GameTimer;
 
-
 import java.net.URL;
-import java.security.spec.RSAOtherPrimeInfo;
 import java.util.ResourceBundle;
-import java.util.*;
-import java.util.concurrent.TimeUnit;
+import java.util.Stack;
 
-
+//
 public class SudokuGame implements Initializable {
 
     // Main AnchorPane
@@ -38,13 +35,12 @@ public class SudokuGame implements Initializable {
     Button hintButn;
     @FXML
     Text gameTime;
-
+    GameTimer gt;
     //Sudoku Board
     private Label mat[][] = new Label[9][9];
     private Label[][] key = new Label[9][9];
     private int difficulty;
     private int hints;
-    GameTimer gt;
 
     // Sets up the board
     @Override
@@ -75,7 +71,7 @@ public class SudokuGame implements Initializable {
     /* Changes number by 1 */
     public void changeNumber(MouseEvent mouseEvent) {
         Label source = (Label) mouseEvent.getSource();
-        
+
         if (source.getText().isEmpty() && source.focusTraversableProperty().getValue() == false) {
             source.setText(1 + "");
             source.setTextFill(Color.DODGERBLUE);
@@ -98,18 +94,17 @@ public class SudokuGame implements Initializable {
     }
 
     /* Fills a 3x3 grid with logical numbers */
-    public boolean fillBoxUsingStack(int row, int col){
+    public boolean fillBoxUsingStack(int row, int col) {
         int r = 0;
         int c = 0;
         int count = 0;
         Stack<Integer> stack = fillStack();
         while (!stack.isEmpty()) {
             int pop = stack.pop();
-            if (checkRow(row+r,pop) && checkCol(col+c,pop) && mat[row+r][col+c].getText().isEmpty()) {
+            if (checkRow(row + r, pop) && checkCol(col + c, pop) && mat[row + r][col + c].getText().isEmpty()) {
                 mat[row + r][col + c].setText(pop + "");
                 mat[row + r][col + c].setFocusTraversable(true);
-            }
-            else {
+            } else {
                 count++;
                 stack.push(pop);
                 c++;
@@ -122,11 +117,11 @@ public class SudokuGame implements Initializable {
                     return true;
                 }
             }
-            if (c==3) {
+            if (c == 3) {
                 c = 0;
                 r++;
-                if (r==3)
-                    r=0;
+                if (r == 3)
+                    r = 0;
             }
         }
         return false;
@@ -143,9 +138,9 @@ public class SudokuGame implements Initializable {
     }
 
     /* Provides a stack with randomly shuffled numbers 1-9 */
-    public Stack<Integer> fillStack(){
+    public Stack<Integer> fillStack() {
         Stack<Integer> stack = new Stack<Integer>();
-        while (stack.size() < 9){
+        while (stack.size() < 9) {
             int rand = randomGenerator(9);
             if (stack.search(rand) == -1)
                 stack.push(rand);
@@ -171,9 +166,9 @@ public class SudokuGame implements Initializable {
     }
 
     /* Wipes out entire sudoku board */
-    public void wipeAll(){
-        for (int i = 0; i < 9;i++)
-            for (int j = 0; j < 9;j++)
+    public void wipeAll() {
+        for (int i = 0; i < 9; i++)
+            for (int j = 0; j < 9; j++)
                 mat[i][j].setText("");
     }
 
@@ -189,7 +184,7 @@ public class SudokuGame implements Initializable {
     }
 
     /* Check if sudoku board is full */
-    public boolean isMatFull(){
+    public boolean isMatFull() {
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
                 if (mat[i][j].getText().isEmpty())
@@ -216,12 +211,12 @@ public class SudokuGame implements Initializable {
     }
 
     /* Each box has a chance of being removed depending on num
-    *  num represents difficulty
-    *  1 - Easy
-    *  2 - Medium
-    *  3 - Hard
-    *  The Harder the difficulty, the higher chance a number gets removed
-    */
+     *  num represents difficulty
+     *  1 - Easy
+     *  2 - Medium
+     *  3 - Hard
+     *  The Harder the difficulty, the higher chance a number gets removed
+     */
     public void remove(int num) {
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
@@ -259,7 +254,7 @@ public class SudokuGame implements Initializable {
                 int r1 = randomGenerator(9) - 1;
                 int r2 = randomGenerator(9) - 1;
                 String s2 = key[r1][r2].getText();
-                if (mat[r1][r2].focusTraversableProperty().getValue()==false) {
+                if (mat[r1][r2].focusTraversableProperty().getValue() == false) {
                     mat[r1][r2].setText(s2);
                     mat[r1][r2].setTextFill(Color.RED);
                     mat[r1][r2].setFocusTraversable(true);
@@ -278,7 +273,7 @@ public class SudokuGame implements Initializable {
         hints = 3;
         numHints.setText("Hints: " + hints);
         difficultyPane.setVisible(false);
-        if(!difficultyPane.isVisible()) {
+        if (!difficultyPane.isVisible()) {
             // Fills out sudoku board
             for (int r = 0; r <= 6; r += 3) {
                 for (int c = 0; c <= 6; c += 3) {
@@ -307,7 +302,7 @@ public class SudokuGame implements Initializable {
         hints = 2;
         numHints.setText("Hints: " + hints);
         difficultyPane.setVisible(false);
-        if(!difficultyPane.isVisible()) {
+        if (!difficultyPane.isVisible()) {
             // Fills out sudoku board
             for (int r = 0; r <= 6; r += 3) {
                 for (int c = 0; c <= 6; c += 3) {
@@ -338,7 +333,7 @@ public class SudokuGame implements Initializable {
         hints = 1;
         numHints.setText("Hints: " + hints);
         difficultyPane.setVisible(false);
-        if(!difficultyPane.isVisible()) {
+        if (!difficultyPane.isVisible()) {
             // Fills out sudoku board
             for (int r = 0; r <= 6; r += 3) {
                 for (int c = 0; c <= 6; c += 3) {

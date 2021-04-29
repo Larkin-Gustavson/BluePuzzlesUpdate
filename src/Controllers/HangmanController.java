@@ -24,7 +24,7 @@ import misc.myLabel;
 import java.net.URL;
 import java.security.spec.RSAOtherPrimeInfo;
 import java.util.*;
-
+//
 public class HangmanController implements Initializable {
 
     @FXML
