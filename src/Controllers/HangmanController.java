@@ -22,6 +22,7 @@ import misc.GameTimer;
 import misc.myLabel;
 
 import java.net.URL;
+import java.security.spec.RSAOtherPrimeInfo;
 import java.util.*;
 
 public class HangmanController implements Initializable {
@@ -45,16 +46,16 @@ public class HangmanController implements Initializable {
     String[] words = {"School", "Laundry", "House", "Gameboy Advanced", "Amazing", "Educational", "Puzzle",
             "Blue Puzzles", "Smoke", "Maple Syrup"};
     String word;
-    GameTimer gt; //Timer
+    GameTimer gt; // Timer
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        /*Select a rand word from the array*/
+        /* Select a rand word from the array */
         int pick = randomGenerator(words.length - 1);
         word = words[pick].toUpperCase(); //the word
         System.out.println(word);
 
-        /*Positions the word*/
+        /* Positions the word */
         int pos = 0;
         for (int i = 0; i < word.length(); i++) {
             myLabel label = new myLabel(word.charAt(i));
@@ -76,14 +77,14 @@ public class HangmanController implements Initializable {
 
 
     public void doSomething(MouseEvent mouseEvent) {
-        /*Changes to letter clicked*/
+        /* Changes to letter clicked */
         Text source = (Text) mouseEvent.getSource();
         System.out.println(source.getText());
         source.setDisable(true);
         Paint p = Color.GREY;
         source.setFill(p);
-        char guess = source.getText().charAt(0); //guessed letter
-        /*Changes to word*/
+        char guess = source.getText().charAt(0); // guessed letter
+        /* Changes to word */
         boolean guessRight = false;
         for (Node node : wordPane.getChildren()) {
             if (node instanceof myLabel) {
@@ -97,9 +98,9 @@ public class HangmanController implements Initializable {
         }
         if (!guessRight)
             wrongGuess();
-    } //End of Method
+    } // End of Method
 
-    /*Determines if the game is won*/
+    /* Determines if the game is won */
     public boolean gameWon() {
         for (Node node : wordPane.getChildren()) {
             if (node instanceof myLabel) {
@@ -177,7 +178,13 @@ public class HangmanController implements Initializable {
 
     @FXML
     void hintButtonClicked(MouseEvent event) throws Exception {
-        System.out.println("Hint button clicked");
+        if (HangmanDifficultyController.getDifficultyLevel().equals("Easy")) {
+            System.out.println("EASY BUTTON CLICKED");
+        } else if (HangmanDifficultyController.getDifficultyLevel().equals("Medium")) {
+            System.out.println("MEDIUM BUTTON CLICKED");
+        } else {
+            System.out.println("HARD BUTTON CLICKED");
+        }
     }
 
 }

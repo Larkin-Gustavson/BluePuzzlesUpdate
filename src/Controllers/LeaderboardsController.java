@@ -24,7 +24,7 @@ import java.util.ResourceBundle;
 public class LeaderboardsController implements Initializable {
 
     @FXML
-    TableView<Record> JigsawTable, hangmanTable;
+    TableView<Record> jigsawTable, hangmanTable;
     @FXML
     TableColumn<Record, String> jigsawUser, jigsawDifficulty, jigsawTime, hangmanUser, hangmanDifficulty,
             hangmanTime;
@@ -32,16 +32,16 @@ public class LeaderboardsController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        /*Jigsaw*/
+        /* Jigsaw */
         jigsawUser.setCellValueFactory(new PropertyValueFactory<Record, String>("userName"));
         jigsawDifficulty.setCellValueFactory(new PropertyValueFactory<Record, String>("difficulty"));
         jigsawTime.setCellValueFactory(new PropertyValueFactory<Record, String>("time"));
-        /*Hangman*/
+        /* Hangman */
         jigsawUser.setCellValueFactory(new PropertyValueFactory<Record, String>("userName"));
         jigsawDifficulty.setCellValueFactory(new PropertyValueFactory<Record, String>("difficulty"));
         jigsawTime.setCellValueFactory(new PropertyValueFactory<Record, String>("time"));
         try {
-            JigsawTable.setItems(getRecords());
+            jigsawTable.setItems(getRecords());
 
         } catch (SQLException e) {
 
@@ -51,8 +51,9 @@ public class LeaderboardsController implements Initializable {
     public ObservableList<Record> getRecords() throws SQLException {
         ObservableList<Record> records = FXCollections.observableArrayList();
         ArrayList<String> record = JigsawLeaderboard.getAllRecords();
+        Record jr = null;
         for (int i = 0; i < JigsawLeaderboard.getAllRecords().size(); i += 3) {
-            Record jr = new Record(record.get(i), record.get(i + 1), record.get(i + 2));
+            jr = new Record(record.get(i), record.get(i + 1), record.get(i + 2));
             records.add(jr);
         }
 
