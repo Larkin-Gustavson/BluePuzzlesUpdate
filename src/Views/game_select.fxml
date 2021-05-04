@@ -75,13 +75,13 @@
                 <Button focusTraversable="false" layoutX="107.0" layoutY="204.0" mnemonicParsing="false"
                         prefHeight="27.0" prefWidth="95.0" text="Slitherlink"/>
                 <Button focusTraversable="false" layoutX="269.0" layoutY="63.0" mnemonicParsing="false"
-                        prefHeight="27.0" prefWidth="95.0" text="Nonogram"/>
+                        onAction="#playTents" prefHeight="27.0" prefWidth="95.0" text="Tents"/>
                 <Button focusTraversable="false" layoutX="269.0" layoutY="110.0" mnemonicParsing="false"
-                        prefHeight="27.0" prefWidth="95.0" text="Game"/>
+                        prefHeight="27.0" prefWidth="95.0" text="Wires"/>
                 <Button focusTraversable="false" layoutX="269.0" layoutY="157.0" mnemonicParsing="false"
-                        prefHeight="27.0" prefWidth="95.0" text="Game"/>
+                        prefHeight="27.0" prefWidth="95.0" text="Memory"/>
                 <Button focusTraversable="false" layoutX="269.0" layoutY="204.0" mnemonicParsing="false"
-                        prefHeight="27.0" prefWidth="95.0" text="Game"/>
+                        prefHeight="27.0" prefWidth="95.0" text="Time Attack"/>
             </children>
         </Pane>
         <ImageView fx:id="shyguy1" fitHeight="193.0" fitWidth="217.0" layoutX="55.0" layoutY="225.0" opacity="0.5"

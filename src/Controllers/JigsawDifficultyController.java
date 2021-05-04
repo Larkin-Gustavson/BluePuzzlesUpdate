@@ -23,8 +23,8 @@ public class JigsawDifficultyController implements Initializable {
     public void playEasy(ActionEvent actionEvent) throws Exception {
         difficulty = "easy";
         //Pick a game at random
-        String[] easyGames = {"/Views/jigsaw/easy/jigsaw.fxml"};
-        int rand = randomGenerator(1) - 1;
+        String[] easyGames = {"/Views/jigsaw/easy/jigsaw.fxml", "/Views/jigsaw/easy/skull.fxml"};
+        int rand = randomGenerator(easyGames.length) - 1;
         //Load the game
         Parent page = FXMLLoader.load(getClass().getResource(easyGames[rand]));
         Scene scene = new Scene(page, 900, 600);
@@ -36,8 +36,8 @@ public class JigsawDifficultyController implements Initializable {
     public void playMedium(ActionEvent actionEvent) throws Exception {
         difficulty = "medium";
         //Pick a game at random
-        String[] mediumGames = {"/Views/jigsaw/medium/jigsawShyGuy.fxml"};
-        int rand = randomGenerator(1) - 1;
+        String[] mediumGames = {"/Views/jigsaw/medium/jigsawShyGuy.fxml", "/Views/jigsaw/medium/dooplis.fxml"};
+        int rand = randomGenerator(mediumGames.length) - 1;
         //Load the game
         Parent page = FXMLLoader.load(getClass().getResource(mediumGames[rand]));
         Scene scene = new Scene(page, 900, 600);

@@ -1,5 +1,6 @@
 package Controllers;
 
+import DB.Leaderboard;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,6 +23,7 @@ import misc.GameTimer;
 import misc.myLabel;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.*;
 
 public class HangmanController implements Initializable {
@@ -38,7 +40,6 @@ public class HangmanController implements Initializable {
     private Button hintButton;
     @FXML
     Label gameTime;
-
 
 
     int lives = 6;
@@ -141,6 +142,12 @@ public class HangmanController implements Initializable {
         winScreen.setVisible(true);
         finishTime.setText(gt.toString());
         gt.stop();
+        try {
+            Leaderboard.insertNewUser("HangmanLeaderboard", LoginController.user, gameTime.getText(),
+                    HangmanDifficultyController.difficulty);
+        } catch (SQLException e) {
+
+        }
         for (Node node : hangmanAnchorPane.getChildren())
             if (node instanceof Button)
                 node.setDisable(true);

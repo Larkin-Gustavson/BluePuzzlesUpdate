@@ -1,6 +1,6 @@
 package Controllers;
 
-import DB.JigsawLeaderboard;
+import DB.Leaderboard;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -71,7 +71,7 @@ public class JigsawController implements Initializable {
         gt = new GameTimer(gameTime);
         gt.start();
         try {
-            bestTime.setText("Best Time: " + JigsawLeaderboard.getBestTime(LoginController.user, JigsawDifficultyController.difficulty));
+            bestTime.setText("Best Time: " + Leaderboard.getBestTime("JigsawLeaderboard", LoginController.user, JigsawDifficultyController.difficulty));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -135,7 +135,7 @@ public class JigsawController implements Initializable {
             winorlose.setText("You lost!");
         winScreen.setVisible(true); //set win screen visible
         finishTime.setText(gameTime.getText()); //reveal finshing game time
-        JigsawLeaderboard.insertNewUser(LoginController.user, gameTime.getText(),
+        Leaderboard.insertNewUser("JigsawLeaderboard", LoginController.user, gameTime.getText(),
                 JigsawDifficultyController.difficulty);
         gt.stop(); // stop game timer
         gameTime.setDisable(true);
