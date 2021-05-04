@@ -90,4 +90,18 @@ public class GameSelectController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+
+    public void playTents(ActionEvent actionEvent) throws Exception {
+        String[] games = {"/Views/tents/tentsTemplate1.fxml", "/Views/tents/tentsTemplate2.fxml"};
+        int rand = randomGenerator(games.length) - 1;
+        Parent page = FXMLLoader.load(getClass().getResource(games[rand]));
+        Scene scene = new Scene(page, 900, 600);
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    int randomGenerator(int num) {
+        return (int) Math.floor((Math.random() * num + 1));
+    }
 }

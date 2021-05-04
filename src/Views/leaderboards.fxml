@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="Controllers.LeaderboardsController">
+
+<AnchorPane fx:id="mainAnchor" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.LeaderboardsController">
     <children>
         <TabPane layoutX="106.0" layoutY="56.0" prefHeight="449.0" prefWidth="538.0" tabClosingPolicy="UNAVAILABLE">
             <tabs>
@@ -14,7 +17,7 @@
                             <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="351.0" prefWidth="503.0">
                                     <children>
-                                        <TableView fx:id="jigsawTable" layoutY="47.0" prefHeight="415.0"
+                                        <TableView fx:id="JigsawTable" layoutY="47.0" prefHeight="415.0"
                                                    prefWidth="538.0" AnchorPane.bottomAnchor="-64.0"
                                                    AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-35.0"
                                                    AnchorPane.topAnchor="0.0">
@@ -75,19 +78,21 @@
                         </ScrollPane>
                     </content>
                 </Tab>
-                <Tab text="Slitherlink">
+                <Tab text="Tents">
                     <content>
                         <ScrollPane prefHeight="403.0" prefWidth="518.0">
                             <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="351.0" prefWidth="503.0">
                                     <children>
-                                        <TableView layoutY="47.0" prefHeight="415.0" prefWidth="538.0"
-                                                   AnchorPane.bottomAnchor="-64.0" AnchorPane.leftAnchor="0.0"
-                                                   AnchorPane.rightAnchor="-35.0" AnchorPane.topAnchor="0.0">
+                                        <TableView fx:id="tentsTable" layoutY="47.0" prefHeight="415.0"
+                                                   prefWidth="538.0" AnchorPane.bottomAnchor="-64.0"
+                                                   AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-35.0"
+                                                   AnchorPane.topAnchor="0.0">
                                             <columns>
-                                                <TableColumn prefWidth="75.0" text="UserName"/>
-                                                <TableColumn prefWidth="75.0" text="Difficulty"/>
-                                                <TableColumn prefWidth="75.0" text="Time"/>
+                                                <TableColumn fx:id="tentsUser" prefWidth="75.0" text="UserName"/>
+                                                <TableColumn fx:id="tentsDifficulty" prefWidth="75.0"
+                                                             text="Difficulty"/>
+                                                <TableColumn fx:id="tentsTime" prefWidth="75.0" text="Time"/>
                                             </columns>
                                         </TableView>
                                     </children>

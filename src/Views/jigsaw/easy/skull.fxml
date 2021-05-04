@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="anchorpane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.JigsawController">
+    <children>
+        <Pane layoutX="663.0" layoutY="300.0" onKeyPressed="#rotate" onMouseClicked="#select" prefHeight="200.0"
+              prefWidth="200.0" style="-fx-border-color: BLACK;">
+            <children>
+                <ImageView fitHeight="194.0" fitWidth="194.0" layoutX="3.0" layoutY="3.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+                        <Image url="@../../../images/jigsaw/skull/image_part_004.jpg"/>
+                    </image>
+                </ImageView>
+            </children>
+        </Pane>
+        <Pane layoutX="463.0" layoutY="300.0" onKeyPressed="#rotate" onMouseClicked="#select" prefHeight="200.0"
+              prefWidth="200.0" style="-fx-border-color: Black;">
+            <children>
+                <ImageView fitHeight="194.0" fitWidth="194.0" layoutX="3.0" layoutY="3.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+                        <Image url="@../../../images/jigsaw/skull/image_part_003.jpg"/>
+                    </image>
+                </ImageView>
+            </children>
+        </Pane>
+        <Pane layoutX="663.0" layoutY="100.0" onKeyPressed="#rotate" onMouseClicked="#select" prefHeight="200.0"
+              prefWidth="200.0" style="-fx-border-color: Black;">
+            <children>
+                <ImageView fx:id="check2" fitHeight="194.0" fitWidth="194.0" layoutX="3.0" layoutY="3.0"
+                           pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../images/jigsaw/skull/image_part_002.jpg"/>
+                    </image>
+                </ImageView>
+            </children>
+        </Pane>
+        <Pane layoutX="463.0" layoutY="100.0" onKeyPressed="#rotate" onMouseClicked="#select" prefHeight="200.0"
+              prefWidth="200.0" style="-fx-border-color: BLACK;">
+            <children>
+                <ImageView fx:id="check1" fitHeight="194.0" fitWidth="200.0" layoutX="3.0" layoutY="3.0"
+                           pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../images/jigsaw/skull/image_part_001.jpg"/>
+                    </image>
+                </ImageView>
+            </children>
+        </Pane>
+        <ImageView fitHeight="225.0" fitWidth="233.0" layoutX="81.0" layoutY="175.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <image>
+                <Image url="@../../../images/jigsaw/skull/skulltik.png"/>
+            </image>
+        </ImageView>
+        <Button fx:id="button" focusTraversable="false" layoutX="636.0" layoutY="523.0" mnemonicParsing="false"
+                onAction="#checkWin" text="Check"/>
+        <Button focusTraversable="false" layoutX="26.0" layoutY="55.0" mnemonicParsing="false" onAction="#goBack"
+                text="Back"/>
+        <MenuBar layoutX="370.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Close"/>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Delete"/>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="About"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <Rectangle fx:id="rBox" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="29.0" layoutX="733.0" layoutY="54.0"
+                   stroke="BLACK" strokeType="INSIDE" width="30.0"/>
+        <Text layoutX="740.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R" textAlignment="CENTER">
+            <font>
+                <Font size="22.0"/>
+            </font>
+        </Text>
+        <Text layoutX="604.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Press 'R' Key to rotate"/>
+        <AnchorPane fx:id="winScreen" layoutX="185.0" layoutY="115.0" prefHeight="385.0" prefWidth="592.0"
+                    style="-fx-background-color: skyblue; -fx-border-color: black; -fx-border-width: 5;"
+                    visible="false">
+            <children>
+                <Text fx:id="winorlose" fill="#136dd3" layoutX="113.0" layoutY="104.0" strokeType="OUTSIDE"
+                      strokeWidth="0.0" text="You Won!">
+                    <font>
+                        <Font name="Silom" size="72.0"/>
+                    </font>
+                </Text>
+                <Button layoutX="258.0" layoutY="147.0" mnemonicParsing="false" onAction="#playAgain"
+                        text="Play Again"/>
+                <Button layoutX="273.0" layoutY="193.0" mnemonicParsing="false" onAction="#goBack" text="Back"/>
+                <Text layoutX="160.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Time:">
+                    <font>
+                        <Font name="Silom" size="34.0"/>
+                    </font>
+                </Text>
+                <Text fx:id="finishTime" layoutX="360.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      textAlignment="CENTER" wrappingWidth="143.853515625">
+                    <font>
+                        <Font name="Silom" size="34.0"/>
+                    </font>
+                </Text>
+            </children>
+        </AnchorPane>
+        <Label fx:id="gameTime" layoutX="808.0" layoutY="533.0" prefHeight="29.0" prefWidth="63.0" text="00:00"
+               textAlignment="CENTER">
+            <font>
+                <Font size="20.0"/>
+            </font>
+        </Label>
+        <Text fx:id="bestTime" layoutX="72.0" layoutY="509.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              textAlignment="CENTER" wrappingWidth="257.0">
+            <font>
+                <Font size="20.0"/>
+            </font>
+        </Text>
+    </children>
+</AnchorPane>

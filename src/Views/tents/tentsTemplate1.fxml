@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="anchorpane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.TentsController">
+   <children>
+      <Button focusTraversable="false" layoutX="54.0" layoutY="48.0" mnemonicParsing="false" onAction="#goBack"
+              prefHeight="30.0" prefWidth="64.0" text="Back"/>
+      <AnchorPane fx:id="gamePane" layoutX="146.0" layoutY="84.0" prefHeight="432.0" prefWidth="734.0">
+         <children>
+            <Pane fx:id="T1" disable="true" layoutX="244.0" layoutY="102.0" prefHeight="40.0" prefWidth="40.0"
+                  style="-fx-border-color: BLACK;">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/tentstree.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane focusTraversable="true" layoutX="204.0" layoutY="102.0" onMouseClicked="#giveTent" prefHeight="40.0"
+                  prefWidth="40.0" style="-fx-border-color: BLACK;">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/tentstent.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="T2" disable="true" layoutX="324.0" layoutY="102.0" prefHeight="40.0" prefWidth="40.0"
+                  style="-fx-border-color: BLACK;">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/tentstree.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="T3" disable="true" layoutX="404.0" layoutY="142.0" prefHeight="40.0" prefWidth="40.0"
+                  style="-fx-border-color: BLACK;">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/tentstree.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="T4" disable="true" layoutX="364.0" layoutY="182.0" prefHeight="40.0" prefWidth="40.0"
+                  style="-fx-border-color: BLACK;">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/tentstree.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="T5" disable="true" layoutX="324.0" layoutY="222.0" prefHeight="40.0" prefWidth="40.0"
+                  style="-fx-border-color: BLACK;">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/tentstree.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="T6" disable="true" layoutX="244.0" layoutY="262.0" prefHeight="40.0" prefWidth="40.0"
+                  style="-fx-border-color: BLACK;">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/tentstree.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="T7" disable="true" layoutX="324.0" layoutY="302.0" prefHeight="40.0" prefWidth="40.0"
+                  style="-fx-border-color: BLACK;">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/tentstree.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane focusTraversable="true" layoutX="284.0" layoutY="102.0" onMouseClicked="#giveTent" prefHeight="40.0"
+                  prefWidth="40.0" style="-fx-border-color: BLACK;">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/tentstent.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane focusTraversable="true" layoutX="404.0" layoutY="102.0" onMouseClicked="#giveTent" prefHeight="40.0"
+                  prefWidth="40.0" style="-fx-border-color: BLACK;">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/tentstent.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane focusTraversable="true" layoutX="324.0" layoutY="182.0" onMouseClicked="#giveTent" prefHeight="40.0"
+                  prefWidth="40.0" style="-fx-border-color: BLACK;">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/tentstent.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane focusTraversable="true" layoutX="404.0" layoutY="182.0" onMouseClicked="#giveTent" prefHeight="40.0"
+                  prefWidth="40.0" style="-fx-border-color: BLACK;">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/tentstent.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane focusTraversable="true" layoutX="244.0" layoutY="222.0" onMouseClicked="#giveTent" prefHeight="40.0"
+                  prefWidth="40.0" style="-fx-border-color: BLACK;">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/tentstent.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane focusTraversable="true" layoutX="324.0" layoutY="262.0" onMouseClicked="#giveTent" prefHeight="40.0"
+                  prefWidth="40.0" style="-fx-border-color: BLACK;">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/tentstent.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="364.0" layoutY="102.0" onMouseClicked="#giveTent" prefHeight="40.0" prefWidth="40.0"
+                  style="-fx-border-color: BLACK;">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/tentstent.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="364.0" layoutY="142.0" onMouseClicked="#giveTent" prefHeight="40.0" prefWidth="40.0"
+                  style="-fx-border-color: BLACK;">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/tentstent.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="324.0" layoutY="142.0" onMouseClicked="#giveTent" prefHeight="40.0" prefWidth="40.0"
+                  style="-fx-border-color: BLACK;">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/tentstent.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="244.0" layoutY="142.0" onMouseClicked="#giveTent" prefHeight="40.0" prefWidth="40.0"
+                  style="-fx-border-color: BLACK;">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/tentstent.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="284.0" layoutY="142.0" onMouseClicked="#giveTent" prefHeight="40.0" prefWidth="40.0"
+                  style="-fx-border-color: BLACK;">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/tentstent.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="204.0" layoutY="142.0" onMouseClicked="#giveTent" prefHeight="40.0" prefWidth="40.0"
+                  style="-fx-border-color: BLACK;">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/tentstent.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="204.0" layoutY="182.0" onMouseClicked="#giveTent" prefHeight="40.0" prefWidth="40.0"
+                  style="-fx-border-color: BLACK;">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/tentstent.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="284.0" layoutY="182.0" onMouseClicked="#giveTent" prefHeight="40.0" prefWidth="40.0"
+                  style="-fx-border-color: BLACK;">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/tentstent.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="244.0" layoutY="182.0" onMouseClicked="#giveTent" prefHeight="40.0" prefWidth="40.0"
+                  style="-fx-border-color: BLACK;">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/tentstent.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="204.0" layoutY="222.0" onMouseClicked="#giveTent" prefHeight="40.0" prefWidth="40.0"
+                  style="-fx-border-color: BLACK;">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/tentstent.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="284.0" layoutY="222.0" onMouseClicked="#giveTent" prefHeight="40.0" prefWidth="40.0"
+                  style="-fx-border-color: BLACK;">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/tentstent.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="364.0" layoutY="222.0" onMouseClicked="#giveTent" prefHeight="40.0" prefWidth="40.0"
+                  style="-fx-border-color: BLACK;">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/tentstent.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="404.0" layoutY="222.0" onMouseClicked="#giveTent" prefHeight="40.0" prefWidth="40.0"
+                  style="-fx-border-color: BLACK;">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/tentstent.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="204.0" layoutY="262.0" onMouseClicked="#giveTent" prefHeight="40.0" prefWidth="40.0"
+                  style="-fx-border-color: BLACK;">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/tentstent.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="284.0" layoutY="262.0" onMouseClicked="#giveTent" prefHeight="40.0" prefWidth="40.0"
+                  style="-fx-border-color: BLACK;">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/tentstent.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="364.0" layoutY="262.0" onMouseClicked="#giveTent" prefHeight="40.0" prefWidth="40.0"
+                  style="-fx-border-color: BLACK;">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/tentstent.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="404.0" layoutY="262.0" onMouseClicked="#giveTent" prefHeight="40.0" prefWidth="40.0"
+                  style="-fx-border-color: BLACK;">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/tentstent.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="204.0" layoutY="302.0" onMouseClicked="#giveTent" prefHeight="40.0" prefWidth="40.0"
+                  style="-fx-border-color: BLACK;">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/tentstent.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="244.0" layoutY="302.0" onMouseClicked="#giveTent" prefHeight="40.0" prefWidth="40.0"
+                  style="-fx-border-color: BLACK;">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/tentstent.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="284.0" layoutY="302.0" onMouseClicked="#giveTent" prefHeight="40.0" prefWidth="40.0"
+                  style="-fx-border-color: BLACK;">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/tentstent.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="364.0" layoutY="302.0" onMouseClicked="#giveTent" prefHeight="40.0" prefWidth="40.0"
+                  style="-fx-border-color: BLACK;">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/tentstent.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="404.0" layoutY="302.0" onMouseClicked="#giveTent" prefHeight="40.0" prefWidth="40.0"
+                  style="-fx-border-color: BLACK;">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/tentstent.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Text layoutX="202.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                  text="     1         1        1         2        0        2" wrappingWidth="245.0">
+               <font>
+                  <Font size="18.0"/>
+               </font>
+            </Text>
+            <Text layoutX="181.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3">
+               <font>
+                  <Font size="18.0"/>
+               </font>
+            </Text>
+            <Text layoutX="181.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+               <font>
+                  <Font size="18.0"/>
+               </font>
+            </Text>
+            <Text layoutX="180.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2">
+               <font>
+                  <Font size="18.0"/>
+               </font>
+            </Text>
+            <Text layoutX="181.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1">
+               <font>
+                  <Font size="18.0"/>
+               </font>
+            </Text>
+            <Text layoutX="180.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1">
+               <font>
+                  <Font size="18.0"/>
+               </font>
+            </Text>
+            <Text layoutX="181.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+               <font>
+                  <Font size="18.0"/>
+               </font>
+            </Text>
+            <Button focusTraversable="false" layoutX="384.0" layoutY="381.0" mnemonicParsing="false" onAction="#check"
+                    text="Check"/>
+            <Button focusTraversable="false" layoutX="218.0" layoutY="381.0" mnemonicParsing="false" onAction="#reset"
+                    text="Reset"/>
+         </children>
+      </AnchorPane>
+      <Label fx:id="gameTime" layoutX="627.0" layoutY="40.0" prefHeight="38.0" prefWidth="72.0" text="00:00"
+             textAlignment="CENTER">
+         <font>
+            <Font size="24.0"/>
+         </font>
+      </Label>
+      <AnchorPane fx:id="winScreen" layoutX="195.0" layoutY="125.0" prefHeight="385.0" prefWidth="592.0"
+                  style="-fx-background-color: skyblue; -fx-border-color: black; -fx-border-width: 5;" visible="false">
+         <children>
+            <Text fx:id="winorlose" fill="#136dd3" layoutX="113.0" layoutY="104.0" strokeType="OUTSIDE"
+                  strokeWidth="0.0" text="You Won!">
+               <font>
+                  <Font name="Silom" size="72.0"/>
+               </font>
+            </Text>
+            <Button layoutX="258.0" layoutY="147.0" mnemonicParsing="false" onAction="#playAgain" text="Play Again"/>
+            <Button layoutX="273.0" layoutY="193.0" mnemonicParsing="false" onAction="#goBack" text="Back"/>
+            <Text layoutX="160.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Time:">
+               <font>
+                  <Font name="Silom" size="34.0"/>
+               </font>
+            </Text>
+            <Text fx:id="finishTime" layoutX="360.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                  textAlignment="CENTER" wrappingWidth="143.853515625">
+               <font>
+                  <Font name="Silom" size="34.0"/>
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
