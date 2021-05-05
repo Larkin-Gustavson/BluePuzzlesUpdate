@@ -104,4 +104,12 @@ public class GameSelectController implements Initializable {
     int randomGenerator(int num) {
         return (int) Math.floor((Math.random() * num + 1));
     }
+
+    public void playTimeAttack(ActionEvent actionEvent) throws Exception {
+        Parent page = FXMLLoader.load(getClass().getResource("/Views/TimeAttack/sudokuTimeAttack.fxml"));
+        Scene scene = new Scene(page, 900, 600);
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
 }

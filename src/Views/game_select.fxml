@@ -81,7 +81,7 @@
                 <Button focusTraversable="false" layoutX="269.0" layoutY="157.0" mnemonicParsing="false"
                         prefHeight="27.0" prefWidth="95.0" text="Memory"/>
                 <Button focusTraversable="false" layoutX="269.0" layoutY="204.0" mnemonicParsing="false"
-                        prefHeight="27.0" prefWidth="95.0" text="Time Attack"/>
+                        onAction="#playTimeAttack" prefHeight="27.0" prefWidth="95.0" text="Time Attack"/>
             </children>
         </Pane>
         <ImageView fx:id="shyguy1" fitHeight="193.0" fitWidth="217.0" layoutX="55.0" layoutY="225.0" opacity="0.5"
