@@ -49,7 +49,7 @@ public class UserAccount {
 
 
     public static boolean userExist(String newUser) throws SQLException {
-        Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD); //Establishing connection
+        Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD); // Establishing connection
         String select = "SELECT * FROM Accounts;"; // Select statement
         PreparedStatement statement = connection.prepareStatement(select); // Prepared Statement
         ResultSet result = statement.executeQuery(); // Initializing all users into result

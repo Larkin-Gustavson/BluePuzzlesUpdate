@@ -1,5 +1,6 @@
 package Controllers;
 
+import DB.Leaderboard;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,12 +20,12 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import misc.GameTimer;
-import misc.myLabel;
+import misc.MyLabel;
 
 import java.net.URL;
-import java.security.spec.RSAOtherPrimeInfo;
+import java.sql.SQLException;
 import java.util.*;
-//
+
 public class HangmanController implements Initializable {
 
     @FXML
@@ -39,7 +40,6 @@ public class HangmanController implements Initializable {
     private Button hintButton;
     @FXML
     Label gameTime;
-
 
 
     int lives = 6;
@@ -58,7 +58,7 @@ public class HangmanController implements Initializable {
         /* Positions the word */
         int pos = 0;
         for (int i = 0; i < word.length(); i++) {
-            myLabel label = new myLabel(word.charAt(i));
+            MyLabel label = new MyLabel(word.charAt(i));
             label.setFont(new Font("System", 30));
             wordPane.getChildren().add(label);
             label.relocate(10 + pos, 5);
@@ -83,12 +83,12 @@ public class HangmanController implements Initializable {
         source.setDisable(true);
         Paint p = Color.GREY;
         source.setFill(p);
-        char guess = source.getText().charAt(0); // guessed letter
-        /* Changes to word */
+        char guess = source.getText().charAt(0); //guessed letter
+        /*Changes to word*/
         boolean guessRight = false;
         for (Node node : wordPane.getChildren()) {
-            if (node instanceof myLabel) {
-                myLabel label = (myLabel) node;
+            if (node instanceof MyLabel) {
+                MyLabel label = (MyLabel) node;
                 if (guess == label.getLetter()) {
                     label.showLetter();
                     guessRight = true;
@@ -98,13 +98,13 @@ public class HangmanController implements Initializable {
         }
         if (!guessRight)
             wrongGuess();
-    } // End of Method
+    } //End of Method
 
-    /* Determines if the game is won */
+    /*Determines if the game is won*/
     public boolean gameWon() {
         for (Node node : wordPane.getChildren()) {
-            if (node instanceof myLabel) {
-                if (((myLabel) node).getText().equals("_"))
+            if (node instanceof MyLabel) {
+                if (((MyLabel) node).getText().equals("_"))
                     return false;
             }
         }
@@ -123,8 +123,8 @@ public class HangmanController implements Initializable {
             System.out.println("You win!");
             showWinScreen(true);
             for (Node node : wordPane.getChildren()) {
-                if (node instanceof myLabel) {
-                    ((myLabel) node).showLetter();
+                if (node instanceof MyLabel) {
+                    ((MyLabel) node).showLetter();
                 }
             }
         } else {
@@ -142,6 +142,12 @@ public class HangmanController implements Initializable {
         winScreen.setVisible(true);
         finishTime.setText(gt.toString());
         gt.stop();
+        try {
+            Leaderboard.insertNewUser("HangmanLeaderboard", LoginController.user, gameTime.getText(),
+                    HangmanDifficultyController.getDifficulty());
+        } catch (SQLException e) {
+
+        }
         for (Node node : hangmanAnchorPane.getChildren())
             if (node instanceof Button)
                 node.setDisable(true);
@@ -178,13 +184,7 @@ public class HangmanController implements Initializable {
 
     @FXML
     void hintButtonClicked(MouseEvent event) throws Exception {
-        if (HangmanDifficultyController.getDifficultyLevel().equals("Easy")) {
-            System.out.println("EASY BUTTON CLICKED");
-        } else if (HangmanDifficultyController.getDifficultyLevel().equals("Medium")) {
-            System.out.println("MEDIUM BUTTON CLICKED");
-        } else {
-            System.out.println("HARD BUTTON CLICKED");
-        }
+        System.out.println("Hint button clicked");
     }
 
 }

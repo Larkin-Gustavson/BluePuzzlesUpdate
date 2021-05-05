@@ -8,30 +8,32 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-//
+
 public class HangmanDifficultyController {
-    private static String difficultyLevel = "";
     @FXML
     private Button easyButton;
+
     @FXML
     private Button backButton;
+
     @FXML
     private Button mediumButton;
     @FXML
     private Button hardButton;
 
-    public static String getDifficultyLevel() {
-        return difficultyLevel;
+    private static String difficulty;
+
+    public static void setDifficulty(String diff) {
+        difficulty = diff;
     }
 
-    public static void setDifficultyLevel(String difLevel) {
-        difficultyLevel = difLevel;
+    public static String getDifficulty() {
+        return difficulty;
     }
-
 
     @FXML
     void clickEasyButton(MouseEvent event) throws Exception {
-        setDifficultyLevel("Easy");
+        setDifficulty("easy");
         Parent page = FXMLLoader.load(getClass().getResource("/Views/hangman.fxml"));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -41,7 +43,7 @@ public class HangmanDifficultyController {
 
     @FXML
     void clickMediumButton(MouseEvent event) throws Exception {
-        setDifficultyLevel("Medium");
+        setDifficulty("medium");
         Parent page = FXMLLoader.load(getClass().getResource("/Views/hangman.fxml"));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -51,7 +53,7 @@ public class HangmanDifficultyController {
 
     @FXML
     void clickHardButton(MouseEvent event) throws Exception {
-        setDifficultyLevel("Hard");
+        setDifficulty("hard");
         Parent page = FXMLLoader.load(getClass().getResource("/Views/hangman.fxml"));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

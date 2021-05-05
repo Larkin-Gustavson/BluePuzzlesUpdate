@@ -1,6 +1,6 @@
 package Controllers;
 
-import DB.JigsawLeaderboard;
+import DB.Leaderboard;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,7 +24,7 @@ import java.sql.SQLException;
 import java.util.*;
 
 import java.net.URL;
-//
+
 public class JigsawController implements Initializable {
 
     @FXML
@@ -36,7 +36,7 @@ public class JigsawController implements Initializable {
     @FXML
     Button button;
     @FXML
-    Text winOrLose, finishTime, bestTime;
+    Text winorlose, finishTime, bestTime;
     @FXML
     Label gameTime;
 
@@ -47,7 +47,7 @@ public class JigsawController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //Scramble pics
+        // Scramble pics
         Stack<Pane> stack = new Stack<>();
 
         for (Node node : anchorpane.getChildren())
@@ -71,7 +71,7 @@ public class JigsawController implements Initializable {
         gt = new GameTimer(gameTime);
         gt.start();
         try {
-            bestTime.setText("Best Time: " + JigsawLeaderboard.getBestTime(LoginController.user, JigsawDifficultyController.getDifficulty()));
+            bestTime.setText("Best Time: " + Leaderboard.getBestTime("JigsawLeaderboard", LoginController.user, JigsawDifficultyController.getDifficulty()));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -130,12 +130,12 @@ public class JigsawController implements Initializable {
     /* Show win screen */
     public void showWinScreen(boolean win) throws SQLException {
         if (win)
-            winOrLose.setText("You Won!");
+            winorlose.setText("You Won!");
         else
-            winOrLose.setText("You lost!");
+            winorlose.setText("You lost!");
         winScreen.setVisible(true); // set win screen visible
         finishTime.setText(gameTime.getText()); // reveal finishing game time
-        JigsawLeaderboard.insertNewUser(LoginController.user, gameTime.getText(),
+        Leaderboard.insertNewUser("JigsawLeaderboard", LoginController.user, gameTime.getText(),
                 JigsawDifficultyController.getDifficulty());
         gt.stop(); // stop game timer
         gameTime.setDisable(true);
