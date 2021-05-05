@@ -1,5 +1,9 @@
 package Controllers.TimeAttack;
 
+import Controllers.GameSelectController;
+import Controllers.LoginController;
+import DB.TimeAttackLeaderboard;
+import com.mysql.cj.log.Log;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -21,6 +25,7 @@ import misc.GameTimer;
 import misc.limitTimer;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.Stack;
 
@@ -33,20 +38,25 @@ public class SudokuTimeAttack implements Initializable {
     @FXML
     Pane difficultyPane, winScreen, loseScreen;
     @FXML
-    Text gameTime;
+    Text gameTime, points, highScore;
 
 
     //Sudoku Board
     private Label mat[][] = new Label[9][9];
     private Label[][] key = new Label[9][9];
     private int difficulty;
+    static int totalPoints = 0;
     limitTimer gt;
 
     //Sets up the board
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) throws RuntimeException {
         difficultyPane.setVisible(true);
-
+        try {
+            highScore.setText("High Score: " + TimeAttackLeaderboard.getHighScore(LoginController.user));
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
         //Initializes all labels into a 2d array
         int row = 0, col = -1;
         int count = 1;
@@ -222,6 +232,8 @@ public class SudokuTimeAttack implements Initializable {
     }
 
     public void goBack(ActionEvent event) throws Exception {
+        TimeAttackLeaderboard.insertNewUser(LoginController.user, GameSelectController.totalpoints);
+        GameSelectController.totalpoints = 0;
         Parent page = FXMLLoader.load(getClass().getResource("/Views/game_select.fxml"));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -231,6 +243,7 @@ public class SudokuTimeAttack implements Initializable {
 
 
     public void setEasy(ActionEvent actionEvent) {
+        points.setText("Points: " + GameSelectController.totalpoints);
         gt = new limitTimer(gameTime);
         gt.start();
         gameTime.textProperty().addListener(new ChangeListener<String>() {
@@ -273,7 +286,8 @@ public class SudokuTimeAttack implements Initializable {
         if (isSolved()) {
             winScreen.setVisible(true);
             gt.stop();
-            System.out.println(gt.giveTime());
+            GameSelectController.totalpoints++;
+
         }
     }
 
@@ -282,7 +296,7 @@ public class SudokuTimeAttack implements Initializable {
     }
 
     public void goNext(ActionEvent event) throws Exception {
-        Parent page = FXMLLoader.load(getClass().getResource("/Views/TimeAttack/sudokuTimeAttack.fxml"));
+        Parent page = FXMLLoader.load(getClass().getResource("/Views/TimeAttack/hangmanTimeAttack.fxml"));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);

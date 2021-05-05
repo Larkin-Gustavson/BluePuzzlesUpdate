@@ -18,6 +18,7 @@ public class GameSelectController implements Initializable {
 
     @FXML
     ImageView sudokuImage, sudokuImage2, hangmanImage, hangmanImage2, shyguy1, shyguy2;
+    public static int totalpoints;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
