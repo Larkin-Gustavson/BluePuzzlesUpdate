@@ -36,7 +36,7 @@ public class SudokuGame implements Initializable {
     @FXML
     Text gameTime;
     GameTimer gt;
-    //Sudoku Board
+    // Sudoku Board
     private Label mat[][] = new Label[9][9];
     private Label[][] key = new Label[9][9];
     private int difficulty;

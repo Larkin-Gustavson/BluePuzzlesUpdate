@@ -463,7 +463,7 @@
                     style="-fx-background-color: skyblue; -fx-border-color: black; -fx-border-width: 5;"
                     visible="false">
             <children>
-                <Text fx:id="winorlose" fill="#136dd3" layoutX="113.0" layoutY="104.0" strokeType="OUTSIDE"
+                <Text fx:id="winOrLose" fill="#136dd3" layoutX="113.0" layoutY="104.0" strokeType="OUTSIDE"
                       strokeWidth="0.0" text="You Won!">
                     <font>
                         <Font name="Silom" size="72.0"/>

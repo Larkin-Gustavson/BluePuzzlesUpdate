@@ -41,13 +41,13 @@ public class JigsawController implements Initializable {
     Label gameTime;
 
 
-    Pane selected; //Current selected pane
-    Stack<Pair> original = new Stack<>(); //Winning positions
+    Pane selected; // Current selected pane
+    Stack<Pair> original = new Stack<>(); // Winning positions
     GameTimer gt;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //Scramble pics
+        // Scramble pics
         Stack<Pane> stack = new Stack<>();
 
         for (Node node : anchorpane.getChildren())
@@ -67,18 +67,18 @@ public class JigsawController implements Initializable {
             }
         }
 
-        //Game Timer
+        // Game Timer
         gt = new GameTimer(gameTime);
         gt.start();
         try {
-            bestTime.setText("Best Time: " + Leaderboard.getBestTime("JigsawLeaderboard", LoginController.user, JigsawDifficultyController.difficulty));
+            bestTime.setText("Best Time: " + Leaderboard.getBestTime("JigsawLeaderboard", LoginController.user, JigsawDifficultyController.getDifficulty()));
         } catch (Exception e) {
             e.printStackTrace();
         }
 
     }
 
-    //Select a pane
+    // Select a pane
     public void select(MouseEvent mouseEvent) {
         Pane source = (Pane) mouseEvent.getSource();
         if (source.focusTraversableProperty().getValue() == true) {
@@ -94,7 +94,7 @@ public class JigsawController implements Initializable {
         }
     }
 
-    //Checks if any panes are selected, returns false if none
+    // Checks if any panes are selected, returns false if none
     public boolean isSelected() {
         for (Node node : anchorpane.getChildren()) {
             if (node instanceof Pane)
@@ -104,7 +104,7 @@ public class JigsawController implements Initializable {
         return false;
     }
 
-    //Rotate if 'r' key is pressed
+    // Rotate if 'r' key is pressed
     public void rotate(KeyEvent keyEvent) throws InterruptedException {
         if (isSelected()) {
             if (keyEvent.getCode() == KeyCode.R)
@@ -127,16 +127,16 @@ public class JigsawController implements Initializable {
         return (int) Math.floor((Math.random() * num + 1));
     }
 
-    /*Show win screen*/
+    /* Show win screen */
     public void showWinScreen(boolean win) throws SQLException {
         if (win)
             winorlose.setText("You Won!");
         else
             winorlose.setText("You lost!");
-        winScreen.setVisible(true); //set win screen visible
-        finishTime.setText(gameTime.getText()); //reveal finshing game time
+        winScreen.setVisible(true); // set win screen visible
+        finishTime.setText(gameTime.getText()); // reveal finishing game time
         Leaderboard.insertNewUser("JigsawLeaderboard", LoginController.user, gameTime.getText(),
-                JigsawDifficultyController.difficulty);
+                JigsawDifficultyController.getDifficulty());
         gt.stop(); // stop game timer
         gameTime.setDisable(true);
         for (Node node : anchorpane.getChildren())
@@ -175,10 +175,10 @@ public class JigsawController implements Initializable {
 
 
     public void playAgain(ActionEvent actionEvent) throws Exception {
-        //Pick a game at random
+        // Pick a game at random
         String[] easyGames = {"/Views/jigsaw/medium/jigsawShyGuy.fxml"};
         int rand = randomGenerator(1) - 1;
-        //Load the game
+        // Load the game
         Parent page = FXMLLoader.load(getClass().getResource(easyGames[rand]));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();

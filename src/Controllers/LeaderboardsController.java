@@ -36,15 +36,15 @@ public class LeaderboardsController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        /*Jigsaw*/
+        /* Jigsaw */
         jigsawUser.setCellValueFactory(new PropertyValueFactory<Record, String>("userName"));
         jigsawDifficulty.setCellValueFactory(new PropertyValueFactory<Record, String>("difficulty"));
         jigsawTime.setCellValueFactory(new PropertyValueFactory<Record, String>("time"));
-        /*Hangman*/
+        /* Hangman */
         hangmanUser.setCellValueFactory(new PropertyValueFactory<Record, String>("userName"));
         hangmanDifficulty.setCellValueFactory(new PropertyValueFactory<Record, String>("difficulty"));
         hangmanTime.setCellValueFactory(new PropertyValueFactory<Record, String>("time"));
-        /*Tents*/
+        /* Tents */
         tentsUser.setCellValueFactory(new PropertyValueFactory<Record, String>("userName"));
         tentsDifficulty.setCellValueFactory(new PropertyValueFactory<Record, String>("difficulty"));
         tentsTime.setCellValueFactory(new PropertyValueFactory<Record, String>("time"));
