@@ -18,6 +18,7 @@ public class GameSelectController implements Initializable {
 
     @FXML
     ImageView sudokuImage, sudokuImage2, hangmanImage, hangmanImage2, shyguy1, shyguy2;
+    public static int totalpoints;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -103,5 +104,13 @@ public class GameSelectController implements Initializable {
 
     int randomGenerator(int num) {
         return (int) Math.floor((Math.random() * num + 1));
+    }
+
+    public void playTimeAttack(ActionEvent actionEvent) throws Exception {
+        Parent page = FXMLLoader.load(getClass().getResource("/Views/TimeAttack/sudokuTimeAttack.fxml"));
+        Scene scene = new Scene(page, 900, 600);
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
     }
 }

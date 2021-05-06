@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="hangmanAnchorPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.TimeAttack.HangmanTimeAttack">
+    <children>
+        <Pane fx:id="guessWordPane" layoutX="314.0" layoutY="80.0" prefHeight="249.0" prefWidth="299.0"
+              style="-fx-background-color: RED;" visible="false">
+            <children>
+                <Text layoutX="24.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Guess the word"
+                      textAlignment="CENTER">
+                    <font>
+                        <Font name="Silom" size="30.0"/>
+                    </font>
+                </Text>
+                <TextField fx:id="guessWordField" layoutX="69.0" layoutY="111.0"/>
+                <Button fx:id="guessButton" layoutX="122.0" layoutY="173.0" mnemonicParsing="false"
+                        onAction="#enterGuess" text="Guess"/>
+            </children>
+        </Pane>
+        <Pane layoutX="178.0" layoutY="398.0" prefHeight="136.0" prefWidth="528.0">
+            <children>
+                <Text fill="#0e70e1" layoutX="20.0" layoutY="41.0" onMouseClicked="#doSomething" strokeType="OUTSIDE"
+                      strokeWidth="0.0" text="A" wrappingWidth="20.21630859375">
+                    <font>
+                        <Font size="29.0"/>
+                    </font>
+                </Text>
+                <Text fill="#0e70e1" layoutX="50.0" layoutY="41.0" onMouseClicked="#doSomething" strokeType="OUTSIDE"
+                      strokeWidth="0.0" text="B" wrappingWidth="20.21630859375">
+                    <font>
+                        <Font size="29.0"/>
+                    </font>
+                </Text>
+                <Text fill="#0e70e1" layoutX="80.0" layoutY="41.0" onMouseClicked="#doSomething" strokeType="OUTSIDE"
+                      strokeWidth="0.0" text="C" wrappingWidth="20.21630859375">
+                    <font>
+                        <Font size="29.0"/>
+                    </font>
+                </Text>
+                <Text fill="#0e70e1" layoutX="110.0" layoutY="41.0" onMouseClicked="#doSomething" strokeType="OUTSIDE"
+                      strokeWidth="0.0" text="D" wrappingWidth="20.21630859375">
+                    <font>
+                        <Font size="29.0"/>
+                    </font>
+                </Text>
+                <Text fill="#0e70e1" layoutX="140.0" layoutY="41.0" onMouseClicked="#doSomething" strokeType="OUTSIDE"
+                      strokeWidth="0.0" text="E" wrappingWidth="20.21630859375">
+                    <font>
+                        <Font size="29.0"/>
+                    </font>
+                </Text>
+                <Text fill="#0e70e1" layoutX="170.0" layoutY="41.0" onMouseClicked="#doSomething" strokeType="OUTSIDE"
+                      strokeWidth="0.0" text="F" wrappingWidth="20.21630859375">
+                    <font>
+                        <Font size="29.0"/>
+                    </font>
+                </Text>
+                <Text fill="#0e70e1" layoutX="195.0" layoutY="41.0" onMouseClicked="#doSomething" strokeType="OUTSIDE"
+                      strokeWidth="0.0" text="G" wrappingWidth="20.21630859375">
+                    <font>
+                        <Font size="29.0"/>
+                    </font>
+                </Text>
+                <Text fill="#0e70e1" layoutX="230.0" layoutY="41.0" onMouseClicked="#doSomething" strokeType="OUTSIDE"
+                      strokeWidth="0.0" text="H" wrappingWidth="20.21630859375">
+                    <font>
+                        <Font size="29.0"/>
+                    </font>
+                </Text>
+                <Text fill="#0e70e1" layoutX="260.0" layoutY="41.0" onMouseClicked="#doSomething" strokeType="OUTSIDE"
+                      strokeWidth="0.0" text="I" wrappingWidth="20.21630859375">
+                    <font>
+                        <Font size="29.0"/>
+                    </font>
+                </Text>
+                <Text fill="#0e70e1" layoutX="280.0" layoutY="41.0" onMouseClicked="#doSomething" strokeType="OUTSIDE"
+                      strokeWidth="0.0" text="J" wrappingWidth="20.21630859375">
+                    <font>
+                        <Font size="29.0"/>
+                    </font>
+                </Text>
+                <Text fill="#0e70e1" layoutX="335.0" layoutY="41.0" onMouseClicked="#doSomething" strokeType="OUTSIDE"
+                      strokeWidth="0.0" text="L" wrappingWidth="20.21630859375">
+                    <font>
+                        <Font size="29.0"/>
+                    </font>
+                </Text>
+                <Text fill="#0e70e1" layoutX="362.0" layoutY="41.0" onMouseClicked="#doSomething" strokeType="OUTSIDE"
+                      strokeWidth="0.0" text="M" wrappingWidth="20.21630859375">
+                    <font>
+                        <Font size="29.0"/>
+                    </font>
+                </Text>
+                <Text fill="#0e70e1" layoutX="392.0" layoutY="41.0" onMouseClicked="#doSomething" strokeType="OUTSIDE"
+                      strokeWidth="0.0" text="N" wrappingWidth="20.21630859375">
+                    <font>
+                        <Font size="29.0"/>
+                    </font>
+                </Text>
+                <Text fill="#0e70e1" layoutX="423.0" layoutY="41.0" onMouseClicked="#doSomething" strokeType="OUTSIDE"
+                      strokeWidth="0.0" text="O" wrappingWidth="20.21630859375">
+                    <font>
+                        <Font size="29.0"/>
+                    </font>
+                </Text>
+                <Text fill="#0e70e1" layoutX="455.0" layoutY="41.0" onMouseClicked="#doSomething" strokeType="OUTSIDE"
+                      strokeWidth="0.0" text="P" wrappingWidth="20.21630859375">
+                    <font>
+                        <Font size="29.0"/>
+                    </font>
+                </Text>
+                <Text fill="#0e70e1" layoutX="483.0" layoutY="41.0" onMouseClicked="#doSomething" strokeType="OUTSIDE"
+                      strokeWidth="0.0" text="Q" wrappingWidth="20.21630859375">
+                    <font>
+                        <Font size="29.0"/>
+                    </font>
+                </Text>
+                <Text fill="#0e70e1" layoutX="130.0" layoutY="92.0" onMouseClicked="#doSomething" strokeType="OUTSIDE"
+                      strokeWidth="0.0" text="R" wrappingWidth="20.21630859375">
+                    <font>
+                        <Font size="29.0"/>
+                    </font>
+                </Text>
+                <Text fill="#0e70e1" layoutX="160.0" layoutY="92.0" onMouseClicked="#doSomething" strokeType="OUTSIDE"
+                      strokeWidth="0.0" text="S" wrappingWidth="20.21630859375">
+                    <font>
+                        <Font size="29.0"/>
+                    </font>
+                </Text>
+                <Text fill="#0e70e1" layoutX="190.0" layoutY="91.0" onMouseClicked="#doSomething" strokeType="OUTSIDE"
+                      strokeWidth="0.0" text="T" wrappingWidth="20.21630859375">
+                    <font>
+                        <Font size="29.0"/>
+                    </font>
+                </Text>
+                <Text fill="#0e70e1" layoutX="220.0" layoutY="91.0" onMouseClicked="#doSomething" strokeType="OUTSIDE"
+                      strokeWidth="0.0" text="U" wrappingWidth="20.21630859375">
+                    <font>
+                        <Font size="29.0"/>
+                    </font>
+                </Text>
+                <Text fill="#0e70e1" layoutX="250.0" layoutY="91.0" onMouseClicked="#doSomething" strokeType="OUTSIDE"
+                      strokeWidth="0.0" text="V" wrappingWidth="20.21630859375">
+                    <font>
+                        <Font size="29.0"/>
+                    </font>
+                </Text>
+                <Text fill="#0e70e1" layoutX="280.0" layoutY="91.0" onMouseClicked="#doSomething" strokeType="OUTSIDE"
+                      strokeWidth="0.0" text="W" wrappingWidth="20.21630859375">
+                    <font>
+                        <Font size="29.0"/>
+                    </font>
+                </Text>
+                <Text fill="#0e70e1" layoutX="315.0" layoutY="91.0" onMouseClicked="#doSomething" strokeType="OUTSIDE"
+                      strokeWidth="0.0" text="X" wrappingWidth="20.21630859375">
+                    <font>
+                        <Font size="29.0"/>
+                    </font>
+                </Text>
+                <Text fill="#0e70e1" layoutX="340.0" layoutY="92.0" onMouseClicked="#doSomething" strokeType="OUTSIDE"
+                      strokeWidth="0.0" text="Y" wrappingWidth="20.21630859375">
+                    <font>
+                        <Font size="29.0"/>
+                    </font>
+                </Text>
+                <Text fill="#0e70e1" layoutX="370.0" layoutY="91.0" onMouseClicked="#doSomething" strokeType="OUTSIDE"
+                      strokeWidth="0.0" text="Z" wrappingWidth="20.21630859375">
+                    <font>
+                        <Font size="29.0"/>
+                    </font>
+                </Text>
+                <Text fill="#0e70e1" layoutX="305.0" layoutY="41.0" onMouseClicked="#doSomething" strokeType="OUTSIDE"
+                      strokeWidth="0.0" text="K" wrappingWidth="20.21630859375">
+                    <font>
+                        <Font size="29.0"/>
+                    </font>
+                </Text>
+            </children>
+        </Pane>
+        <Pane fx:id="hangmanBody" layoutX="64.0" layoutY="44.0" prefHeight="316.0" prefWidth="200.0">
+            <children>
+                <Circle fill="WHITE" layoutX="100.0" layoutY="68.0" radius="32.0" stroke="BLACK" strokeType="INSIDE"
+                        strokeWidth="3.0"/>
+                <Line endX="100.0" layoutX="46.0" layoutY="149.0" rotate="90.0" startX="5.0" strokeWidth="3.0"/>
+                <Line endX="100.0" layoutX="3.0" layoutY="120.0" rotate="35.5" startX="40.0" strokeWidth="3.0"/>
+                <Line endX="100.0" layoutX="54.0" layoutY="120.0" rotate="-35.5" startX="40.0" strokeWidth="3.0"/>
+                <Line endX="100.0" layoutX="11.0" layoutY="220.0" rotate="-54.5" startX="40.0" strokeWidth="3.0"/>
+                <Line endX="100.0" layoutX="47.0" layoutY="219.0" rotate="54.5" startX="40.0" strokeWidth="3.0"
+                      visible="false"/>
+                <Line endX="100.0" layoutX="11.0" layoutY="24.0" rotate="90.0" startX="80.0" strokeWidth="3.0"/>
+                <Line endX="100.0" layoutX="1.0" layoutY="14.0" startX="20.0" strokeWidth="3.0"/>
+                <Line endX="270.0" layoutX="-115.0" layoutY="149.0" rotate="90.0" strokeWidth="3.0"/>
+                <Line endX="200.0" layoutY="285.0" strokeWidth="3.0"/>
+            </children>
+        </Pane>
+        <Button layoutX="745.0" layoutY="439.0" mnemonicParsing="false" onAction="#guessWord" text="Guess Word"/>
+        <Pane fx:id="wordPane" layoutX="201.0" layoutY="360.0" prefHeight="39.0" prefWidth="627.0"/>
+        <Button layoutX="14.0" layoutY="53.0" mnemonicParsing="false" onAction="#goBack" text="Back"/>
+        <Pane layoutX="596.0" layoutY="48.0" prefHeight="38.0" prefWidth="200.0">
+            <children>
+                <Text layoutX="7.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lives:">
+                    <font>
+                        <Font size="22.0"/>
+                    </font>
+                </Text>
+                <Text fx:id="livesText" layoutX="67.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="6">
+                    <font>
+                        <Font size="26.0"/>
+                    </font>
+                </Text>
+            </children>
+        </Pane>
+        <MenuBar layoutX="348.0" layoutY="14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                 AnchorPane.topAnchor="0.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Close"/>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Delete"/>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="About"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <Label fx:id="gameTime" layoutX="808.0" layoutY="533.0" prefHeight="29.0" prefWidth="63.0"
+               textAlignment="CENTER">
+            <font>
+                <Font size="20.0"/>
+            </font>
+        </Label>
+        <Text fx:id="points" layoutX="69.0" layoutY="523.0" strokeType="OUTSIDE" strokeWidth="0.0">
+            <font>
+                <Font size="22.0"/>
+            </font>
+        </Text>
+        <Pane fx:id="winScreen" layoutX="347.0" layoutY="193.0" prefHeight="200.0" prefWidth="200.0"
+              style="-fx-background-color: RED;" visible="false">
+            <children>
+                <Button layoutX="72.0" layoutY="87.0" mnemonicParsing="false" onAction="#goNext" text="Next"/>
+            </children>
+        </Pane>
+        <Pane fx:id="loseScreen" layoutX="360.0" layoutY="193.0" prefHeight="200.0" prefWidth="200.0"
+              style="-fx-background-color: RED;" visible="false">
+            <children>
+                <Button layoutX="72.0" layoutY="87.0" mnemonicParsing="false" onAction="#goBack" text="Back"/>
+                <Text layoutX="63.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Game Over"/>
+            </children>
+        </Pane>
+        <Text fx:id="highScore" layoutX="390.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0">
+            <font>
+                <Font size="21.0"/>
+            </font>
+        </Text>
+    </children>
+</AnchorPane>

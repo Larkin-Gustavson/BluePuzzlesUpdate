@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<AnchorPane fx:id="anchorpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controllers.TimeAttack.SudokuTimeAttack">
+   <children>
+      <ImageView fitHeight="332.0" fitWidth="341.0" layoutX="281.0" layoutY="116.0" pickOnBounds="true"
+                 preserveRatio="true">
+         <image>
+            <Image url="@../../images/emptysudoku.png"/>
+         </image>
+      </ImageView>
+      <Label fx:id="box47" alignment="CENTER" layoutX="281.0" layoutY="117.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box1" alignment="CENTER" layoutX="318.0" layoutY="116.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box2" alignment="CENTER" layoutX="355.0" layoutY="116.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box471" alignment="CENTER" layoutX="392.0" layoutY="116.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box472" alignment="CENTER" layoutX="429.0" layoutY="116.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box473" alignment="CENTER" layoutX="466.0" layoutY="116.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box474" alignment="CENTER" layoutX="503.0" layoutY="116.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box475" alignment="CENTER" layoutX="540.0" layoutY="116.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box476" alignment="CENTER" layoutX="576.0" layoutY="116.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box477" alignment="CENTER" layoutX="281.0" layoutY="153.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box478" alignment="CENTER" layoutX="318.0" layoutY="153.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box479" alignment="CENTER" layoutX="355.0" layoutY="153.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4710" alignment="CENTER" layoutX="392.0" layoutY="153.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4711" alignment="CENTER" layoutX="429.0" layoutY="153.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4712" alignment="CENTER" layoutX="466.0" layoutY="153.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4713" alignment="CENTER" layoutX="503.0" layoutY="153.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4714" alignment="CENTER" layoutX="540.0" layoutY="153.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4715" alignment="CENTER" layoutX="576.0" layoutY="153.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4716" alignment="CENTER" layoutX="281.0" layoutY="190.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4717" alignment="CENTER" layoutX="318.0" layoutY="190.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4718" alignment="CENTER" layoutX="355.0" layoutY="190.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4719" alignment="CENTER" layoutX="392.0" layoutY="190.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4720" alignment="CENTER" layoutX="429.0" layoutY="190.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4721" alignment="CENTER" layoutX="466.0" layoutY="190.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4722" alignment="CENTER" layoutX="503.0" layoutY="190.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4723" alignment="CENTER" layoutX="540.0" layoutY="190.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4724" alignment="CENTER" layoutX="576.0" layoutY="190.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4725" alignment="CENTER" layoutX="281.0" layoutY="227.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4726" alignment="CENTER" layoutX="318.0" layoutY="227.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4727" alignment="CENTER" layoutX="355.0" layoutY="227.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4728" alignment="CENTER" layoutX="392.0" layoutY="227.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4729" alignment="CENTER" layoutX="429.0" layoutY="227.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4730" alignment="CENTER" layoutX="466.0" layoutY="227.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4731" alignment="CENTER" layoutX="503.0" layoutY="227.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4732" alignment="CENTER" layoutX="539.0" layoutY="227.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4733" alignment="CENTER" layoutX="576.0" layoutY="227.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4734" alignment="CENTER" layoutX="281.0" layoutY="264.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4735" alignment="CENTER" layoutX="318.0" layoutY="264.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4736" alignment="CENTER" layoutX="355.0" layoutY="264.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4737" alignment="CENTER" layoutX="392.0" layoutY="264.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4738" alignment="CENTER" layoutX="429.0" layoutY="264.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4739" alignment="CENTER" layoutX="466.0" layoutY="264.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4740" alignment="CENTER" layoutX="503.0" layoutY="264.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4741" alignment="CENTER" layoutX="539.0" layoutY="264.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4742" alignment="CENTER" layoutX="576.0" layoutY="264.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4743" alignment="CENTER" layoutX="281.0" layoutY="298.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4744" alignment="CENTER" layoutX="318.0" layoutY="298.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4745" alignment="CENTER" layoutX="355.0" layoutY="298.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4746" alignment="CENTER" layoutX="392.0" layoutY="298.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4747" alignment="CENTER" layoutX="429.0" layoutY="301.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4748" alignment="CENTER" layoutX="466.0" layoutY="298.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4749" alignment="CENTER" layoutX="503.0" layoutY="301.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4750" alignment="CENTER" layoutX="540.0" layoutY="301.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4751" alignment="CENTER" layoutX="576.0" layoutY="301.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4752" alignment="CENTER" layoutX="281.0" layoutY="335.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4753" alignment="CENTER" layoutX="318.0" layoutY="338.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box4754" alignment="CENTER" layoutX="355.0" layoutY="338.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box47541" alignment="CENTER" layoutX="392.0" layoutY="338.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box47542" alignment="CENTER" layoutX="429.0" layoutY="338.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box47543" alignment="CENTER" layoutX="466.0" layoutY="338.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box47544" alignment="CENTER" layoutX="503.0" layoutY="338.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box47545" alignment="CENTER" layoutX="539.0" layoutY="338.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box47546" alignment="CENTER" layoutX="576.0" layoutY="335.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box47547" alignment="CENTER" layoutX="281.0" layoutY="372.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box47548" alignment="CENTER" layoutX="318.0" layoutY="372.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box47549" alignment="CENTER" layoutX="355.0" layoutY="372.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box475410" alignment="CENTER" layoutX="392.0" layoutY="372.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box475411" alignment="CENTER" layoutX="429.0" layoutY="372.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box475412" alignment="CENTER" layoutX="466.0" layoutY="372.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box475413" alignment="CENTER" layoutX="503.0" layoutY="372.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box475414" alignment="CENTER" layoutX="539.0" layoutY="372.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box475415" alignment="CENTER" layoutX="576.0" layoutY="372.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box475416" alignment="CENTER" layoutX="281.0" layoutY="409.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box475417" alignment="CENTER" layoutX="318.0" layoutY="409.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box475418" alignment="CENTER" layoutX="355.0" layoutY="409.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box475419" alignment="CENTER" layoutX="392.0" layoutY="409.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box475420" alignment="CENTER" layoutX="429.0" layoutY="409.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box475421" alignment="CENTER" layoutX="466.0" layoutY="409.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box475422" alignment="CENTER" layoutX="503.0" layoutY="409.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box475423" alignment="CENTER" layoutX="540.0" layoutY="409.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Label fx:id="box475424" alignment="CENTER" layoutX="576.0" layoutY="409.0" onMouseClicked="#changeNumber"
+             prefHeight="18.0" prefWidth="37.0" textAlignment="CENTER">
+         <font>
+            <Font size="30.0"/>
+         </font>
+      </Label>
+      <Button layoutX="39.0" layoutY="41.0" mnemonicParsing="false" onAction="#goBack" text="Back"/>
+      <Pane fx:id="difficultyPane" layoutX="347.0" layoutY="183.0" prefHeight="200.0" prefWidth="200.0"
+            style="-fx-background-color: RED;" visible="false">
+         <children>
+            <Button layoutX="72.0" layoutY="87.0" mnemonicParsing="false" onAction="#setEasy" text="Start"/>
+         </children>
+      </Pane>
+      <Text fx:id="numHints" layoutX="497.0" layoutY="477.0" strokeType="OUTSIDE" strokeWidth="0.0"
+            wrappingWidth="62.63037109375">
+         <font>
+            <Font size="18.0"/>
+         </font>
+      </Text>
+      <MenuBar layoutX="397.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Close"/>
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Edit">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Delete"/>
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About"/>
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <Text fx:id="gameTime" layoutX="747.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0"
+            textAlignment="CENTER" wrappingWidth="69.21630859375">
+         <font>
+            <Font size="22.0"/>
+         </font>
+      </Text>
+      <Button focusTraversable="false" layoutX="420.0" layoutY="457.0" mnemonicParsing="false" onAction="#checkWin"
+              text="Check"/>
+      <Pane fx:id="winScreen" layoutX="337.0" layoutY="183.0" prefHeight="200.0" prefWidth="200.0"
+            style="-fx-background-color: RED;" visible="false">
+         <children>
+            <Button layoutX="72.0" layoutY="87.0" mnemonicParsing="false" onAction="#goNext" text="Next"/>
+         </children>
+      </Pane>
+      <Pane fx:id="loseScreen" layoutX="350.0" layoutY="183.0" prefHeight="200.0" prefWidth="200.0"
+            style="-fx-background-color: RED;" visible="false">
+         <children>
+            <Button layoutX="72.0" layoutY="87.0" mnemonicParsing="false" onAction="#goBack" text="Back"/>
+            <Text layoutX="63.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Game Over"/>
+         </children>
+      </Pane>
+      <Text fx:id="points" layoutX="73.0" layoutY="489.0" strokeType="OUTSIDE" strokeWidth="0.0">
+         <font>
+            <Font size="23.0"/>
+         </font>
+      </Text>
+      <Text fx:id="highScore" layoutX="380.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0">
+         <font>
+            <Font size="21.0"/>
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
