@@ -101,6 +101,29 @@
                         </ScrollPane>
                     </content>
                 </Tab>
+                <Tab text="Memory">
+                    <content>
+                        <ScrollPane prefHeight="403.0" prefWidth="518.0">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="351.0" prefWidth="503.0">
+                                    <children>
+                                        <TableView fx:id="memoryTable" layoutY="47.0" prefHeight="415.0"
+                                                   prefWidth="538.0" AnchorPane.bottomAnchor="-64.0"
+                                                   AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-35.0"
+                                                   AnchorPane.topAnchor="0.0">
+                                            <columns>
+                                                <TableColumn fx:id="memoryUser" prefWidth="75.0" text="UserName"/>
+                                                <TableColumn fx:id="memoryDifficulty" prefWidth="75.0"
+                                                             text="Difficulty"/>
+                                                <TableColumn fx:id="memoryTime" prefWidth="75.0" text="Time"/>
+                                            </columns>
+                                        </TableView>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </ScrollPane>
+                    </content>
+                </Tab>
                 <Tab text="TimeAttack">
                     <content>
                         <ScrollPane prefHeight="403.0" prefWidth="518.0">
