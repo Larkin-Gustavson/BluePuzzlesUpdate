@@ -8,7 +8,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.Base64;
-// Test
+//
 public class AES {
 
     private static SecretKeySpec secretKey;
