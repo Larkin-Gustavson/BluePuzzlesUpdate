@@ -1,6 +1,5 @@
 package Controllers;
 
-import DB.Leaderboard;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,16 +13,18 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.*;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Pair;
 import misc.GameTimer;
 
-import java.sql.SQLException;
-import java.util.*;
-
 import java.net.URL;
+import java.sql.SQLException;
+import java.util.Collections;
+import java.util.ResourceBundle;
+import java.util.Stack;
 
 public class JigsawController implements Initializable {
 

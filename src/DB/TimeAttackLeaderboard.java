@@ -12,7 +12,7 @@ public class TimeAttackLeaderboard {
     public static void insertNewUser(String user, int points) throws SQLException {
         try {
             Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD); // Establishing connection
-            String insert = "INSERT INTO TimeAttackLeaderboard (UserName,points) VALUES(?,?)"; // Select statement
+            String insert = "INSERT INTO TimeAttackLeaderboard (UserName,points) VALUES(?, ?)"; // Select statement
             PreparedStatement statement = connection.prepareStatement(insert);
             statement.setString(1, user);
             statement.setInt(2, points);
@@ -20,8 +20,8 @@ public class TimeAttackLeaderboard {
         } catch (SQLException e) {
             System.out.println("gotta update");
             Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD); // Establishing connection
-            String update = "Update TimeAttackLeaderboard SET points=? " +
-                    "WHERE Username=? AND points<?";
+            String update = "Update TimeAttackLeaderboard SET points = ? " +
+                    "WHERE Username = ? AND points < ?";
             PreparedStatement statement = connection.prepareStatement(update);
             statement.setInt(1, points);
             statement.setString(2, user);

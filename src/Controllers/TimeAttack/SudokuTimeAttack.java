@@ -3,7 +3,6 @@ package Controllers.TimeAttack;
 import Controllers.GameSelectController;
 import Controllers.LoginController;
 import DB.TimeAttackLeaderboard;
-import com.mysql.cj.log.Log;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -13,7 +12,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -21,8 +19,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import misc.GameTimer;
-import misc.limitTimer;
+import misc.LimitTimer;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -46,7 +43,7 @@ public class SudokuTimeAttack implements Initializable {
     private Label[][] key = new Label[9][9];
     private int difficulty;
     static int totalPoints = 0;
-    limitTimer gt;
+    LimitTimer gt;
 
     //Sets up the board
     @Override
@@ -244,7 +241,7 @@ public class SudokuTimeAttack implements Initializable {
 
     public void setEasy(ActionEvent actionEvent) {
         points.setText("Points: " + GameSelectController.totalpoints);
-        gt = new limitTimer(gameTime);
+        gt = new LimitTimer(gameTime);
         gt.start();
         gameTime.textProperty().addListener(new ChangeListener<String>() {
             @Override

@@ -29,7 +29,7 @@ public class UserAccount {
 
     public static void insertNewUser(String newUser, String newPassword) throws SQLException {
         Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD); // Establishing connection
-        String insert = "INSERT INTO Accounts (UserName,Password) VALUES(?,?);"; // Select statement
+        String insert = "INSERT INTO Accounts (UserName,Password) VALUES(?, ?);"; // Select statement
         PreparedStatement statement = connection.prepareStatement(insert);
         try {
             if (userExist(newUser))

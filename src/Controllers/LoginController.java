@@ -24,7 +24,7 @@ import java.util.regex.Pattern;
 
 public class LoginController implements Initializable {
 
-    //Stores the user in here for the program
+    // Stores the user in here for the program
     public static String user;
     @FXML
     AnchorPane signUpPane;
@@ -126,6 +126,7 @@ public class LoginController implements Initializable {
         if ((isPasswordMatchingPattern == true && isRePasswordMatchingPattern == true) && (passwordField.getText().equals(rePassword.getText()))) { // if the password both matches the templated pattern for a valid password and that the passwords entered in both the password field and the confirm password equal each other, then return true
             return true;
         } else if (!(passwordField.getText().equals(rePassword.getText()))) { // if the passwords do not match, do the following
+            // TODO COMEBACK TO THIS
             passwordField.clear();
             rePassword.clear();
             outputLabel.setTextFill(Color.RED);
@@ -142,6 +143,7 @@ public class LoginController implements Initializable {
                 "- (!@#$%^&*(),.<>+?|{}\\\\=~`), \n" +
                 "- and contains 8 - 15 characters."
         ); // display a message to the user of what is considered to be an acceptable password
+        // TODO COMEBACK TO THIS
         passwordField.clear();
         rePassword.clear();
         return false;

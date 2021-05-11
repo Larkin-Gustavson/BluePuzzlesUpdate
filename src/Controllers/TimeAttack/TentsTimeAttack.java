@@ -2,7 +2,6 @@ package Controllers.TimeAttack;
 
 import Controllers.GameSelectController;
 import Controllers.LoginController;
-import DB.Leaderboard;
 import DB.TimeAttackLeaderboard;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -21,8 +20,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import misc.GameTimer;
-import misc.limitTimer;
+import misc.LimitTimer;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -36,7 +34,7 @@ public class TentsTimeAttack implements Initializable {
     private AnchorPane gamePane, winScreen, anchorpane, loseScreen;
     @FXML
     Label gameTime;
-    private limitTimer gt;
+    private LimitTimer gt;
     @FXML
     private Text points;
 
@@ -61,7 +59,7 @@ public class TentsTimeAttack implements Initializable {
             p.getChildren().get(0).setVisible(true);
         }
         //Game Timer
-        gt = new limitTimer(gameTime);
+        gt = new LimitTimer(gameTime);
         gt.start();
         gameTime.textProperty().addListener(new ChangeListener<String>() {
             @Override

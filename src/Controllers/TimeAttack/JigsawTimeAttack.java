@@ -1,9 +1,7 @@
 package Controllers.TimeAttack;
 
 import Controllers.GameSelectController;
-import Controllers.JigsawDifficultyController;
 import Controllers.LoginController;
-import DB.Leaderboard;
 import DB.TimeAttackLeaderboard;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -25,8 +23,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Pair;
-import misc.GameTimer;
-import misc.limitTimer;
+import misc.LimitTimer;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -50,7 +47,7 @@ public class JigsawTimeAttack implements Initializable {
 
     Pane selected; //Current selected pane
     Stack<Pair> original = new Stack<>(); //Winning positions
-    limitTimer gt;
+    LimitTimer gt;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -79,7 +76,7 @@ public class JigsawTimeAttack implements Initializable {
             }
         }
         points.setText("Points: " + GameSelectController.totalpoints);
-        gt = new limitTimer(gameTime);
+        gt = new LimitTimer(gameTime);
         gt.start();
         gameTime.textProperty().addListener(new ChangeListener<String>() {
             @Override

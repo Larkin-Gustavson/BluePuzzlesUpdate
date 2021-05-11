@@ -1,6 +1,5 @@
 package Controllers;
 
-import DB.Leaderboard;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,7 +8,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -21,11 +19,9 @@ import misc.GameTimer;
 
 import java.net.URL;
 import java.sql.SQLException;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.ResourceBundle;
 import java.util.Stack;
-import java.util.concurrent.TimeUnit;
 
 public class MemoryController implements Initializable {
 

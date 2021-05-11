@@ -15,7 +15,7 @@ public class JigsawLeaderboard {
     public static void insertNewUser(String newUser, String newTime, String difficulty) throws SQLException {
         try {
             Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD); // Establishing connection
-            String insert = "INSERT INTO JigsawLeaderboard (UserName,Time,Difficulty) VALUES(?,?,?)"; // Select statement
+            String insert = "INSERT INTO JigsawLeaderboard (UserName,Time,Difficulty) VALUES(?, ?, ?)"; // Select statement
             PreparedStatement statement = connection.prepareStatement(insert);
             statement.setString(1, newUser);
             statement.setString(2, newTime);
@@ -24,8 +24,8 @@ public class JigsawLeaderboard {
         } catch (SQLException e) {
             System.out.println("gotta update");
             Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD); // Establishing connection
-            String update = "Update JigsawLeaderboard SET Time=?" +
-                    "WHERE UserName=? AND Time >=? AND DIFFICULTY=?";
+            String update = "Update JigsawLeaderboard SET Time = ?" +
+                    "WHERE UserName = ? AND Time >= ? AND DIFFICULTY = ?";
             PreparedStatement statement = connection.prepareStatement(update);
             statement.setString(1, newTime);
             statement.setString(2, newUser);
