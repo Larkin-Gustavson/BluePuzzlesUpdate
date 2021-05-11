@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<AnchorPane fx:id="anchorpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controllers.MemoryController">
+   <children>
+      <MenuBar layoutX="397.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Close"/>
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Edit">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Delete"/>
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About"/>
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <Text fx:id="gameTime" layoutX="747.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0"
+            textAlignment="CENTER" wrappingWidth="69.21630859375">
+         <font>
+            <Font size="22.0"/>
+         </font>
+      </Text>
+      <AnchorPane fx:id="gamePane" layoutX="116.0" layoutY="65.0" prefHeight="471.0" prefWidth="668.0">
+         <children>
+            <Pane layoutX="174.0" layoutY="117.0" onMouseClicked="#flipCard" prefHeight="80.0" prefWidth="43.0">
+               <children>
+                  <ImageView fitHeight="68.0" fitWidth="62.0" layoutX="-1.0" layoutY="7.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Memory/bluesquare.png"/>
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="68.0" fitWidth="62.0" layoutX="-1.0" layoutY="7.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Memory/facedown.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="231.0" layoutY="117.0" onMouseClicked="#flipCard" prefHeight="80.0" prefWidth="43.0">
+               <children>
+                  <ImageView fitHeight="68.0" fitWidth="62.0" layoutX="-1.0" layoutY="7.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Memory/bluesquare.png"/>
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="68.0" fitWidth="62.0" layoutX="-1.0" layoutY="7.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Memory/facedown.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="291.0" layoutY="117.0" onMouseClicked="#flipCard" prefHeight="80.0" prefWidth="43.0">
+               <children>
+                  <ImageView fitHeight="68.0" fitWidth="62.0" layoutX="-1.0" layoutY="7.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Memory/redsquare.png"/>
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="68.0" fitWidth="62.0" layoutX="-1.0" layoutY="7.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Memory/facedown.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="346.0" layoutY="117.0" onMouseClicked="#flipCard" prefHeight="80.0" prefWidth="43.0">
+               <children>
+                  <ImageView fitHeight="68.0" fitWidth="62.0" layoutX="-1.0" layoutY="7.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Memory/redsquare.png"/>
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="68.0" fitWidth="62.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Memory/facedown.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="404.0" layoutY="117.0" onMouseClicked="#flipCard" prefHeight="80.0" prefWidth="43.0">
+               <children>
+                  <ImageView fitHeight="68.0" fitWidth="62.0" layoutX="-1.0" layoutY="7.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Memory/greensquare.png"/>
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="68.0" fitWidth="62.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Memory/facedown.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="462.0" layoutY="117.0" onMouseClicked="#flipCard" prefHeight="80.0" prefWidth="43.0">
+               <children>
+                  <ImageView fitHeight="68.0" fitWidth="62.0" layoutX="-1.0" layoutY="7.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Memory/greensquare.png"/>
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="68.0" fitWidth="62.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Memory/facedown.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="462.0" layoutY="204.0" onMouseClicked="#flipCard" prefHeight="80.0" prefWidth="43.0">
+               <children>
+                  <ImageView fitHeight="68.0" fitWidth="62.0" layoutX="-1.0" layoutY="7.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Memory/bluecircle.png"/>
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="68.0" fitWidth="62.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Memory/facedown.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="404.0" layoutY="204.0" onMouseClicked="#flipCard" prefHeight="80.0" prefWidth="43.0">
+               <children>
+                  <ImageView fitHeight="68.0" fitWidth="62.0" layoutX="-1.0" layoutY="7.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Memory/bluecircle.png"/>
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="68.0" fitWidth="62.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Memory/facedown.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="346.0" layoutY="204.0" onMouseClicked="#flipCard" prefHeight="80.0" prefWidth="43.0">
+               <children>
+                  <ImageView fitHeight="68.0" fitWidth="62.0" layoutX="-1.0" layoutY="7.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Memory/greencircle.png"/>
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="68.0" fitWidth="62.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Memory/facedown.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="291.0" layoutY="204.0" onMouseClicked="#flipCard" prefHeight="80.0" prefWidth="43.0">
+               <children>
+                  <ImageView fitHeight="68.0" fitWidth="62.0" layoutX="-1.0" layoutY="7.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Memory/greencircle.png"/>
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="68.0" fitWidth="62.0" layoutX="-1.0" layoutY="7.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Memory/facedown.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="231.0" layoutY="204.0" onMouseClicked="#flipCard" prefHeight="80.0" prefWidth="43.0">
+               <children>
+                  <ImageView fitHeight="68.0" fitWidth="62.0" layoutX="-1.0" layoutY="7.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Memory/redcircle.png"/>
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="68.0" fitWidth="62.0" layoutX="-1.0" layoutY="7.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Memory/facedown.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="174.0" layoutY="204.0" onMouseClicked="#flipCard" prefHeight="80.0" prefWidth="43.0">
+               <children>
+                  <ImageView fitHeight="68.0" fitWidth="62.0" layoutX="-1.0" layoutY="7.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Memory/redcircle.png"/>
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="68.0" fitWidth="62.0" layoutX="-1.0" layoutY="7.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Memory/facedown.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="463.0" layoutY="293.0" onMouseClicked="#flipCard" prefHeight="80.0" prefWidth="43.0">
+               <children>
+                  <ImageView fitHeight="68.0" fitWidth="62.0" layoutX="-1.0" layoutY="7.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Memory/bluediamond.png"/>
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="68.0" fitWidth="62.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Memory/facedown.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="405.0" layoutY="293.0" onMouseClicked="#flipCard" prefHeight="80.0" prefWidth="43.0">
+               <children>
+                  <ImageView fitHeight="68.0" fitWidth="62.0" layoutX="-1.0" layoutY="7.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Memory/bluediamond.png"/>
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="68.0" fitWidth="62.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Memory/facedown.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="347.0" layoutY="293.0" onMouseClicked="#flipCard" prefHeight="80.0" prefWidth="43.0">
+               <children>
+                  <ImageView fitHeight="68.0" fitWidth="62.0" layoutX="-1.0" layoutY="7.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Memory/greendiamond.png"/>
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="68.0" fitWidth="62.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Memory/facedown.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="292.0" layoutY="293.0" onMouseClicked="#flipCard" prefHeight="80.0" prefWidth="43.0">
+               <children>
+                  <ImageView fitHeight="68.0" fitWidth="62.0" layoutX="-1.0" layoutY="7.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Memory/greendiamond.png"/>
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="68.0" fitWidth="62.0" layoutX="-1.0" layoutY="7.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Memory/facedown.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="232.0" layoutY="293.0" onMouseClicked="#flipCard" prefHeight="80.0" prefWidth="43.0">
+               <children>
+                  <ImageView fitHeight="68.0" fitWidth="62.0" layoutX="-1.0" layoutY="7.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Memory/reddiamond.png"/>
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="68.0" fitWidth="62.0" layoutX="-1.0" layoutY="7.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Memory/facedown.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="175.0" layoutY="293.0" onMouseClicked="#flipCard" prefHeight="80.0" prefWidth="43.0">
+               <children>
+                  <ImageView fitHeight="68.0" fitWidth="62.0" layoutX="-1.0" layoutY="7.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Memory/reddiamond.png"/>
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="68.0" fitWidth="62.0" layoutX="-1.0" layoutY="7.0" pickOnBounds="true"
+                             preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Memory/facedown.png"/>
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Text fx:id="plusten" layoutX="277.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                  text="+10 seconds" visible="false" wrappingWidth="140.21630859375">
+               <font>
+                  <Font size="23.0"/>
+               </font>
+            </Text>
+            <AnchorPane fx:id="winScreen" layoutX="87.0" layoutY="55.0" prefHeight="378.0" prefWidth="497.0"
+                        style="-fx-background-color: skyblue; -fx-border-color: black; -fx-border-width: 5;"
+                        visible="false">
+               <children>
+                  <Text layoutX="140.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You Win!"
+                        textAlignment="CENTER" wrappingWidth="217.21630859375">
+                     <font>
+                        <Font name="Silom" size="34.0"/>
+                     </font>
+                  </Text>
+                  <Text fx:id="finishTime" layoutX="79.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                        textAlignment="CENTER" wrappingWidth="321.6302490234375">
+                     <font>
+                        <Font name="Silom" size="34.0"/>
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <Text fx:id="freeFlips" layoutX="111.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                  wrappingWidth="163.83245849609375">
+               <font>
+                  <Font size="22.0"/>
+               </font>
+            </Text>
+            <AnchorPane fx:id="difficultySelect" layoutX="97.0" layoutY="65.0" prefHeight="378.0" prefWidth="497.0"
+                        style="-fx-background-color: skyblue; -fx-border-color: black; -fx-border-width: 5;">
+               <children>
+                  <Text layoutX="140.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Difficulty"
+                        textAlignment="CENTER" wrappingWidth="217.21630859375">
+                     <font>
+                        <Font name="Silom" size="34.0"/>
+                     </font>
+                  </Text>
+                  <Text fx:id="finishTime1" layoutX="79.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                        textAlignment="CENTER" wrappingWidth="321.6302490234375">
+                     <font>
+                        <Font name="Silom" size="34.0"/>
+                     </font>
+                  </Text>
+                  <Button layoutX="213.0" layoutY="176.0" mnemonicParsing="false" onAction="#setDifficulty"
+                          text="easy"/>
+                  <Button layoutX="205.0" layoutY="217.0" mnemonicParsing="false" onAction="#setDifficulty"
+                          text="medium"/>
+                  <Button layoutX="213.0" layoutY="261.0" mnemonicParsing="false" onAction="#setDifficulty"
+                          text="hard"/>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <Button focusTraversable="false" layoutX="34.0" layoutY="44.0" mnemonicParsing="false" onAction="#goBack"
+              prefHeight="30.0" prefWidth="51.0" text="Back"/>
+   </children>
+</AnchorPane>

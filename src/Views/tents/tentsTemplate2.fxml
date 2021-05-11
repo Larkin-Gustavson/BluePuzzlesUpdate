@@ -16,7 +16,7 @@
         <AnchorPane fx:id="gamePane" layoutX="146.0" layoutY="84.0" prefHeight="432.0" prefWidth="734.0">
             <children>
                 <Text layoutX="202.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0"
-                      text="     1         1        1         2        0        2" wrappingWidth="245.0">
+                      text="     3         0        1         1        1        1" wrappingWidth="245.0">
                     <font>
                         <Font size="18.0"/>
                     </font>
@@ -31,17 +31,17 @@
                         <Font size="18.0"/>
                     </font>
                 </Text>
-                <Text layoutX="180.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2">
+                <Text layoutX="180.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1">
                     <font>
                         <Font size="18.0"/>
                     </font>
                 </Text>
-                <Text layoutX="181.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1">
+                <Text layoutX="181.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
                     <font>
                         <Font size="18.0"/>
                     </font>
                 </Text>
-                <Text layoutX="180.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1">
+                <Text layoutX="180.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3">
                     <font>
                         <Font size="18.0"/>
                     </font>

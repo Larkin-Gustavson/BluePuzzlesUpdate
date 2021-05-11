@@ -56,6 +56,10 @@ public class GameTimer extends TimerTask {
         return minutesString + ":" + secondsString;
     }
 
+    public void addTen() {
+        timePassed += 5;
+    }
+
     public void stop() {
         timer.cancel();
         timer.purge();

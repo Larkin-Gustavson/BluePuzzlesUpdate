@@ -200,7 +200,7 @@ public class JigsawTimeAttack implements Initializable {
     }
 
     public void goNext(ActionEvent actionEvent) throws Exception {
-        Parent page = FXMLLoader.load(getClass().getResource("/Views/TimeAttack/SudokuTimeAttack.fxml"));
+        Parent page = FXMLLoader.load(getClass().getResource("/Views/TimeAttack/TentsTimeAttack.fxml"));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);

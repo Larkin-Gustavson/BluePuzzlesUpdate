@@ -50,7 +50,7 @@ public class TimeAttackLeaderboard {
     public static ArrayList<String> getAllRecords() throws SQLException {
         ArrayList<String> al = new ArrayList<>();
         Connection connection = DriverManager.getConnection(url, username, password); //Establishing connection
-        String select = "SELECT * FROM TimeAttackLeaderboard ORDER BY points"; //Select statment
+        String select = "SELECT * FROM TimeAttackLeaderboard ORDER BY points DESC"; //Select statment
         PreparedStatement statement = connection.prepareStatement(select); //Prepared Statement
         ResultSet result = statement.executeQuery(); //Initializing all users into result
 

@@ -135,19 +135,20 @@ public class HangmanController implements Initializable {
     }
 
     public void showWinScreen(boolean win) {
-        if (win)
+        if (win) {
+            try {
+                Leaderboard.insertNewUser("HangmanLeaderboard", LoginController.user, gameTime.getText(),
+                        HangmanDifficultyController.difficulty);
+            } catch (SQLException e) {
+
+            }
             winorlose.setText("You Won!");
-        else
+        } else
             winorlose.setText("You lost!");
         winScreen.setVisible(true);
         finishTime.setText(gt.toString());
         gt.stop();
-        try {
-            Leaderboard.insertNewUser("HangmanLeaderboard", LoginController.user, gameTime.getText(),
-                    HangmanDifficultyController.difficulty);
-        } catch (SQLException e) {
 
-        }
         for (Node node : hangmanAnchorPane.getChildren())
             if (node instanceof Button)
                 node.setDisable(true);

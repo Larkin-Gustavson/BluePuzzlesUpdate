@@ -29,12 +29,12 @@ public class LeaderboardsController implements Initializable {
     @FXML
     AnchorPane mainAnchor;
     @FXML
-    TableView<Record> JigsawTable, hangmanTable, tentsTable;
+    TableView<Record> JigsawTable, hangmanTable, tentsTable, memoryTable;
     @FXML
     TableView<TARecord> TATable;
     @FXML
     TableColumn<Record, String> jigsawUser, jigsawDifficulty, jigsawTime, hangmanUser, hangmanDifficulty,
-            hangmanTime, tentsUser, tentsDifficulty, tentsTime;
+            hangmanTime, tentsUser, tentsDifficulty, tentsTime, memoryUser, memoryDifficulty, memoryTime;
     @FXML
     TableColumn<TARecord, String> TAUser, TAPoints;
 
@@ -54,6 +54,10 @@ public class LeaderboardsController implements Initializable {
         tentsUser.setCellValueFactory(new PropertyValueFactory<Record, String>("userName"));
         tentsDifficulty.setCellValueFactory(new PropertyValueFactory<Record, String>("difficulty"));
         tentsTime.setCellValueFactory(new PropertyValueFactory<Record, String>("time"));
+        /*Memory*/
+        memoryUser.setCellValueFactory(new PropertyValueFactory<Record, String>("userName"));
+        memoryDifficulty.setCellValueFactory(new PropertyValueFactory<Record, String>("difficulty"));
+        memoryTime.setCellValueFactory(new PropertyValueFactory<Record, String>("time"));
         /*Time Attack*/
         TAUser.setCellValueFactory(new PropertyValueFactory<TARecord, String>("userName"));
         TAPoints.setCellValueFactory(new PropertyValueFactory<TARecord, String>("points"));
@@ -61,6 +65,7 @@ public class LeaderboardsController implements Initializable {
             JigsawTable.setItems(getRecords("JigsawLeaderboard"));
             hangmanTable.setItems((getRecords("HangmanLeaderboard")));
             tentsTable.setItems((getRecords("TentsLeaderboard")));
+            memoryTable.setItems(getRecords("MemoryLeaderboard"));
             TATable.setItems(getTARecords());
         } catch (SQLException e) {
 
@@ -82,7 +87,7 @@ public class LeaderboardsController implements Initializable {
     public ObservableList<TARecord> getTARecords() throws SQLException {
         ObservableList<TARecord> records = FXCollections.observableArrayList();
         ArrayList<String> record = TimeAttackLeaderboard.getAllRecords();
-        for (int i = 0; i < TimeAttackLeaderboard.getAllRecords().size(); i += 3) {
+        for (int i = 0; i < TimeAttackLeaderboard.getAllRecords().size(); i += 2) {
             TARecord jr = new TARecord(record.get(i), Integer.parseInt(record.get(i + 1)));
             records.add(jr);
         }

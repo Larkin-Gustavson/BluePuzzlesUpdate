@@ -63,25 +63,48 @@
         </Text>
         <Pane layoutX="211.0" layoutY="176.0" prefHeight="308.0" prefWidth="460.0">
             <children>
-                <Button focusTraversable="false" layoutX="107.0" layoutY="63.0" mnemonicParsing="false"
+                <Button focusTraversable="false" layoutX="78.0" layoutY="45.0" mnemonicParsing="false"
                         onAction="#playHangman" onMouseEntered="#showHangManImage" onMouseExited="#hideHangManImage"
-                        prefHeight="27.0" prefWidth="95.0" text="Hangman"/>
-                <Button focusTraversable="false" layoutX="107.0" layoutY="110.0" mnemonicParsing="false"
-                        onAction="#playSudoku" onMouseEntered="#showImage" onMouseExited="#hideImage" prefHeight="27.0"
-                        prefWidth="95.0" text="Sudoku"/>
-                <Button focusTraversable="false" layoutX="107.0" layoutY="157.0" mnemonicParsing="false"
+                        prefHeight="45.0" prefWidth="124.0" text="Hangman">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </Button>
+                <Button focusTraversable="false" layoutX="78.0" layoutY="110.0" mnemonicParsing="false"
+                        onAction="#playSudoku" onMouseEntered="#showImage" onMouseExited="#hideImage" prefHeight="45.0"
+                        prefWidth="124.0" text="Sudoku">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </Button>
+                <Button focusTraversable="false" layoutX="78.0" layoutY="171.0" mnemonicParsing="false"
                         onAction="#playJigsaw" onMouseEntered="#showJigsaw" onMouseExited="#hideJigsaw"
-                        prefHeight="27.0" prefWidth="95.0" text="Jigsaw"/>
-                <Button focusTraversable="false" layoutX="107.0" layoutY="204.0" mnemonicParsing="false"
-                        prefHeight="27.0" prefWidth="95.0" text="Slitherlink"/>
-                <Button focusTraversable="false" layoutX="269.0" layoutY="63.0" mnemonicParsing="false"
-                        onAction="#playTents" prefHeight="27.0" prefWidth="95.0" text="Tents"/>
+                        prefHeight="45.0" prefWidth="124.0" text="Jigsaw">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </Button>
+                <Button focusTraversable="false" layoutX="269.0" layoutY="45.0" mnemonicParsing="false"
+                        onAction="#playTents" onMouseEntered="#showTents" onMouseExited="#hideTents" prefHeight="45.0"
+                        prefWidth="124.0" text="Tents">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </Button>
                 <Button focusTraversable="false" layoutX="269.0" layoutY="110.0" mnemonicParsing="false"
-                        prefHeight="27.0" prefWidth="95.0" text="Wires"/>
-                <Button focusTraversable="false" layoutX="269.0" layoutY="157.0" mnemonicParsing="false"
-                        prefHeight="27.0" prefWidth="95.0" text="Memory"/>
-                <Button focusTraversable="false" layoutX="269.0" layoutY="204.0" mnemonicParsing="false"
-                        onAction="#playTimeAttack" prefHeight="27.0" prefWidth="95.0" text="Time Attack"/>
+                        onAction="#playMemory" onMouseEntered="#showMemory" onMouseExited="#hideMemory"
+                        prefHeight="45.0" prefWidth="124.0" text="Memory">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </Button>
+                <Button focusTraversable="false" layoutX="269.0" layoutY="171.0" mnemonicParsing="false"
+                        onAction="#playTimeAttack" onMouseEntered="#showTimeAttack" onMouseExited="#hideTimeAttack"
+                        prefHeight="45.0" prefWidth="124.0" text="Time Attack">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </Button>
             </children>
         </Pane>
         <ImageView fx:id="shyguy1" fitHeight="193.0" fitWidth="217.0" layoutX="55.0" layoutY="225.0" opacity="0.5"
@@ -97,5 +120,83 @@
             </image>
         </ImageView>
         <Button layoutX="34.0" layoutY="58.0" mnemonicParsing="false" onAction="#goBack" text="Back"/>
+        <Text fx:id="hangmanText" layoutX="244.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              text="How to play:  You must guess the word(s) by guessing each individual letter.  You get 6 wrong guesses which are your lives. Once 6 lives are used up, the game is lost. You can also guess the entire word but get it wrong..you lose a life."
+              visible="false" wrappingWidth="449.0">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Text>
+        <Text fx:id="sudokuText" layoutX="244.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              text="How to play: The board is a 3x3 grid pattern with 81 boxes in total. Each box is part of unqiue array of numbers from 1-9 which is special to each row, column, and grid. Obtain each box with its correct number. You are given hints depend on difficulty."
+              visible="false" wrappingWidth="449.0">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Text>
+        <Text fx:id="jigsawText" layoutX="244.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              text="How to play: Rotate and move around the puzzles pieces until it matches the picture on the left."
+              visible="false" wrappingWidth="449.0">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Text>
+        <Text fx:id="tentsText" layoutX="244.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              text="How to play: Place all the tents in their correct box. Each tent needs to be next to a tree. There can only be a certain amount of tents in each row and column depending on the number associated with it."
+              visible="false" wrappingWidth="449.0">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Text>
+        <Text fx:id="memoryText" layoutX="244.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              text="How to play: Unflip all the cards until you find each matching pair. You can only flip two cards at a time. You are given a certain amount of free flips depending on the difficulty. After that, 5 seconds will be added for each wrong pair flip."
+              visible="false" wrappingWidth="449.0">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Text>
+        <Text fx:id="timeattackText" layoutX="244.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              text="How to play: You are given 10 seconds to complete an infinite amount of puzzle games. Each puzzle game is reduced to near game winning point. If 10 seconds are up, the game is over."
+              visible="false" wrappingWidth="449.0">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Text>
+        <ImageView fx:id="tents1" fitHeight="248.0" fitWidth="248.0" layoutX="14.0" layoutY="200.0" opacity="0.28"
+                   pickOnBounds="true" preserveRatio="true" visible="false">
+            <image>
+                <Image url="@../images/tentsImage.png"/>
+            </image>
+        </ImageView>
+        <ImageView fx:id="tents2" fitHeight="248.0" fitWidth="248.0" layoutX="627.0" layoutY="198.0" opacity="0.28"
+                   pickOnBounds="true" preserveRatio="true" visible="false">
+            <image>
+                <Image url="@../images/tentsImage.png"/>
+            </image>
+        </ImageView>
+        <ImageView fx:id="memory2" fitHeight="248.0" fitWidth="248.0" layoutX="627.0" layoutY="208.0" opacity="0.28"
+                   pickOnBounds="true" preserveRatio="true" visible="false">
+            <image>
+                <Image url="@../images/memoryImage.png"/>
+            </image>
+        </ImageView>
+        <ImageView fx:id="memory1" fitHeight="248.0" fitWidth="248.0" layoutX="14.0" layoutY="220.0" opacity="0.28"
+                   pickOnBounds="true" preserveRatio="true" visible="false">
+            <image>
+                <Image url="@../images/memoryImage.png"/>
+            </image>
+        </ImageView>
+        <ImageView fx:id="timeattack2" fitHeight="248.0" fitWidth="248.0" layoutX="627.0" layoutY="198.0" opacity="0.28"
+                   pickOnBounds="true" preserveRatio="true" visible="false">
+            <image>
+                <Image url="@../images/stopwatchImage.jpeg"/>
+            </image>
+        </ImageView>
+        <ImageView fx:id="timeattack1" fitHeight="248.0" fitWidth="248.0" layoutX="18.0" layoutY="197.0" opacity="0.28"
+                   pickOnBounds="true" preserveRatio="true" visible="false">
+            <image>
+                <Image url="@../images/stopwatchImage.jpeg"/>
+            </image>
+        </ImageView>
     </children>
 </AnchorPane>
