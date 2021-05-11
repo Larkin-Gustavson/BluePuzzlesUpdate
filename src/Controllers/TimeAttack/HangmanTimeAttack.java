@@ -26,7 +26,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import misc.limitTimer;
-import misc.myLabel;
+import misc.MyLabel;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -71,7 +71,7 @@ public class HangmanTimeAttack implements Initializable {
 
         for (int i = 0; i < word.length(); i++) {
             int rand = randomGenerator(2);
-            myLabel label = new myLabel(word.charAt(i));
+            MyLabel label = new MyLabel(word.charAt(i));
             label.setFont(new Font("System", 30));
             wordPane.getChildren().add(label);
             if (rand == 1) label.showLetter(); //Shows letter
@@ -111,8 +111,8 @@ public class HangmanTimeAttack implements Initializable {
         /*Changes to word*/
         boolean guessRight = false;
         for (Node node : wordPane.getChildren()) {
-            if (node instanceof myLabel) {
-                myLabel label = (myLabel) node;
+            if (node instanceof MyLabel) {
+                MyLabel label = (MyLabel) node;
                 if (guess == label.getLetter()) {
                     label.showLetter();
                     guessRight = true;
@@ -127,8 +127,8 @@ public class HangmanTimeAttack implements Initializable {
     /*Determines if the game is won*/
     public boolean gameWon() {
         for (Node node : wordPane.getChildren()) {
-            if (node instanceof myLabel) {
-                if (((myLabel) node).getText().equals("_"))
+            if (node instanceof MyLabel) {
+                if (((MyLabel) node).getText().equals("_"))
                     return false;
             }
         }
@@ -147,8 +147,8 @@ public class HangmanTimeAttack implements Initializable {
             System.out.println("You win!");
             showWinScreen(true);
             for (Node node : wordPane.getChildren()) {
-                if (node instanceof myLabel) {
-                    ((myLabel) node).showLetter();
+                if (node instanceof MyLabel) {
+                    ((MyLabel) node).showLetter();
                 }
             }
         } else {

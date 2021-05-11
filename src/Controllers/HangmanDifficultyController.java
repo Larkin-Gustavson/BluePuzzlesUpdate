@@ -10,25 +10,22 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class HangmanDifficultyController {
+    private static String difficulty;
     @FXML
     private Button easyButton;
-
     @FXML
     private Button backButton;
-
     @FXML
     private Button mediumButton;
     @FXML
     private Button hardButton;
 
-    private static String difficulty;
+    public static String getDifficulty() {
+        return difficulty;
+    }
 
     public static void setDifficulty(String diff) {
         difficulty = diff;
-    }
-
-    public static String getDifficulty() {
-        return difficulty;
     }
 
     @FXML
