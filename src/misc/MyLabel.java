@@ -1,7 +1,7 @@
 package misc;
 
 import javafx.scene.control.Label;
-
+// Test
 public class MyLabel extends Label {
 
     private char letter;

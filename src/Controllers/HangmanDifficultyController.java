@@ -8,7 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-
+// Test
 public class HangmanDifficultyController {
     private static String difficulty;
     @FXML

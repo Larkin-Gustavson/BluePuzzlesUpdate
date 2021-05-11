@@ -21,7 +21,7 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
+// Test
 public class LoginController implements Initializable {
 
     // Stores the user in here for the program

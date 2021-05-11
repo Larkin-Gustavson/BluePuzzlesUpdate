@@ -22,7 +22,7 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-
+// Test
 public class LeaderboardsController implements Initializable {
 
     @FXML

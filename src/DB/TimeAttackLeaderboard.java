@@ -2,7 +2,7 @@ package DB;
 
 import java.sql.*;
 import java.util.ArrayList;
-
+// Test
 public class TimeAttackLeaderboard {
 
     private static final String URL = "jdbc:mysql://bluepuzzles.c6g1bhjsrnsm.us-east-2.rds.amazonaws.com/BLUE_PUZZLES";

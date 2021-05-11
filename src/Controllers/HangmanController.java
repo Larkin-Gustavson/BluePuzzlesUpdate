@@ -29,7 +29,7 @@ import java.util.Random;
 import java.util.ResourceBundle;
 
 public class HangmanController implements Initializable {
-
+    // Test
     @FXML
     AnchorPane hangmanAnchorPane;
     @FXML
