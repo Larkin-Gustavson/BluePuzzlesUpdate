@@ -1,9 +1,7 @@
 package Controllers.TimeAttack;
 
 import Controllers.GameSelectController;
-import Controllers.HangmanDifficultyController;
 import Controllers.LoginController;
-import DB.Leaderboard;
 import DB.TimeAttackLeaderboard;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -25,7 +23,7 @@ import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import misc.limitTimer;
+import misc.LimitTimer;
 import misc.MyLabel;
 
 import java.net.URL;
@@ -52,7 +50,7 @@ public class HangmanTimeAttack implements Initializable {
     String[] words = {"School", "Laundry", "House", "Gameboy Advanced", "Amazing", "Educational", "Puzzle",
             "Blue Puzzles", "Smoke", "Maple Syrup"};
     String word;
-    limitTimer gt; //Timer
+    LimitTimer gt; //Timer
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -79,7 +77,7 @@ public class HangmanTimeAttack implements Initializable {
             pos += 40;
         }
         points.setText("Points: " + GameSelectController.totalpoints);
-        gt = new limitTimer(gameTime);
+        gt = new LimitTimer(gameTime);
         gt.start();
         gameTime.textProperty().addListener(new ChangeListener<String>() {
             @Override

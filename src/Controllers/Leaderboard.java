@@ -1,9 +1,7 @@
-package DB;
-
-import Controllers.JigsawDifficultyController;
+package Controllers;
 
 import java.sql.*;
-import java.util.*;
+import java.util.ArrayList;
 
 
 public class Leaderboard {
