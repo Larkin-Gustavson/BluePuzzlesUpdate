@@ -21,7 +21,7 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-//
+
 public class LoginController implements Initializable {
 
     // Stores the user in here for the program
@@ -38,10 +38,12 @@ public class LoginController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         final Tooltip usernameTooltip = new Tooltip();
-        usernameTooltip.setText("Username must have atleast \n" +
+        usernameTooltip.setText("Username must have at least \n" +
                 "- 8 characters\n" +
                 "- 1 Capital Letter\n" +
                 "- 1 Lowercase Letter\n" +
+                "- no whitespace" +
+                "- no special characters" +
                 "- 1 numerical character");
         userField.setTooltip(usernameTooltip);
     }
@@ -86,20 +88,19 @@ public class LoginController implements Initializable {
     /* Password validation */
 
     /**
-     *
-     * @param str the password the user put into the password field.
+     * @param password the password the user put into the password field.
      * @return true if the password the user put into the password field is valid.
-     *         <br></br>
-     *         false if the password the user put into the password field is not valid.
+     * <br></br>
+     * false if the password the user put into the password field is not valid.
      */
-    public boolean validatePassword(String str) {
+    public boolean validatePassword(String password) {
         /* Regular expression to allow at minimum one digit, at minimum lower case letter,
-        *  at least one upper case letter, does not allow special characters
-        *  (!@#$%^&*(),.<>+?|{}\=~`), does not allow any sort of whitespace,
-        *  and the passwords need to be between 8 - 15 characters long.
-        *
-        */
-        String regex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=[^!@#$%^&*(),.<>+?|{}\\\\=~`]+$)(?=\\S+$).{8,15}$";
+         *  at least one upper case letter, does not allow special characters
+         *  (!@#$%^&*(),.<>+?|{}\=~`), does not allow any sort of whitespace,
+         *  and the passwords need to be between 8 - 15 characters long.
+         *
+         */
+        String regex = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=[^!@#$%^&*(),.<>+?|{}\\\\=~`]+$)(?=\\S+$).{8,15}$";
 
         Pattern validPasswordPattern = Pattern.compile(regex); // compile the regex as a pattern or template that all valid passwords must adhere to
 
@@ -124,11 +125,15 @@ public class LoginController implements Initializable {
             Else report to the user that they did not enter a password that meets the
             acceptable criteria for a valid password (return false).
          */
-        if (isPasswordMatchingPattern == true && isRePasswordMatchingPattern == true && passwordField.getText().equals(rePassword.getText())) { // if the password both matches the templated pattern for a valid password and that the passwords entered in both the password field and the confirm password equal each other, then return true
+        if ((isPasswordMatchingPattern == true && isRePasswordMatchingPattern == true) && (passwordField.getText().equals(rePassword.getText()))) { // if the password both matches the templated pattern for a valid password and that the passwords entered in both the password field and the confirm password equal each other, then return true
+            userField.clear(); // clear the username after a successful login
+            passwordField.clear(); // clear the password after a successful login
+            rePassword.clear(); // clear the confirm password after a successful login
+            outputLabel.setText(""); // get rid of the error output text, if there has been failed attempts at creating a valid password
             return true;
-        } else if (!passwordField.getText().equals(rePassword.getText())) {
+        } else if (!(passwordField.getText().equals(rePassword.getText()))) { // if the passwords do not match, do the following
             outputLabel.setText(""); // used to clear the output text if the user had a previous message shown on screen
-            outputLabel.setTextFill(Color.RED);
+            outputLabel.setTextFill(Color.RED); // set the below text to be red
             outputLabel.setText("Your passwords do not match!");
             passwordField.clear(); // clear whatever the user had entered in the password field for convenience of the user
             rePassword.clear(); // clear whatever the user had entered in the confirm password field for convenience of the user
@@ -136,25 +141,24 @@ public class LoginController implements Initializable {
         }
         outputLabel.setTextFill(Color.RED);
         outputLabel.setText("Your password must contain \n" +
-                "at least one capital letter, \n" +
+                "- at least one capital letter, \n" +
                 "at least one lowercase letter, \n" +
                 "at least one number, \n" +
                 "no whitespaces, \n" +
-                "no special characters, \n"+
-                "(!@#$%^&*(),.<>+?|{}\\\\=~`) \n" +
+                "no special characters, \n" +
+                "(!@#$%^&*(),.<>+?|{}\\\\=~`), \n" +
                 "and contains 8 - 15 characters."
-        );
+        ); // display a message to the user of what is considered to be an acceptable password
         passwordField.clear(); // clear whatever the user had entered in the password field for convenience of the user
         rePassword.clear(); // clear whatever the user had entered in the confirm password field for convenience of the user
         return false;
     }
 
     /**
-     *
      * @param userName the username the user passed into the field.
      * @return true - if the username is valid (if it doesn't exist already).
-     *          <br></br>
-     *          false - if the username is not valid (if the username already exists).
+     * <br></br>
+     * false - if the username is not valid (if the username already exists).
      * @throws SQLException if the query is not able to execute.
      */
     public boolean validateUserName(String userName) throws SQLException {

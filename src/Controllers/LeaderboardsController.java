@@ -2,8 +2,6 @@ package Controllers;
 
 import DB.Leaderboard;
 import DB.Record;
-import DB.TARecord;
-import DB.TimeAttackLeaderboard;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -31,12 +29,8 @@ public class LeaderboardsController implements Initializable {
     @FXML
     TableView<Record> JigsawTable, hangmanTable, tentsTable;
     @FXML
-    TableView<TARecord> TATable;
-    @FXML
     TableColumn<Record, String> jigsawUser, jigsawDifficulty, jigsawTime, hangmanUser, hangmanDifficulty,
             hangmanTime, tentsUser, tentsDifficulty, tentsTime;
-    @FXML
-    TableColumn<TARecord, String> TAUser, TAPoints;
 
 
     @Override
@@ -54,14 +48,10 @@ public class LeaderboardsController implements Initializable {
         tentsUser.setCellValueFactory(new PropertyValueFactory<Record, String>("userName"));
         tentsDifficulty.setCellValueFactory(new PropertyValueFactory<Record, String>("difficulty"));
         tentsTime.setCellValueFactory(new PropertyValueFactory<Record, String>("time"));
-        /*Time Attack*/
-        TAUser.setCellValueFactory(new PropertyValueFactory<TARecord, String>("userName"));
-        TAPoints.setCellValueFactory(new PropertyValueFactory<TARecord, String>("points"));
         try {
             JigsawTable.setItems(getRecords("JigsawLeaderboard"));
             hangmanTable.setItems((getRecords("HangmanLeaderboard")));
             tentsTable.setItems((getRecords("TentsLeaderboard")));
-            TATable.setItems(getTARecords());
         } catch (SQLException e) {
 
         }
@@ -72,18 +62,6 @@ public class LeaderboardsController implements Initializable {
         ArrayList<String> record = Leaderboard.getAllRecords(game);
         for (int i = 0; i < Leaderboard.getAllRecords(game).size(); i += 3) {
             Record jr = new Record(record.get(i), record.get(i + 1), record.get(i + 2));
-            records.add(jr);
-        }
-
-
-        return records;
-    }
-
-    public ObservableList<TARecord> getTARecords() throws SQLException {
-        ObservableList<TARecord> records = FXCollections.observableArrayList();
-        ArrayList<String> record = TimeAttackLeaderboard.getAllRecords();
-        for (int i = 0; i < TimeAttackLeaderboard.getAllRecords().size(); i += 3) {
-            TARecord jr = new TARecord(record.get(i), Integer.parseInt(record.get(i + 1)));
             records.add(jr);
         }
 
