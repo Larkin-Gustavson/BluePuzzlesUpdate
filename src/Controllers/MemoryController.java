@@ -73,7 +73,7 @@ public class MemoryController implements Initializable {
     public void flipCard(MouseEvent mouseEvent) {
 
         Pane pane = (Pane) mouseEvent.getSource();
-        for (Node node : gamePane.getChildren()) { //Unflips any unmatched card
+        for (Node node : gamePane.getChildren()) { // Unflips any unmatched card
             if (node instanceof Pane && !(node instanceof AnchorPane))
                 if (node.focusTraversableProperty().getValue() == false && firstCard == null) {
                     Pane p = (Pane) node;
@@ -81,14 +81,14 @@ public class MemoryController implements Initializable {
                 }
         }
 
-        //Flip a card
+        // Flip a card
         if (pane.getChildren().get(1).isVisible() == true && pane.focusTraversableProperty().getValue() == false) {
             pane.getChildren().get(1).setVisible(false);
         } else if (pane.getChildren().get(1).isVisible() == false && pane.focusTraversableProperty().getValue() == false) {
             pane.getChildren().get(1).setVisible(true);
         }
 
-        //If card is first card pulled
+        // If card is first card pulled
         if (firstCard == null && pane.focusTraversableProperty().getValue() == false
                 && pane.getChildren().get(1).isVisible() == false)
             firstCard = pane;
@@ -96,7 +96,7 @@ public class MemoryController implements Initializable {
                 && pane.getChildren().get(1).isVisible() == false) {
             ImageView fc = (ImageView) firstCard.getChildren().get(0);
             ImageView sc = (ImageView) pane.getChildren().get(0);
-            if (fc.getImage().getUrl().equals(sc.getImage().getUrl())) {//IF MATCH
+            if (fc.getImage().getUrl().equals(sc.getImage().getUrl())) { // IF MATCH
                 firstCard.setFocusTraversable(true);
                 pane.setFocusTraversable(true);
             } else {
@@ -109,7 +109,7 @@ public class MemoryController implements Initializable {
             firstCard = null;
         }
 
-        //If final pair is matched
+        // If final pair is matched
         if (isWon()) {
             showWinScreen();
             try {
@@ -123,7 +123,7 @@ public class MemoryController implements Initializable {
 
     }
 
-    //Checks if game is won
+    // Checks if game is won
     public boolean isWon() {
         for (Node node : gamePane.getChildren()) {
             if (node instanceof Pane && !(node instanceof AnchorPane))
@@ -133,14 +133,14 @@ public class MemoryController implements Initializable {
         return true;
     }
 
-    //Show Win Screen
+    // Show Win Screen
     public void showWinScreen() {
         winScreen.setVisible(true);
         gt.stop();
         finishTime.setText("Your Time: " + gt.toString());
     }
 
-    //Back Button
+    // Back Button
     public void goBack(ActionEvent event) throws Exception {
         gt.stop();
         Parent page = FXMLLoader.load(getClass().getResource("/Views/game_select.fxml"));
@@ -150,11 +150,11 @@ public class MemoryController implements Initializable {
         stage.show();
     }
 
-    //Set the Difficulty - easy, medium, hard
+    // Set the Difficulty - easy, medium, hard
     public void setDifficulty(ActionEvent actionEvent) {
         Button button = (Button) actionEvent.getSource();
-        difficulty += button.getText(); //Set the difficulty
-        difficultySelect.setVisible(false); //Hide pane
+        difficulty += button.getText(); // Set the difficulty
+        difficultySelect.setVisible(false); // Hide pane
 
         if (difficulty.equals("easy"))
             freeflips = 5;
