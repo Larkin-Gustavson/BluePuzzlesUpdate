@@ -24,7 +24,7 @@ import java.util.regex.Pattern;
 
 public class LoginController implements Initializable {
 
-    // Stores the user in here for the program
+    //Stores the user in here for the program
     public static String user;
     @FXML
     AnchorPane signUpPane;
@@ -39,12 +39,12 @@ public class LoginController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         final Tooltip usernameTooltip = new Tooltip();
         usernameTooltip.setText("Username must have at least \n" +
-                "- 8 characters\n" +
-                "- 1 Capital Letter\n" +
-                "- 1 Lowercase Letter\n" +
-                "- no whitespace" +
-                "- no special characters" +
-                "- 1 numerical character");
+                "- 8 characters, \n" +
+                "- 1 Capital Letter, \n" +
+                "- 1 Lowercase Letter, \n" +
+                "- no whitespace, \n " +
+                "- no special characters, \n " +
+                "- and 1 numerical character");
         userField.setTooltip(usernameTooltip);
     }
 
@@ -67,12 +67,12 @@ public class LoginController implements Initializable {
         }
     }
 
-    /* Sign up for new Account */
+    /*Sign up for new Account*/
     public void SignUp(ActionEvent actionEvent) {
         signUpPane.setVisible(true);
     }
 
-    /* Cancel account creation */
+    /*Cancel account creation*/
     public void goBack(ActionEvent actionEvent) {
         signUpPane.setVisible(false);
     }
@@ -94,6 +94,7 @@ public class LoginController implements Initializable {
      * false if the password the user put into the password field is not valid.
      */
     public boolean validatePassword(String password) {
+
         /* Regular expression to allow at minimum one digit, at minimum lower case letter,
          *  at least one upper case letter, does not allow special characters
          *  (!@#$%^&*(),.<>+?|{}\=~`), does not allow any sort of whitespace,
@@ -115,56 +116,48 @@ public class LoginController implements Initializable {
             If the password and the confirm password match the criteria in the
             regex expression (must have at least 1 capital letter, 1 lowercase letter,
             no special characters, no whitespace, and between 8-15 characters long.
-
             If the entered passwords in the password field and the Re-enter password
             field are the same, then login (return true).
-
             Else if the passwords entered are not the same, report that the user did not enter
             the same password in both fields (return false).
-
             Else report to the user that they did not enter a password that meets the
             acceptable criteria for a valid password (return false).
          */
         if ((isPasswordMatchingPattern == true && isRePasswordMatchingPattern == true) && (passwordField.getText().equals(rePassword.getText()))) { // if the password both matches the templated pattern for a valid password and that the passwords entered in both the password field and the confirm password equal each other, then return true
-            userField.clear(); // clear the username after a successful login
-            passwordField.clear(); // clear the password after a successful login
-            rePassword.clear(); // clear the confirm password after a successful login
-            outputLabel.setText(""); // get rid of the error output text, if there has been failed attempts at creating a valid password
             return true;
         } else if (!(passwordField.getText().equals(rePassword.getText()))) { // if the passwords do not match, do the following
-            outputLabel.setText(""); // used to clear the output text if the user had a previous message shown on screen
-            outputLabel.setTextFill(Color.RED); // set the below text to be red
+            passwordField.clear();
+            rePassword.clear();
+            outputLabel.setTextFill(Color.RED);
             outputLabel.setText("Your passwords do not match!");
-            passwordField.clear(); // clear whatever the user had entered in the password field for convenience of the user
-            rePassword.clear(); // clear whatever the user had entered in the confirm password field for convenience of the user
             return false;
         }
         outputLabel.setTextFill(Color.RED);
         outputLabel.setText("Your password must contain \n" +
                 "- at least one capital letter, \n" +
-                "at least one lowercase letter, \n" +
-                "at least one number, \n" +
-                "no whitespaces, \n" +
-                "no special characters, \n" +
-                "(!@#$%^&*(),.<>+?|{}\\\\=~`), \n" +
-                "and contains 8 - 15 characters."
+                "- at least one lowercase letter, \n" +
+                "- at least one number, \n" +
+                "- no whitespaces, \n" +
+                "- no special characters, \n" +
+                "- (!@#$%^&*(),.<>+?|{}\\\\=~`), \n" +
+                "- and contains 8 - 15 characters."
         ); // display a message to the user of what is considered to be an acceptable password
-        passwordField.clear(); // clear whatever the user had entered in the password field for convenience of the user
-        rePassword.clear(); // clear whatever the user had entered in the confirm password field for convenience of the user
+        passwordField.clear();
+        rePassword.clear();
         return false;
     }
-
     /**
-     * @param userName the username the user passed into the field.
+     * @param username the username the user passed into the field.
      * @return true - if the username is valid (if it doesn't exist already).
      * <br></br>
      * false - if the username is not valid (if the username already exists).
      * @throws SQLException if the query is not able to execute.
      */
-    public boolean validateUserName(String userName) throws SQLException {
+
+    public boolean validateUserName(String username) throws SQLException {
         String output = "";
         try {
-            if (UserAccount.userExist(userName)) {
+            if (UserAccount.userExist(username)) {
                 output += "Username already exists!";
                 outputLabel.setText(output);
                 return false;

@@ -3,7 +3,6 @@ package DB;
 import java.sql.*;
 import java.util.ArrayList;
 
-//
 public class UserAccount {
 
 
