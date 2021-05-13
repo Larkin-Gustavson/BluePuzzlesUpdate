@@ -24,7 +24,7 @@ import java.util.regex.Pattern;
 
 public class LoginController implements Initializable {
 
-    //Stores the user in here for the program
+    // Stores the user in here for the program
     public static String user;
     @FXML
     AnchorPane signUpPane;
@@ -67,12 +67,12 @@ public class LoginController implements Initializable {
         }
     }
 
-    /*Sign up for new Account*/
+    /* Sign up for new Account */
     public void SignUp(ActionEvent actionEvent) {
         signUpPane.setVisible(true);
     }
 
-    /*Cancel account creation*/
+    /* Cancel account creation */
     public void goBack(ActionEvent actionEvent) {
         signUpPane.setVisible(false);
     }

@@ -13,7 +13,7 @@ public class Leaderboard {
     public static void insertNewUser(String game, String newUser, String newTime, String Difficulty) throws SQLException {
         try {
             Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD); // Establishing connection
-            String insert = "INSERT INTO " + game + " (UserName,Time,Difficulty) VALUES(?,?,?)"; // Select statement
+            String insert = "INSERT INTO " + game + " (UserName,Time,Difficulty) VALUES(?, ?, ?)"; // Select statement
             PreparedStatement statement = connection.prepareStatement(insert);
             statement.setString(1, newUser);
             statement.setString(2, newTime);
@@ -22,8 +22,8 @@ public class Leaderboard {
         } catch (SQLException e) {
             System.out.println("gotta update");
             Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD); // Establishing connection
-            String update = "Update " + game + " SET Time=?" +
-                    "WHERE UserName=? AND Difficulty=? AND Time >?";
+            String update = "Update " + game + " SET Time = ?" +
+                    "WHERE UserName = ? AND Difficulty = ? AND Time > ?";
             PreparedStatement statement = connection.prepareStatement(update);
             statement.setString(1, newTime);
             statement.setString(2, newUser);
@@ -31,7 +31,7 @@ public class Leaderboard {
             statement.setString(4, newTime);
 
             statement.executeUpdate();
-            //e.printStackTrace();
+            // e.printStackTrace();
         }
     }
 

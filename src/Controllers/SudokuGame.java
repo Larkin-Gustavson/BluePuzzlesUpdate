@@ -210,7 +210,7 @@ public class SudokuGame implements Initializable {
 
     }
 
-    /* Each box has a chance of being removed depending on num
+    /*  Each box has a chance of being removed depending on num
      *  num represents difficulty
      *  1 - Easy
      *  2 - Medium
