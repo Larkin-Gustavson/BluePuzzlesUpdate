@@ -1,6 +1,7 @@
 package Controllers;
 
 import DB.UserAccount;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -44,7 +45,7 @@ public class LoginController implements Initializable {
 
     @FXML
     void closeButtonClick(ActionEvent event) {
-            System.exit(0);
+            Platform.exit();
     }
 
     @Override
