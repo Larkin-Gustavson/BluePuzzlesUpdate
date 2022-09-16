@@ -28,7 +28,7 @@ Larkin
     - Sudoku
     - Sudoku X
     - Tents
-* All games, as this app is GUI (Graphical User Interface) are completely displayed through a visual medium to the user.
+* All games, as this app is a GUI (Graphical User Interface) are completely displayed through a visual medium to the user.
 * The ability to play on Easy, Medium, or Hard difficulty
 * Random level generation
 * Leaderboards
