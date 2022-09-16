@@ -1,8 +1,6 @@
 
 L
 .idea/codeStyles/Project.xml,6\e\6ecd6000a7b6f4a2884412ff19f74193ed089648
-W
-'.idea/artifacts/MyBluePuzzles_jar22.xml,d\c\dcd6a92ca6d53d3b1fec4592e0e73c150ccd5b23
 V
 &.idea/artifacts/MyBluePuzzles_jar5.xml,b\f\bf2b34dcee96956e81876c32b3fdcc3873371039
 U
