@@ -8,10 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Tooltip;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -26,6 +23,8 @@ public class LoginController implements Initializable {
 
     // Stores the user in here for the program
     public static String user;
+    @FXML
+    private MenuItem closeButton;
     @FXML
     AnchorPane signUpPane;
     @FXML
@@ -42,6 +41,11 @@ public class LoginController implements Initializable {
     Label outputLabel;
     @FXML
     Label loginMessage;
+
+    @FXML
+    void closeButtonClick(ActionEvent event) {
+            System.exit(0);
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
