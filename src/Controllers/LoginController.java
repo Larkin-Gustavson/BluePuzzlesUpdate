@@ -29,11 +29,19 @@ public class LoginController implements Initializable {
     @FXML
     AnchorPane signUpPane;
     @FXML
-    TextField userField, loginUser;
+    TextField userField;
     @FXML
-    PasswordField passwordField, rePassword, loginPassword;
+    TextField loginUser;
     @FXML
-    Label outputLabel, loginMessage;
+    PasswordField passwordField;
+    @FXML
+    PasswordField rePassword;
+    @FXML
+    PasswordField loginPassword;
+    @FXML
+    Label outputLabel;
+    @FXML
+    Label loginMessage;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -60,7 +68,7 @@ public class LoginController implements Initializable {
         } else if (loginUser.getText().equalsIgnoreCase("") || loginPassword.getText().equalsIgnoreCase("")) {
             loginMessage.setText("Please enter a username or a password");
         } else { // if the user entered an incorrect username or password, do the following
-            loginUser.clear(); // clear whatever was in the the username field
+            loginUser.clear(); // clear whatever was in the username field
             loginPassword.clear(); // clear whatever was in the password field
             loginMessage.setTextFill(Color.RED);
             loginMessage.setText("Sorry, incorrect username or password!");
@@ -115,7 +123,7 @@ public class LoginController implements Initializable {
         /*
             If the password and the confirm password match the criteria in the
             regex expression (must have at least 1 capital letter, 1 lowercase letter,
-            no special characters, no whitespace, and between 8-15 characters long.
+            no special characters, no whitespace, and between 8-15 characters long.)
             If the entered passwords in the password field and the Re-enter password
             field are the same, then login (return true).
             Else if the passwords entered are not the same, report that the user did not enter

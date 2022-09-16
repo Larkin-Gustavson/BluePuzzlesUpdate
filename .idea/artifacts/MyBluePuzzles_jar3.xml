@@ -4,7 +4,6 @@
     <root id="archive" name="MyBluePuzzles.jar">
       <element id="module-output" name="MyBluePuzzles" />
       <element id="extracted-dir" path="$USER_HOME$/Documents/mysql-connector-java-8.0.23.jar" path-in-jar="/" />
-      <element id="library" level="project" name="lib1" />
       <element id="extracted-dir" path="$USER_HOME$/Desktop/javafx-sdk-11.0.2/lib/src.zip" path-in-jar="/" />
       <element id="extracted-dir" path="$USER_HOME$/Desktop/javafx-sdk-11.0.2/lib/javafx-swt.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$USER_HOME$/Desktop/javafx-sdk-11.0.2/lib/javafx.web.jar" path-in-jar="/" />
