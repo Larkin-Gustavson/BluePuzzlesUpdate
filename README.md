@@ -56,7 +56,7 @@ $ cd BluePuzzlesUpdate
 > In you're in order to use this application you MUST have installed the Java JDK (11.0.2), JavaFX SDK (11.0.2), and
 > JDBC (also known as MySQL Connector) version 8.0.23.
 
-> The MySQL server that this application uses to store users account information (username and password) and each
+> The MySQL server that this application uses to store users account information (usernames and passwords) and each
 > accounts associated game stats is being hosted on Amazon, due to this to host this server payment was necessary. So as
 > of a couple of months ago, we chose not to pay Amazon to host the database, so as of now a user cannot get past the
 > login screen.
