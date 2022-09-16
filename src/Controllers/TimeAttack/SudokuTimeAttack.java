@@ -50,7 +50,7 @@ public class SudokuTimeAttack implements Initializable {
     private Label[][] key = new Label[9][9];
     private int difficulty;
     static int totalPoints = 0;
-    LimitTimer gt;
+    LimitTimer timer;
 
     //Sets up the board
     @Override
@@ -250,8 +250,8 @@ public class SudokuTimeAttack implements Initializable {
 
     public void setEasy(ActionEvent actionEvent) {
         points.setText("Points: " + GameSelectController.totalpoints);
-        gt = new LimitTimer(gameTime);
-        gt.start();
+        timer = new LimitTimer(gameTime);
+        timer.start();
         gameTime.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable,
@@ -291,7 +291,7 @@ public class SudokuTimeAttack implements Initializable {
     public void checkWin(ActionEvent actionEvent) {
         if (isSolved()) {
             winScreen.setVisible(true);
-            gt.stop();
+            timer.stop();
             GameSelectController.totalpoints++;
 
         }

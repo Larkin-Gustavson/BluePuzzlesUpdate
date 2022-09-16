@@ -57,14 +57,14 @@ public class JigsawTimeAttack implements Initializable {
 
     Pane selected; //Current selected pane
     Stack<Pair> original = new Stack<>(); //Winning positions
-    LimitTimer gt;
+    LimitTimer timer;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
             highScore.setText("High Score: " + TimeAttackLeaderboard.getHighScore(LoginController.user));
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException throwable) {
+            throwable.printStackTrace();
         }
         //Scramble pics
         Stack<Pane> stack = new Stack<>();
@@ -72,8 +72,8 @@ public class JigsawTimeAttack implements Initializable {
         for (Node node : anchorpane.getChildren())
             if (node instanceof Pane && !(node instanceof AnchorPane)) {
                 stack.push((Pane) node);
-                Pair<Double, Double> coords = new Pair<Double, Double>(node.getLayoutX(), node.getLayoutY());
-                original.push(coords);
+                Pair<Double, Double> coordinate = new Pair<>(node.getLayoutX(), node.getLayoutY());
+                original.push(coordinate);
             }
 
         Collections.shuffle(stack);
@@ -86,8 +86,8 @@ public class JigsawTimeAttack implements Initializable {
             }
         }
         points.setText("Points: " + GameSelectController.totalpoints);
-        gt = new LimitTimer(gameTime);
-        gt.start();
+        timer = new LimitTimer(gameTime);
+        timer.start();
         gameTime.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable,
@@ -146,15 +146,15 @@ public class JigsawTimeAttack implements Initializable {
         pane2.setStyle("-fx-border-color: black");
     }
 
-    int randomGenerator(int num) {
-        return (int) Math.floor((Math.random() * num + 1));
+    int randomGenerator(int number) {
+        return (int) Math.floor((Math.random() * number + 1));
     }
 
     /*Show win screen*/
     public void showWinScreen(boolean win) throws SQLException {
 
         winScreen.setVisible(true); //set win screen visible
-        gt.stop(); // stop game timer
+        timer.stop(); // stop game timer
         gameTime.setDisable(true);
         for (Node node : anchorpane.getChildren())
             if (node instanceof Button)
@@ -166,8 +166,8 @@ public class JigsawTimeAttack implements Initializable {
         Stack<Pair> stack = new Stack<>();
         for (Node node : anchorpane.getChildren()) {
             if (node instanceof Pane && !(node instanceof AnchorPane)) {
-                Pair<Double, Double> coords = new Pair<Double, Double>(node.getLayoutX(), node.getLayoutY());
-                stack.push(coords);
+                Pair<Double, Double> coordinate = new Pair<>(node.getLayoutX(), node.getLayoutY());
+                stack.push(coordinate);
                 if (node.getRotate() % 360 != 0) {
                     System.out.println("Not yet!");
                     return;
@@ -190,7 +190,7 @@ public class JigsawTimeAttack implements Initializable {
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
-        gt.stop();
+        timer.stop();
     }
 
 

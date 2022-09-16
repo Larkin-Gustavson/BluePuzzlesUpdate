@@ -63,7 +63,7 @@ public class HangmanTimeAttack implements Initializable {
     String[] words = {"School", "Laundry", "House", "Gameboy Advanced", "Amazing", "Educational", "Puzzle",
             "Blue Puzzles", "Smoke", "Maple Syrup"};
     String word;
-    LimitTimer gt; //Timer
+    LimitTimer timer; //Timer
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -90,8 +90,8 @@ public class HangmanTimeAttack implements Initializable {
             pos += 40;
         }
         points.setText("Points: " + GameSelectController.totalpoints);
-        gt = new LimitTimer(gameTime);
-        gt.start();
+        timer = new LimitTimer(gameTime);
+        timer.start();
         gameTime.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable,
@@ -116,8 +116,8 @@ public class HangmanTimeAttack implements Initializable {
         Text source = (Text) mouseEvent.getSource();
         System.out.println(source.getText());
         source.setDisable(true);
-        Paint p = Color.GREY;
-        source.setFill(p);
+        Paint pain = Color.GREY;
+        source.setFill(pain);
         char guess = source.getText().charAt(0); //guessed letter
         /*Changes to word*/
         boolean guessRight = false;
@@ -172,7 +172,7 @@ public class HangmanTimeAttack implements Initializable {
     public void showWinScreen(boolean win) {
         GameSelectController.totalpoints++;
         winScreen.setVisible(true);
-        gt.stop();
+        timer.stop();
 
         for (Node node : hangmanAnchorPane.getChildren())
             if (node instanceof Button)

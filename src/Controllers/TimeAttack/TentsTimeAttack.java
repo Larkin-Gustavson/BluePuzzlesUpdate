@@ -40,7 +40,7 @@ public class TentsTimeAttack implements Initializable {
     private AnchorPane loseScreen;
     @FXML
     Label gameTime;
-    private LimitTimer gt;
+    private LimitTimer timer;
     @FXML
     private Text points;
 
@@ -65,8 +65,8 @@ public class TentsTimeAttack implements Initializable {
             p.getChildren().get(0).setVisible(true);
         }
         //Game Timer
-        gt = new LimitTimer(gameTime);
-        gt.start();
+        timer = new LimitTimer(gameTime);
+        timer.start();
         gameTime.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable,
@@ -127,7 +127,7 @@ public class TentsTimeAttack implements Initializable {
 
     public void showWinScreen(boolean win) throws SQLException {
         winScreen.setVisible(true); //set win screen visible
-        gt.stop(); // stop game timer
+        timer.stop(); // stop game timer
         gameTime.setDisable(true);
         for (Node node : anchorPane.getChildren())
             if (node instanceof Button)
@@ -143,7 +143,7 @@ public class TentsTimeAttack implements Initializable {
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
-        gt.stop();
+        timer.stop();
     }
 
     public void playAgain(ActionEvent actionEvent) throws Exception {
@@ -158,8 +158,8 @@ public class TentsTimeAttack implements Initializable {
         stage.show();
     }
 
-    int randomGenerator(int num) {
-        return (int) Math.floor((Math.random() * num + 1));
+    int randomGenerator(int number) {
+        return (int) Math.floor((Math.random() * number + 1));
     }
 
     public void goNext(ActionEvent actionEvent) throws Exception {
