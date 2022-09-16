@@ -38,16 +38,16 @@ public class MemoryController implements Initializable {
     Text finishTime;
     @FXML
     Text freeFlips;
-    private GameTimer gt;
+    private GameTimer timer;
     Pane firstCard;
     static String difficulty = "";
-    private int freeflips = 0;
+    private int numberOfFreeFlips = 0;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        gt = new GameTimer(gameTime);
-        gt.start();
-        freeFlips.setText("Free Flips: " + freeflips);
+        timer = new GameTimer(gameTime);
+        timer.start();
+        freeFlips.setText("Free Flips: " + numberOfFreeFlips);
         randomize();
     }
 
@@ -105,11 +105,11 @@ public class MemoryController implements Initializable {
                 firstCard.setFocusTraversable(true);
                 pane.setFocusTraversable(true);
             } else {
-                if (freeflips > 0)
-                    freeflips--;
-                freeFlips.setText("Free Flips: " + freeflips);
-                if (freeflips == 0)
-                    gt.addTen();
+                if (numberOfFreeFlips > 0)
+                    numberOfFreeFlips--;
+                freeFlips.setText("Free Flips: " + numberOfFreeFlips);
+                if (numberOfFreeFlips == 0)
+                    timer.addTen();
             }
             firstCard = null;
         }
@@ -141,13 +141,13 @@ public class MemoryController implements Initializable {
     // Show Win Screen
     public void showWinScreen() {
         winScreen.setVisible(true);
-        gt.stop();
-        finishTime.setText("Your Time: " + gt.toString());
+        timer.stop();
+        finishTime.setText("Your Time: " + timer.toString());
     }
 
     // Back Button
     public void goBack(ActionEvent event) throws Exception {
-        gt.stop();
+        timer.stop();
         Parent page = FXMLLoader.load(getClass().getResource("/Views/game_select.fxml"));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -162,12 +162,12 @@ public class MemoryController implements Initializable {
         difficultySelect.setVisible(false); // Hide pane
 
         if (difficulty.equals("easy"))
-            freeflips = 5;
+            numberOfFreeFlips = 5;
         else if (difficulty.equals("medium"))
-            freeflips = 3;
+            numberOfFreeFlips = 3;
         else
-            freeflips = 1;
+            numberOfFreeFlips = 1;
 
-        freeFlips.setText("Free Flips: " + freeflips);
+        freeFlips.setText("Free Flips: " + numberOfFreeFlips);
     }
 }

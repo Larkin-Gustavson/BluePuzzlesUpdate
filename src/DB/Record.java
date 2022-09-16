@@ -1,8 +1,6 @@
 package DB;
 
 public class Record {
-
-
     private String userName;
     private String difficulty;
     private String time;

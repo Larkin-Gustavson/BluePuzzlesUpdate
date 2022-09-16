@@ -46,7 +46,7 @@ public class SudokuTimeAttack implements Initializable {
     Text highScore;
 
     //Sudoku Board
-    private Label mat[][] = new Label[9][9];
+    private Label[][] mat = new Label[9][9];
     private Label[][] key = new Label[9][9];
     private int difficulty;
     static int totalPoints = 0;
@@ -101,37 +101,37 @@ public class SudokuTimeAttack implements Initializable {
 
     }
 
-    /*randomly generated number between 1 and num*/
-    int randomGenerator(int num) {
-        return (int) Math.floor((Math.random() * num + 1));
+    /*randomly generated number between 1 and the number passed in*/
+    int randomGenerator(int number) {
+        return (int) Math.floor((Math.random() * number + 1));
     }
 
     /*Fills a 3x3 grid with logical numbers*/
-    public boolean fillBoxUsingStack(int row, int col) {
+    public boolean fillBoxUsingStack(int row, int column) {
         int r = 0;
-        int column = 0;
+        int col = 0;
         int count = 0;
         Stack<Integer> stack = fillStack();
         while (!stack.isEmpty()) {
             int pop = stack.pop();
-            if (checkRow(row + r, pop) && checkCol(col + column, pop) && mat[row + r][col + column].getText().isEmpty()) {
-                mat[row + r][col + column].setText(pop + "");
-                mat[row + r][col + column].setFocusTraversable(true);
+            if (checkRow(row + r, pop) && checkCol(column + col, pop) && mat[row + r][column + col].getText().isEmpty()) {
+                mat[row + r][column + col].setText(pop + "");
+                mat[row + r][column + col].setFocusTraversable(true);
             } else {
                 count++;
                 stack.push(pop);
-                column++;
+                col++;
                 if (count > 50) {
                     wipeAll();
                     stack = fillStack();
-                    column = 0;
+                    col = 0;
                     r = 0;
                     count = 0;
                     return true;
                 }
             }
-            if (column == 3) {
-                column = 0;
+            if (col == 3) {
+                col = 0;
                 r++;
                 if (r == 3)
                     r = 0;
@@ -141,7 +141,7 @@ public class SudokuTimeAttack implements Initializable {
     }
 
     /*Checks 3x3 grid if no repeating numbers*/
-    public boolean checkgrid(int row, int column, int number) {
+    public boolean checkGrid(int row, int column, int number) {
         for (int i = 0; i < 3; i++)
             for (int j = 0; j < 3; j++)
                 if (mat[row + i][column + j].getText().equals(number + "")) {
@@ -238,8 +238,8 @@ public class SudokuTimeAttack implements Initializable {
     }
 
     public void goBack(ActionEvent event) throws Exception {
-        TimeAttackLeaderboard.insertNewUser(LoginController.user, GameSelectController.totalpoints);
-        GameSelectController.totalpoints = 0;
+        TimeAttackLeaderboard.insertNewUser(LoginController.user, GameSelectController.totalPoints);
+        GameSelectController.totalPoints = 0;
         Parent page = FXMLLoader.load(getClass().getResource("/Views/game_select.fxml"));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -249,7 +249,7 @@ public class SudokuTimeAttack implements Initializable {
 
 
     public void setEasy(ActionEvent actionEvent) {
-        points.setText("Points: " + GameSelectController.totalpoints);
+        points.setText("Points: " + GameSelectController.totalPoints);
         timer = new LimitTimer(gameTime);
         timer.start();
         gameTime.textProperty().addListener(new ChangeListener<String>() {
@@ -292,7 +292,7 @@ public class SudokuTimeAttack implements Initializable {
         if (isSolved()) {
             winScreen.setVisible(true);
             timer.stop();
-            GameSelectController.totalpoints++;
+            GameSelectController.totalPoints++;
 
         }
     }

@@ -77,7 +77,7 @@ public class TentsTimeAttack implements Initializable {
 
             }
         });
-        points.setText("Points: " + GameSelectController.totalpoints);
+        points.setText("Points: " + GameSelectController.totalPoints);
 
     }
 
@@ -119,7 +119,7 @@ public class TentsTimeAttack implements Initializable {
 
             }
         }
-        GameSelectController.totalpoints++;
+        GameSelectController.totalPoints++;
         showWinScreen(true);
         return true;
 
@@ -136,8 +136,8 @@ public class TentsTimeAttack implements Initializable {
 
 
     public void goBack(ActionEvent actionEvent) throws Exception {
-        TimeAttackLeaderboard.insertNewUser(LoginController.user, GameSelectController.totalpoints);
-        GameSelectController.totalpoints = 0;
+        TimeAttackLeaderboard.insertNewUser(LoginController.user, GameSelectController.totalPoints);
+        GameSelectController.totalPoints = 0;
         Parent page = FXMLLoader.load(getClass().getResource("/Views/game_select.fxml"));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();

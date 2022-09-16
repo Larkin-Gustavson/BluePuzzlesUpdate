@@ -32,7 +32,7 @@ public class TentsController implements Initializable {
     private AnchorPane anchorPane;
     @FXML
     Label gameTime;
-    private GameTimer gt;
+    private GameTimer timer;
     @FXML
     private Text winOrLose;
     @FXML
@@ -49,8 +49,8 @@ public class TentsController implements Initializable {
             }
         }
         // Game Timer
-        gt = new GameTimer(gameTime);
-        gt.start();
+        timer = new GameTimer(gameTime);
+        timer.start();
 
     }
 
@@ -106,7 +106,7 @@ public class TentsController implements Initializable {
         finishTime.setText(gameTime.getText()); // reveal finishing game time
         Leaderboard.insertNewUser("TentsLeaderboard", LoginController.user, gameTime.getText(),
                 "regular");
-        gt.stop(); // stop game timer
+        timer.stop(); // stop game timer
         gameTime.setDisable(true);
         for (Node node : anchorPane.getChildren())
             if (node instanceof Button)
@@ -120,7 +120,7 @@ public class TentsController implements Initializable {
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
-        gt.stop();
+        timer.stop();
     }
 
     public void playAgain(ActionEvent actionEvent) throws Exception {

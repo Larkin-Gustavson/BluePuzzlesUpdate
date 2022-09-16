@@ -45,7 +45,7 @@ public class HangmanController implements Initializable {
     @FXML
     Text livesText;
     @FXML
-    Text winorlose;
+    Text winOrLose;
     @FXML
     Text finishTime;
     @FXML
@@ -164,9 +164,9 @@ public class HangmanController implements Initializable {
 
     public void showWinScreen(boolean win) {
         if (win)
-            winorlose.setText("You Won!");
+            winOrLose.setText("You Won!");
         else
-            winorlose.setText("You lost!");
+            winOrLose.setText("You lost!");
         winScreen.setVisible(true);
         finishTime.setText(gt.toString());
         gt.stop();

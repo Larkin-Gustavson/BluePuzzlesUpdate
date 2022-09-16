@@ -54,7 +54,7 @@ public class GameSelectController implements Initializable {
     Text memoryText;
     @FXML
     Text timeAttackText;
-    public static int totalpoints;
+    public static int totalPoints;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -144,8 +144,8 @@ public class GameSelectController implements Initializable {
         stage.show();
     }
 
-    int randomGenerator(int num) {
-        return (int) Math.floor((Math.random() * num + 1));
+    int randomGenerator(int number) {
+        return (int) Math.floor((Math.random() * number + 1));
     }
 
     public void playTimeAttack(ActionEvent actionEvent) throws Exception {

@@ -89,7 +89,7 @@ public class HangmanTimeAttack implements Initializable {
             label.relocate(10 + pos, 5);
             pos += 40;
         }
-        points.setText("Points: " + GameSelectController.totalpoints);
+        points.setText("Points: " + GameSelectController.totalPoints);
         timer = new LimitTimer(gameTime);
         timer.start();
         gameTime.textProperty().addListener(new ChangeListener<String>() {
@@ -170,7 +170,7 @@ public class HangmanTimeAttack implements Initializable {
     }
 
     public void showWinScreen(boolean win) {
-        GameSelectController.totalpoints++;
+        GameSelectController.totalPoints++;
         winScreen.setVisible(true);
         timer.stop();
 
@@ -193,8 +193,8 @@ public class HangmanTimeAttack implements Initializable {
     }
 
     public void goBack(ActionEvent actionEvent) throws Exception {
-        TimeAttackLeaderboard.insertNewUser(LoginController.user, GameSelectController.totalpoints);
-        GameSelectController.totalpoints = 0;
+        TimeAttackLeaderboard.insertNewUser(LoginController.user, GameSelectController.totalPoints);
+        GameSelectController.totalPoints = 0;
         Parent page = FXMLLoader.load(getClass().getResource("/Views/game_select.fxml"));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();

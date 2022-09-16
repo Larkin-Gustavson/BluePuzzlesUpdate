@@ -37,7 +37,7 @@ public class SudokuGame implements Initializable {
     Text gameTime;
     GameTimer gt;
     // Sudoku Board
-    private Label mat[][] = new Label[9][9];
+    private Label[][] mat = new Label[9][9];
     private Label[][] key = new Label[9][9];
     private int difficulty;
     private int hints;

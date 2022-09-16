@@ -31,18 +31,16 @@ public class GameTimer extends TimerTask {
     /* Run function that changes label text with the time */
     @Override
     public void run() {
-        Platform.runLater(new Runnable() {
-            public void run() {
-                timePassed++;
-                seconds = timePassed % 60;
-                minutes = timePassed / 60;
-                secondsString = String.format("%02d", seconds);
-                minutesString = String.format("%02d", minutes);
-                if (gameTime != null)
-                    gameTime.setText(minutesString + ":" + secondsString);
-                else if (gameTimeText != null)
-                    gameTimeText.setText(minutesString + ":" + secondsString);
-            }
+        Platform.runLater(() -> {
+            timePassed++;
+            seconds = timePassed % 60;
+            minutes = timePassed / 60;
+            secondsString = String.format("%02d", seconds);
+            minutesString = String.format("%02d", minutes);
+            if (gameTime != null)
+                gameTime.setText(minutesString + ":" + secondsString);
+            else if (gameTimeText != null)
+                gameTimeText.setText(minutesString + ":" + secondsString);
         });
     }
 

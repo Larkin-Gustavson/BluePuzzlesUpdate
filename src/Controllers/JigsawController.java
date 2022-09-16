@@ -52,7 +52,7 @@ public class JigsawController implements Initializable {
 
     Pane selected; // Current selected pane
     Stack<Pair> original = new Stack<>(); // Winning positions
-    GameTimer gt;
+    GameTimer timer;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -77,8 +77,8 @@ public class JigsawController implements Initializable {
         }
 
         // Game Timer
-        gt = new GameTimer(gameTime);
-        gt.start();
+        timer = new GameTimer(gameTime);
+        timer.start();
         try {
             bestTime.setText("Best Time: " + Leaderboard.getBestTime("JigsawLeaderboard", LoginController.user, JigsawDifficultyController.getDifficulty()));
         } catch (Exception e) {
@@ -146,7 +146,7 @@ public class JigsawController implements Initializable {
         finishTime.setText(gameTime.getText()); // reveal finishing game time
         Leaderboard.insertNewUser("JigsawLeaderboard", LoginController.user, gameTime.getText(),
                 JigsawDifficultyController.getDifficulty());
-        gt.stop(); // stop game timer
+        timer.stop(); // stop game timer
         gameTime.setDisable(true);
         for (Node node : anchorPane.getChildren())
             if (node instanceof Button)
@@ -179,7 +179,7 @@ public class JigsawController implements Initializable {
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
-        gt.stop();
+        timer.stop();
     }
 
 
