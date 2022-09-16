@@ -66,5 +66,4 @@ public class GameTimer extends TimerTask {
         timer.purge();
         this.cancel();
     }
-
 }

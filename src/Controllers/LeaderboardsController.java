@@ -28,14 +28,43 @@ public class LeaderboardsController implements Initializable {
     @FXML
     AnchorPane mainAnchor;
     @FXML
-    TableView<Record> JigsawTable, hangmanTable, tentsTable, memoryTable;
+    TableView<Record> jigsawTable;
+    @FXML
+    TableView<Record> hangmanTable;
+    @FXML
+    TableView<Record> tentsTable;
+    @FXML
+    TableView<Record> memoryTable;
     @FXML
     TableView<TARecord> TATable;
     @FXML
-    TableColumn<Record, String> jigsawUser, jigsawDifficulty, jigsawTime, hangmanUser, hangmanDifficulty,
-            hangmanTime, tentsUser, tentsDifficulty, tentsTime, memoryUser, memoryDifficulty, memoryTime;
+    TableColumn<Record, String> jigsawUser;
     @FXML
-    TableColumn<TARecord, String> TAUser, TAPoints;
+    TableColumn<Record, String> jigsawDifficulty;
+    @FXML
+    TableColumn<Record, String> jigsawTime;
+    @FXML
+    TableColumn<Record, String> hangmanUser;
+    @FXML
+    TableColumn<Record, String> hangmanDifficulty;
+    @FXML
+    TableColumn<Record, String> hangmanTime;
+    @FXML
+    TableColumn<Record, String> tentsUser;
+    @FXML
+    TableColumn<Record, String> tentsDifficulty;
+    @FXML
+    TableColumn<Record, String> tentsTime;
+    @FXML
+    TableColumn<Record, String> memoryUser;
+    @FXML
+    TableColumn<Record, String> memoryDifficulty;
+    @FXML
+    TableColumn<Record, String> memoryTime;
+    @FXML
+    TableColumn<TARecord, String> TAUser;
+    @FXML
+    TableColumn<TARecord, String> TAPoints;
 
 
     @Override
@@ -65,7 +94,7 @@ public class LeaderboardsController implements Initializable {
         TAUser.setCellValueFactory(new PropertyValueFactory<TARecord, String>("userName"));
         TAPoints.setCellValueFactory(new PropertyValueFactory<TARecord, String>("points"));
         try {
-            JigsawTable.setItems(getRecords("JigsawLeaderboard"));
+            jigsawTable.setItems(getRecords("JigsawLeaderboard"));
             hangmanTable.setItems((getRecords("HangmanLeaderboard")));
             tentsTable.setItems((getRecords("TentsLeaderboard")));
             memoryTable.setItems(getRecords("MemoryLeaderboard"));

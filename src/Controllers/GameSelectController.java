@@ -14,14 +14,46 @@ import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
 //
 public class GameSelectController implements Initializable {
 
     @FXML
-    ImageView sudokuImage, sudokuImage2, hangmanImage, hangmanImage2, shyguy1, shyguy2, tents1, tents2,
-            timeattack1, timeattack2, memory1, memory2;
+    ImageView sudokuImage;
     @FXML
-    Text hangmanText, sudokuText, jigsawText, tentsText, memoryText, timeattackText;
+    ImageView sudokuImage2;
+    @FXML
+    ImageView hangmanImage;
+    @FXML
+    ImageView hangmanImage2;
+    @FXML
+    ImageView shyguy1;
+    @FXML
+    ImageView shyguy2;
+    @FXML
+    ImageView tents1;
+    @FXML
+    ImageView tents2;
+    @FXML
+    ImageView timeAttack1;
+    @FXML
+    ImageView timeAttack2;
+    @FXML
+    ImageView memory1;
+    @FXML
+    ImageView memory2;
+    @FXML
+    Text hangmanText;
+    @FXML
+    Text sudokuText;
+    @FXML
+    Text jigsawText;
+    @FXML
+    Text tentsText;
+    @FXML
+    Text memoryText;
+    @FXML
+    Text timeAttackText;
     public static int totalpoints;
 
     @Override
@@ -146,15 +178,15 @@ public class GameSelectController implements Initializable {
     }
 
     public void showTimeAttack(MouseEvent mouseEvent) {
-        timeattack1.setVisible(true);
-        timeattack2.setVisible(true);
-        timeattackText.setVisible(true);
+        timeAttack1.setVisible(true);
+        timeAttack2.setVisible(true);
+        timeAttackText.setVisible(true);
     }
 
     public void hideTimeAttack(MouseEvent mouseEvent) {
-        timeattack1.setVisible(false);
-        timeattack2.setVisible(false);
-        timeattackText.setVisible(false);
+        timeAttack1.setVisible(false);
+        timeAttack2.setVisible(false);
+        timeAttackText.setVisible(false);
     }
 
     public void showMemory(MouseEvent mouseEvent) {

@@ -6,6 +6,7 @@ import javafx.scene.text.Text;
 
 import java.util.Timer;
 import java.util.TimerTask;
+
 // Test
 public class LimitTimer extends TimerTask {
 
@@ -30,16 +31,14 @@ public class LimitTimer extends TimerTask {
     /* Run function that changes label text with the time */
     @Override
     public void run() {
-        Platform.runLater(new Runnable() {
-            public void run() {
-                timePassed--;
-                if (gameTime != null)
-                    gameTime.setText(timePassed + "");
-                else if (gameTimeText != null)
-                    gameTimeText.setText(timePassed + "");
-                if (timePassed == 0) {
-                    stop();
-                }
+        Platform.runLater(() -> {
+            timePassed--;
+            if (gameTime != null)
+                gameTime.setText(timePassed + "");
+            else if (gameTimeText != null)
+                gameTimeText.setText(timePassed + "");
+            if (timePassed == 0) {
+                stop();
             }
         });
     }
@@ -48,7 +47,6 @@ public class LimitTimer extends TimerTask {
     public void start() {
         timer = new Timer();
         timer.scheduleAtFixedRate(this, 1000, 1000);
-
     }
 
     public String toString() {
@@ -59,12 +57,9 @@ public class LimitTimer extends TimerTask {
         timer.cancel();
         timer.purge();
         this.cancel();
-
     }
 
     public int giveTime() {
         return timePassed;
     }
-
-
 }

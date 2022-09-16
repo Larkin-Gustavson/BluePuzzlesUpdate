@@ -1,8 +1,6 @@
 package DB;
 
 public class TARecord {
-
-
     private String userName;
     private int points;
 

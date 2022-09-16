@@ -22,13 +22,22 @@ import java.sql.SQLException;
 import java.util.Collections;
 import java.util.ResourceBundle;
 import java.util.Stack;
+
 // Test
 public class MemoryController implements Initializable {
 
     @FXML
-    AnchorPane gamePane, winScreen, difficultySelect;
+    AnchorPane gamePane;
     @FXML
-    Text gameTime, finishTime, freeFlips;
+    AnchorPane winScreen;
+    @FXML
+    AnchorPane difficultySelect;
+    @FXML
+    Text gameTime;
+    @FXML
+    Text finishTime;
+    @FXML
+    Text freeFlips;
     private GameTimer gt;
     Pane firstCard;
     static String difficulty = "";
@@ -86,10 +95,10 @@ public class MemoryController implements Initializable {
 
         // If card is first card pulled
         if (firstCard == null && pane.focusTraversableProperty().getValue() == false
-                && pane.getChildren().get(1).isVisible() == false)
+            && pane.getChildren().get(1).isVisible() == false)
             firstCard = pane;
         else if (firstCard != null && pane.focusTraversableProperty().getValue() == false
-                && pane.getChildren().get(1).isVisible() == false) {
+                 && pane.getChildren().get(1).isVisible() == false) {
             ImageView fc = (ImageView) firstCard.getChildren().get(0);
             ImageView sc = (ImageView) pane.getChildren().get(0);
             if (fc.getImage().getUrl().equals(sc.getImage().getUrl())) { // IF MATCH
@@ -160,7 +169,5 @@ public class MemoryController implements Initializable {
             freeflips = 1;
 
         freeFlips.setText("Free Flips: " + freeflips);
-
-
     }
 }

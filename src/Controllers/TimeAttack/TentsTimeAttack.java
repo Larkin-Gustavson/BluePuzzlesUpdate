@@ -31,7 +31,13 @@ import java.util.Stack;
 public class TentsTimeAttack implements Initializable {
 
     @FXML
-    private AnchorPane gamePane, winScreen, anchorpane, loseScreen;
+    private AnchorPane gamePane;
+    @FXML
+    private AnchorPane winScreen;
+    @FXML
+    private AnchorPane anchorPane;
+    @FXML
+    private AnchorPane loseScreen;
     @FXML
     Label gameTime;
     private LimitTimer gt;
@@ -78,11 +84,11 @@ public class TentsTimeAttack implements Initializable {
     /*Box clicked then give it a tent*/
     public void giveTent(MouseEvent mouseEvent) {
         Pane box = (Pane) mouseEvent.getSource();
-        ImageView iv = (ImageView) box.getChildren().get(0);
+        ImageView imageView = (ImageView) box.getChildren().get(0);
         //Makes tent visible and invisible when clicked
-        if (iv.isVisible())
-            iv.setVisible(false);
-        else iv.setVisible(true);
+        if (imageView.isVisible())
+            imageView.setVisible(false);
+        else imageView.setVisible(true);
 
     }
 
@@ -90,9 +96,9 @@ public class TentsTimeAttack implements Initializable {
     public void reset(ActionEvent actionEvent) {
         for (Node node : gamePane.getChildren()) {
             if (node instanceof Pane) {
-                ImageView iv = (ImageView) ((Pane) node).getChildren().get(0);
+                ImageView imageView = (ImageView) ((Pane) node).getChildren().get(0);
                 if (node.getId() == null)
-                    iv.setVisible(false);
+                    imageView.setVisible(false);
             }
         }
     }
@@ -101,13 +107,13 @@ public class TentsTimeAttack implements Initializable {
     public boolean check(ActionEvent actionEvent) throws SQLException {
         for (Node node : gamePane.getChildren()) {
             if (node instanceof Pane) {
-                ImageView iv = (ImageView) ((Pane) node).getChildren().get(0);
+                ImageView imageView = (ImageView) ((Pane) node).getChildren().get(0);
 
                 //Checks if any box should not have a tent
-                if (iv.isVisible() && node.focusTraversableProperty().getValue() == false && node.getId() == null)
+                if (imageView.isVisible() && node.focusTraversableProperty().getValue() == false && node.getId() == null)
                     return false;
                 //Checks if a box should have a tent
-                if (iv.isVisible() == false && node.focusTraversableProperty().getValue() == true && node.getId() == null)
+                if (imageView.isVisible() == false && node.focusTraversableProperty().getValue() == true && node.getId() == null)
                     return false;
 
 
@@ -123,7 +129,7 @@ public class TentsTimeAttack implements Initializable {
         winScreen.setVisible(true); //set win screen visible
         gt.stop(); // stop game timer
         gameTime.setDisable(true);
-        for (Node node : anchorpane.getChildren())
+        for (Node node : anchorPane.getChildren())
             if (node instanceof Button)
                 node.setDisable(true);
     }

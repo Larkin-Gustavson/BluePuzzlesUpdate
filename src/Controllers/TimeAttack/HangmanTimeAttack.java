@@ -35,16 +35,29 @@ public class HangmanTimeAttack implements Initializable {
     @FXML
     AnchorPane hangmanAnchorPane;
     @FXML
-    Pane hangmanBody, guessWordPane, wordPane, winScreen, loseScreen;
+    Pane hangmanBody;
+    @FXML
+    Pane guessWordPane;
+    @FXML
+    Pane wordPane;
+    @FXML
+    Pane winScreen;
+    @FXML
+    Pane loseScreen;
     @FXML
     TextField guessWordField;
     @FXML
-    Text livesText, finishTime, points, highScore;
+    Text livesText;
+    @FXML
+    Text finishTime;
+    @FXML
+    Text points;
+    @FXML
+    Text highScore;
     @FXML
     private Button hintButton;
     @FXML
     Label gameTime;
-
 
     int lives = 1;
     String[] words = {"School", "Laundry", "House", "Gameboy Advanced", "Amazing", "Educational", "Puzzle",
@@ -56,8 +69,8 @@ public class HangmanTimeAttack implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
             highScore.setText("High Score: " + TimeAttackLeaderboard.getHighScore(LoginController.user));
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException throwable) {
+            throwable.printStackTrace();
         }
         /*Select a rand word from the array*/
         int pick = randomGenerator(words.length - 1);

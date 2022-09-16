@@ -45,19 +45,19 @@ public class LoginController implements Initializable {
 
     @FXML
     void closeButtonClick(ActionEvent event) {
-            Platform.exit();
+        Platform.exit();
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         final Tooltip usernameTooltip = new Tooltip();
         usernameTooltip.setText("Username must have at least \n" +
-                "- 8 characters, \n" +
-                "- 1 Capital Letter, \n" +
-                "- 1 Lowercase Letter, \n" +
-                "- no whitespace, \n " +
-                "- no special characters, \n " +
-                "- and 1 numerical character");
+                                "- 8 characters, \n" +
+                                "- 1 Capital Letter, \n" +
+                                "- 1 Lowercase Letter, \n" +
+                                "- no whitespace, \n " +
+                                "- no special characters, \n " +
+                                "- and 1 numerical character");
         userField.setTooltip(usernameTooltip);
     }
 
@@ -103,7 +103,7 @@ public class LoginController implements Initializable {
     /**
      * @param password the password the user put into the password field.
      * @return true if the password the user put into the password field is valid.
-     * <br></br>
+     * <br />
      * false if the password the user put into the password field is not valid.
      */
     public boolean validatePassword(String password) {
@@ -147,18 +147,19 @@ public class LoginController implements Initializable {
         }
         outputLabel.setTextFill(Color.RED);
         outputLabel.setText("Your password must contain \n" +
-                "- at least one capital letter, \n" +
-                "- at least one lowercase letter, \n" +
-                "- at least one number, \n" +
-                "- no whitespaces, \n" +
-                "- no special characters, \n" +
-                "- (!@#$%^&*(),.<>+?|{}\\\\=~`), \n" +
-                "- and contains 8 - 15 characters."
+                            "- at least one capital letter, \n" +
+                            "- at least one lowercase letter, \n" +
+                            "- at least one number, \n" +
+                            "- no whitespaces, \n" +
+                            "- no special characters, \n" +
+                            "- (!@#$%^&*(),.<>+?|{}\\\\=~`), \n" +
+                            "- and contains 8 - 15 characters."
         ); // display a message to the user of what is considered to be an acceptable password
         passwordField.clear();
         rePassword.clear();
         return false;
     }
+
     /**
      * @param username the username the user passed into the field.
      * @return true - if the username is valid (if it doesn't exist already).

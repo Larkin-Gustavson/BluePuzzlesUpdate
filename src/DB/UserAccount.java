@@ -4,11 +4,9 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class UserAccount {
-
-
-    private final static String URL = "jdbc:mysql://bluepuzzles.c6g1bhjsrnsm.us-east-2.rds.amazonaws.com/BLUE_PUZZLES";
-    private final static String USERNAME = "bluepuzzles";
-    private final static String PASSWORD = "bluepuzzles123";
+    private static final String URL = "jdbc:mysql://bluepuzzles.c6g1bhjsrnsm.us-east-2.rds.amazonaws.com/BLUE_PUZZLES";
+    private static final String USERNAME = "bluepuzzles";
+    private static final String PASSWORD = "bluepuzzles123";
 
     public UserAccount() {
 
@@ -63,15 +61,15 @@ public class UserAccount {
         return false;
     }
 
-    public static boolean correctPassword(String user, String pass) throws SQLException {
+    public static boolean correctPassword(String userName, String password) throws SQLException {
         try {
             Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD); // Establishing connection
             String select = "SELECT * FROM Accounts;"; // Select statement
             PreparedStatement statement = connection.prepareStatement(select); // Prepared Statement
             ResultSet result = statement.executeQuery(); // Initializing all users into result
             while (result.next()) {
-                if (result.getString("UserName").equals(user)) {
-                    String inputPassword = AES.encrypt(pass, "allme");
+                if (result.getString("UserName").equals(userName)) {
+                    String inputPassword = AES.encrypt(password, "allme");
                     String dePass = result.getString("Password");
                     if (dePass.equals(inputPassword))
                         return true;
@@ -83,6 +81,4 @@ public class UserAccount {
         }
         return false;
     }
-
-
 }

@@ -67,8 +67,8 @@ public class JigsawDifficultyController implements Initializable {
         stage.show();
     }
 
-    int randomGenerator(int num) {
-        return (int) Math.floor((Math.random() * num + 1));
+    int randomGenerator(int number) {
+        return (int) Math.floor((Math.random() * number + 1));
     }
 
     /* Go back to Game Selection */

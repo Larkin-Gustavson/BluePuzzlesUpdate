@@ -25,7 +25,9 @@ public class MainMenuController implements Initializable {
     @FXML
     Button leaderboardButton;
     @FXML
-    ImageView leftImage, rightImage;
+    ImageView leftImage;
+    @FXML
+    ImageView rightImage;
 
 
     @Override

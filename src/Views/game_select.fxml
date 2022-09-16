@@ -152,7 +152,7 @@
                 <Font size="18.0"/>
             </font>
         </Text>
-        <Text fx:id="timeattackText" layoutX="244.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0"
+        <Text fx:id="timeAttackText" layoutX="244.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0"
               text="How to play: You are given 10 seconds to complete an infinite amount of puzzle games. Each puzzle game is reduced to near game winning point. If 10 seconds are up, the game is over."
               visible="false" wrappingWidth="449.0">
             <font>
@@ -183,13 +183,13 @@
                 <Image url="@../images/memoryImage.png"/>
             </image>
         </ImageView>
-        <ImageView fx:id="timeattack2" fitHeight="248.0" fitWidth="248.0" layoutX="627.0" layoutY="198.0" opacity="0.28"
+        <ImageView fx:id="timeAttack2" fitHeight="248.0" fitWidth="248.0" layoutX="627.0" layoutY="198.0" opacity="0.28"
                    pickOnBounds="true" preserveRatio="true" visible="false">
             <image>
                 <Image url="@../images/stopwatchImage.jpeg"/>
             </image>
         </ImageView>
-        <ImageView fx:id="timeattack1" fitHeight="248.0" fitWidth="248.0" layoutX="18.0" layoutY="197.0" opacity="0.28"
+        <ImageView fx:id="timeAttack1" fitHeight="248.0" fitWidth="248.0" layoutX="18.0" layoutY="197.0" opacity="0.28"
                    pickOnBounds="true" preserveRatio="true" visible="false">
             <image>
                 <Image url="@../images/stopwatchImage.jpeg"/>

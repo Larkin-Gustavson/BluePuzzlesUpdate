@@ -33,11 +33,21 @@ public class HangmanController implements Initializable {
     @FXML
     AnchorPane hangmanAnchorPane;
     @FXML
-    Pane hangmanBody, guessWordPane, wordPane, winScreen;
+    Pane hangmanBody;
+    @FXML
+    Pane guessWordPane;
+    @FXML
+    Pane wordPane;
+    @FXML
+    Pane winScreen;
     @FXML
     TextField guessWordField;
     @FXML
-    Text livesText, winorlose, finishTime;
+    Text livesText;
+    @FXML
+    Text winorlose;
+    @FXML
+    Text finishTime;
     @FXML
     Label gameTime;
     int lives = 6;
@@ -69,13 +79,13 @@ public class HangmanController implements Initializable {
         System.out.println(word);
 
         /* Positions the word */
-        int pos = 0;
+        int position = 0;
         for (int i = 0; i < word.length(); i++) {
             MyLabel label = new MyLabel(word.charAt(i));
             label.setFont(new Font("System", 30));
             wordPane.getChildren().add(label);
-            label.relocate(10 + pos, 5);
-            pos += 40;
+            label.relocate(10.0 + position, 5);
+            position += 40;
         }
         gt = new GameTimer(gameTime);
         gt.start();
@@ -89,8 +99,8 @@ public class HangmanController implements Initializable {
     }
 
 
-    int randomGenerator(int num) {
-        return (int) Math.floor((Math.random() * num + 1));
+    int randomGenerator(int number) {
+        return (int) Math.floor((Math.random() * number + 1));
     }
 
 
@@ -99,8 +109,8 @@ public class HangmanController implements Initializable {
         Text source = (Text) mouseEvent.getSource();
         System.out.println(source.getText());
         source.setDisable(true);
-        Paint p = Color.GREY;
-        source.setFill(p);
+        Paint paint = Color.GREY;
+        source.setFill(paint);
         char guess = source.getText().charAt(0); // guessed letter
         /* Changes to word */
         boolean guessRight = false;
@@ -581,7 +591,6 @@ public class HangmanController implements Initializable {
         mapleSyrupHints.add("You put this on french toast.");
         mapleSyrupHints.add("This has sugar in it.");
     }
-
 }
 
 

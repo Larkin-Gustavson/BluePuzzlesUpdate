@@ -25,12 +25,18 @@ import java.util.ResourceBundle;
 public class TentsController implements Initializable {
 
     @FXML
-    private AnchorPane gamePane, winScreen, anchorpane;
+    private AnchorPane gamePane;
+    @FXML
+    private AnchorPane winScreen;
+    @FXML
+    private AnchorPane anchorPane;
     @FXML
     Label gameTime;
     private GameTimer gt;
     @FXML
-    private Text winOrLose, finishTime;
+    private Text winOrLose;
+    @FXML
+    private Text finishTime;
 
 
     @Override
@@ -38,8 +44,8 @@ public class TentsController implements Initializable {
         /* Makes every box except the trees empty */
         for (Node node : gamePane.getChildren()) {
             if (node instanceof Pane && !(node.isDisable())) {
-                ImageView iv = (ImageView) ((Pane) node).getChildren().get(0);
-                iv.setVisible(false);
+                ImageView imageView = (ImageView) ((Pane) node).getChildren().get(0);
+                imageView.setVisible(false);
             }
         }
         // Game Timer
@@ -51,11 +57,11 @@ public class TentsController implements Initializable {
     /* Box clicked then give it a tent */
     public void giveTent(MouseEvent mouseEvent) {
         Pane box = (Pane) mouseEvent.getSource();
-        ImageView iv = (ImageView) box.getChildren().get(0);
+        ImageView imageView = (ImageView) box.getChildren().get(0);
         // Makes tent visible and invisible when clicked
-        if (iv.isVisible())
-            iv.setVisible(false);
-        else iv.setVisible(true);
+        if (imageView.isVisible())
+            imageView.setVisible(false);
+        else imageView.setVisible(true);
 
     }
 
@@ -63,9 +69,9 @@ public class TentsController implements Initializable {
     public void reset(ActionEvent actionEvent) {
         for (Node node : gamePane.getChildren()) {
             if (node instanceof Pane) {
-                ImageView iv = (ImageView) ((Pane) node).getChildren().get(0);
+                ImageView imageView = (ImageView) ((Pane) node).getChildren().get(0);
                 if (node.getId() == null)
-                    iv.setVisible(false);
+                    imageView.setVisible(false);
             }
         }
     }
@@ -74,13 +80,13 @@ public class TentsController implements Initializable {
     public boolean check(ActionEvent actionEvent) throws SQLException {
         for (Node node : gamePane.getChildren()) {
             if (node instanceof Pane) {
-                ImageView iv = (ImageView) ((Pane) node).getChildren().get(0);
+                ImageView imageView = (ImageView) ((Pane) node).getChildren().get(0);
 
                 // Checks if any box should not have a tent
-                if (iv.isVisible() && node.focusTraversableProperty().getValue() == false && node.getId() == null)
+                if (imageView.isVisible() && node.focusTraversableProperty().getValue() == false && node.getId() == null)
                     return false;
                 // Checks if a box should have a tent
-                if (iv.isVisible() == false && node.focusTraversableProperty().getValue() == true && node.getId() == null)
+                if (imageView.isVisible() == false && node.focusTraversableProperty().getValue() == true && node.getId() == null)
                     return false;
 
 
@@ -102,7 +108,7 @@ public class TentsController implements Initializable {
                 "regular");
         gt.stop(); // stop game timer
         gameTime.setDisable(true);
-        for (Node node : anchorpane.getChildren())
+        for (Node node : anchorPane.getChildren())
             if (node instanceof Button)
                 node.setDisable(true);
     }
@@ -129,7 +135,7 @@ public class TentsController implements Initializable {
         stage.show();
     }
 
-    int randomGenerator(int num) {
-        return (int) Math.floor((Math.random() * num + 1));
+    int randomGenerator(int number) {
+        return (int) Math.floor((Math.random() * number + 1));
     }
 }

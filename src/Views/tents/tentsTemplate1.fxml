@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="anchorpane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8"
+<AnchorPane fx:id="anchorPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8"
             xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.TentsController">
    <children>
       <Button focusTraversable="false" layoutX="54.0" layoutY="48.0" mnemonicParsing="false" onAction="#goBack"

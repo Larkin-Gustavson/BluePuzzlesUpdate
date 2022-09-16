@@ -36,11 +36,21 @@ public class JigsawTimeAttack implements Initializable {
     @FXML
     ImageView check1;
     @FXML
-    AnchorPane anchorpane, winScreen, loseScreen;
+    AnchorPane anchorpane;
+    @FXML
+    AnchorPane winScreen;
+    @FXML
+    AnchorPane loseScreen;
     @FXML
     Button button;
     @FXML
-    Text finishTime, bestTime, points, highScore;
+    Text finishTime;
+    @FXML
+    Text bestTime;
+    @FXML
+    Text points;
+    @FXML
+    Text highScore;
     @FXML
     Label gameTime;
 

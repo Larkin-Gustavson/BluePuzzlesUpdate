@@ -25,22 +25,30 @@ import java.sql.SQLException;
 import java.util.Collections;
 import java.util.ResourceBundle;
 import java.util.Stack;
+
 // Test
 public class JigsawController implements Initializable {
 
     @FXML
     ImageView check1;
     @FXML
-    Pane gamePane, pane1;
+    Pane gamePane;
     @FXML
-    AnchorPane anchorpane, winScreen;
+    Pane pane1;
+    @FXML
+    AnchorPane anchorPane;
+    @FXML
+    AnchorPane winScreen;
     @FXML
     Button button;
     @FXML
-    Text winorlose, finishTime, bestTime;
+    Text winOrLose;
+    @FXML
+    Text finishTime;
+    @FXML
+    Text bestTime;
     @FXML
     Label gameTime;
-
 
     Pane selected; // Current selected pane
     Stack<Pair> original = new Stack<>(); // Winning positions
@@ -51,17 +59,17 @@ public class JigsawController implements Initializable {
         // Scramble pics
         Stack<Pane> stack = new Stack<>();
 
-        for (Node node : anchorpane.getChildren())
+        for (Node node : anchorPane.getChildren())
             if (node instanceof Pane && !(node instanceof AnchorPane)) {
                 stack.push((Pane) node);
-                Pair<Double, Double> coords = new Pair<Double, Double>(node.getLayoutX(), node.getLayoutY());
-                original.push(coords);
+                Pair<Double, Double> coordinates = new Pair<>(node.getLayoutX(), node.getLayoutY());
+                original.push(coordinates);
             }
 
         Collections.shuffle(stack);
         int rand = randomGenerator(3);
 
-        for (Node node : anchorpane.getChildren()) {
+        for (Node node : anchorPane.getChildren()) {
             if (node instanceof Pane && !(node instanceof AnchorPane)) {
                 node.setRotate(node.getRotate() + (90 * rand));
                 swapPanes(stack.pop(), (Pane) node);
@@ -97,7 +105,7 @@ public class JigsawController implements Initializable {
 
     // Checks if any panes are selected, returns false if none
     public boolean isSelected() {
-        for (Node node : anchorpane.getChildren()) {
+        for (Node node : anchorPane.getChildren()) {
             if (node instanceof Pane)
                 if (node.focusTraversableProperty().getValue() == true)
                     return true;
@@ -124,23 +132,23 @@ public class JigsawController implements Initializable {
         pane2.setStyle("-fx-border-color: black");
     }
 
-    int randomGenerator(int num) {
-        return (int) Math.floor((Math.random() * num + 1));
+    int randomGenerator(int number) {
+        return (int) Math.floor((Math.random() * number + 1));
     }
 
     /* Show win screen */
     public void showWinScreen(boolean win) throws SQLException {
         if (win)
-            winorlose.setText("You Won!");
+            winOrLose.setText("You Won!");
         else
-            winorlose.setText("You lost!");
+            winOrLose.setText("You lost!");
         winScreen.setVisible(true); // set win screen visible
         finishTime.setText(gameTime.getText()); // reveal finishing game time
         Leaderboard.insertNewUser("JigsawLeaderboard", LoginController.user, gameTime.getText(),
                 JigsawDifficultyController.getDifficulty());
         gt.stop(); // stop game timer
         gameTime.setDisable(true);
-        for (Node node : anchorpane.getChildren())
+        for (Node node : anchorPane.getChildren())
             if (node instanceof Button)
                 node.setDisable(true);
 
@@ -148,9 +156,9 @@ public class JigsawController implements Initializable {
 
     public void checkWin(ActionEvent actionEvent) throws SQLException {
         Stack<Pair> stack = new Stack<>();
-        for (Node node : anchorpane.getChildren()) {
+        for (Node node : anchorPane.getChildren()) {
             if (node instanceof Pane && !(node instanceof AnchorPane)) {
-                Pair<Double, Double> coords = new Pair<Double, Double>(node.getLayoutX(), node.getLayoutY());
+                Pair<Double, Double> coords = new Pair<>(node.getLayoutX(), node.getLayoutY());
                 stack.push(coords);
                 if (node.getRotate() % 360 != 0) {
                     System.out.println("Not yet!");

@@ -3,14 +3,14 @@ package DB;
 import Controllers.JigsawDifficultyController;
 
 import java.sql.*;
-import java.util.*;
+import java.util.ArrayList;
 
 
 public class JigsawLeaderboard {
     // Test
-    private final static String URL = "jdbc:mysql://bluepuzzles.c6g1bhjsrnsm.us-east-2.rds.amazonaws.com/BLUE_PUZZLES";
-    private final static String USERNAME = "bluepuzzles";
-    private final static String PASSWORD = "bluepuzzles123";
+    private static final String URL = "jdbc:mysql://bluepuzzles.c6g1bhjsrnsm.us-east-2.rds.amazonaws.com/BLUE_PUZZLES";
+    private static final String USERNAME = "bluepuzzles";
+    private static final String PASSWORD = "bluepuzzles123";
 
     public static void insertNewUser(String newUser, String newTime, String difficulty) throws SQLException {
         try {
@@ -25,7 +25,7 @@ public class JigsawLeaderboard {
             System.out.println("gotta update");
             Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD); // Establishing connection
             String update = "Update JigsawLeaderboard SET Time = ?" +
-                    "WHERE UserName = ? AND Time >= ? AND DIFFICULTY = ?";
+                            "WHERE UserName = ? AND Time >= ? AND DIFFICULTY = ?";
             PreparedStatement statement = connection.prepareStatement(update);
             statement.setString(1, newTime);
             statement.setString(2, newUser);
@@ -58,12 +58,12 @@ public class JigsawLeaderboard {
             ArrayList<String> records = new ArrayList<>();
             Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD); // Establishing connection
             String select = "SELECT * FROM JigsawLeaderboard " +
-                    "WHERE UserName=\"" + user + "\" AND Difficulty=\"" + difficulty + "\""; // Select statement
+                            "WHERE UserName=\"" + user + "\" AND Difficulty=\"" + difficulty + "\""; // Select statement
             PreparedStatement statement = connection.prepareStatement(select); // Prepared Statement
             ResultSet result = statement.executeQuery(); // Initializing all users into result
             while (result.next()) {
                 if (result.getString("UserName").equals(user) &&
-                        result.getString("Difficulty").equals(difficulty))
+                    result.getString("Difficulty").equals(difficulty))
                     return result.getString("Time");
             }
         } catch (SQLException e) {
@@ -86,7 +86,5 @@ public class JigsawLeaderboard {
         }
 
         return al;
-
     }
-
 }
