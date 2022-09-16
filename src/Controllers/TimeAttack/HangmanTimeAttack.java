@@ -86,7 +86,7 @@ public class HangmanTimeAttack implements Initializable {
             label.setFont(new Font("System", 30));
             wordPane.getChildren().add(label);
             if (rand == 1) label.showLetter(); //Shows letter
-            label.relocate(10 + pos, 5);
+            label.relocate(10.0 + pos, 5);
             pos += 40;
         }
         points.setText("Points: " + GameSelectController.totalPoints);
@@ -106,8 +106,8 @@ public class HangmanTimeAttack implements Initializable {
     }
 
 
-    int randomGenerator(int num) {
-        return (int) Math.floor((Math.random() * num + 1));
+    int randomGenerator(int number) {
+        return (int) Math.floor((Math.random() * number + 1));
     }
 
 

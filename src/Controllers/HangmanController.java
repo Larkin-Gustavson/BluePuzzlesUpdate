@@ -54,7 +54,7 @@ public class HangmanController implements Initializable {
     String[] words = {"School", "Laundry", "House", "Gameboy Advanced", "Amazing", "Educational", "Puzzle",
             "Blue Puzzles", "Smoke", "Maple Syrup"};
     String word;
-    GameTimer gt; // Timer
+    GameTimer timer; // Timer
     @FXML
     private TextArea hintsTextArea;
     @FXML
@@ -87,15 +87,14 @@ public class HangmanController implements Initializable {
             label.relocate(10.0 + position, 5);
             position += 40;
         }
-        gt = new GameTimer(gameTime);
-        gt.start();
+        timer = new GameTimer(gameTime);
+        timer.start();
 
         System.out.println(LoginController.user);
 
         hintsTextArea.setEditable(false); // ensuring that the user cannot type into the area where there is a textbox
         hintsTextArea.setWrapText(true); // wraps the text onto the next line
         hintsTextArea.deselect(); // making sure that the textbox is not selected when the game loads
-
     }
 
 
@@ -168,8 +167,8 @@ public class HangmanController implements Initializable {
         else
             winOrLose.setText("You lost!");
         winScreen.setVisible(true);
-        finishTime.setText(gt.toString());
-        gt.stop();
+        finishTime.setText(timer.toString());
+        timer.stop();
         try {
             Leaderboard.insertNewUser("HangmanLeaderboard", LoginController.user, gameTime.getText(),
                     HangmanDifficultyController.getDifficulty());
@@ -538,7 +537,7 @@ public class HangmanController implements Initializable {
     }
 
     /**
-     * A method to put all of the hints, into the appropriate ArrayList for the word
+     * A method to put all the hints, into the appropriate ArrayList for the word
      */
     private void putHintsInArrayLists() {
         // Adding school hints

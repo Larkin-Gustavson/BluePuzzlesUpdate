@@ -8,12 +8,12 @@ public class TimeAttackLeaderboard {
     private static final String USERNAME = "bluepuzzles";
     private static final String PASSWORD = "bluepuzzles123";
 
-    public static void insertNewUser(String userName, int points) throws SQLException {
+    public static void insertNewUser(String username, int points) throws SQLException {
         try {
             Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD); // Establishing connection
             String insert = "INSERT INTO TimeAttackLeaderboard (UserName,points) VALUES(?,?)"; // Select statement
             PreparedStatement statement = connection.prepareStatement(insert);
-            statement.setString(1, userName);
+            statement.setString(1, username);
             statement.setInt(2, points);
             statement.executeUpdate();
         } catch (SQLException e) {
@@ -23,7 +23,7 @@ public class TimeAttackLeaderboard {
                             "WHERE Username=? AND points<?";
             PreparedStatement statement = connection.prepareStatement(update);
             statement.setInt(1, points);
-            statement.setString(2, userName);
+            statement.setString(2, username);
             statement.setInt(3, points);
 
             statement.executeUpdate();
@@ -31,14 +31,14 @@ public class TimeAttackLeaderboard {
         }
     }
 
-    public static int getHighScore(String userName) throws SQLException {
+    public static int getHighScore(String username) throws SQLException {
         Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD); // Establishing connection
         String update = "SELECT * FROM TimeAttackLeaderboard WHERE Username=?";
         PreparedStatement statement = connection.prepareStatement(update);
-        statement.setString(1, userName);
+        statement.setString(1, username);
         ResultSet result = statement.executeQuery();
         while (result.next()) {
-            if (result.getString("Username").equals(userName))
+            if (result.getString("Username").equals(username))
                 return result.getInt("points");
         }
         return 0;

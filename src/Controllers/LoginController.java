@@ -29,7 +29,7 @@ public class LoginController implements Initializable {
     @FXML
     AnchorPane signUpPane;
     @FXML
-    TextField userField;
+    TextField usernameField;
     @FXML
     TextField loginUser;
     @FXML
@@ -58,7 +58,7 @@ public class LoginController implements Initializable {
                                 "- no whitespace, \n " +
                                 "- no special characters, \n " +
                                 "- and 1 numerical character");
-        userField.setTooltip(usernameTooltip);
+        usernameField.setTooltip(usernameTooltip);
     }
 
     @FXML /* Move onto main menu */
@@ -92,8 +92,8 @@ public class LoginController implements Initializable {
 
     /* Create new account if password and username are valid */
     public void signUpUser(ActionEvent actionEvent) throws SQLException {
-        if (validatePassword(passwordField.getText()) && validateUserName(userField.getText())) {
-            UserAccount.insertNewUser(userField.getText(), passwordField.getText());
+        if (validatePassword(passwordField.getText()) && validateUsername(usernameField.getText())) {
+            UserAccount.insertNewUser(usernameField.getText(), passwordField.getText());
             signUpPane.setVisible(false);
         }
     }
@@ -168,7 +168,7 @@ public class LoginController implements Initializable {
      * @throws SQLException if the query is not able to execute.
      */
 
-    public boolean validateUserName(String username) throws SQLException {
+    public boolean validateUsername(String username) throws SQLException {
         String output = "";
         try {
             if (UserAccount.userExist(username)) {

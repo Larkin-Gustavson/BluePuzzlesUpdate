@@ -81,7 +81,7 @@
                         </Menu>
                     </menus>
                 </MenuBar>
-                <TextField fx:id="userField" layoutX="410.0" layoutY="196.0" />
+                <TextField fx:id="usernameField" layoutX="410.0" layoutY="196.0" />
                 <Label layoutX="273.0" layoutY="81.0" prefHeight="52.0" prefWidth="354.0" text="Create New Account" textFill="#214add">
                     <font>
                         <Font name="Silom" size="32.0" />

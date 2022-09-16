@@ -35,7 +35,7 @@ public class Leaderboard {
         }
     }
 
-    public static String getTime(String game, String user, String difficulty) throws SQLException {
+    public static String getTime(String game, String username, String difficulty) throws SQLException {
         try {
             ArrayList<String> records = new ArrayList<>();
             Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD); // Establishing connection
@@ -43,7 +43,7 @@ public class Leaderboard {
             PreparedStatement statement = connection.prepareStatement(select); // Prepared Statement
             ResultSet result = statement.executeQuery(); // Initializing all users into result
             while (result.next()) {
-                if (result.getString("UserName").equals(user) && result.getString("Difficulty").equals(difficulty))
+                if (result.getString("UserName").equals(username) && result.getString("Difficulty").equals(difficulty))
                     return result.getString("Time");
             }
         } catch (SQLException e) {
@@ -52,16 +52,16 @@ public class Leaderboard {
         return "";
     }
 
-    public static String getBestTime(String game, String user, String difficulty) throws SQLException {
+    public static String getBestTime(String game, String username, String difficulty) throws SQLException {
         try {
             ArrayList<String> records = new ArrayList<>();
             Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD); // Establishing connection
             String select = "SELECT * FROM  " + game +
-                            " WHERE UserName=\"" + user + "\" AND Difficulty=\"" + difficulty + "\""; // Select statement
+                            " WHERE UserName=\"" + username + "\" AND Difficulty=\"" + difficulty + "\""; // Select statement
             PreparedStatement statement = connection.prepareStatement(select); // Prepared Statement
             ResultSet result = statement.executeQuery(); // Initializing all users into result
             while (result.next()) {
-                if (result.getString("UserName").equals(user) &&
+                if (result.getString("UserName").equals(username) &&
                     result.getString("Difficulty").equals(difficulty))
                     return result.getString("Time");
             }
@@ -85,7 +85,6 @@ public class Leaderboard {
         }
 
         return al;
-
     }
 
 }

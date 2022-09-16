@@ -1,18 +1,18 @@
 package DB;
 
 public class Record {
-    private String userName;
+    private String username;
     private String difficulty;
     private String time;
 
-    public Record(String userName, String difficulty, String time) {
-        this.userName = userName;
+    public Record(String username, String difficulty, String time) {
+        this.username = username;
         this.difficulty = difficulty;
         this.time = time;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
     public String getDifficulty() {

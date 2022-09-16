@@ -134,8 +134,8 @@
                                                    AnchorPane.bottomAnchor="-64.0" AnchorPane.leftAnchor="0.0"
                                                    AnchorPane.rightAnchor="-35.0" AnchorPane.topAnchor="0.0">
                                             <columns>
-                                                <TableColumn fx:id="TAUser" prefWidth="75.0" text="UserName"/>
-                                                <TableColumn fx:id="TAPoints" prefWidth="75.0" text="Points"/>
+                                                <TableColumn fx:id="timeAttackUsername" prefWidth="75.0" text="UserName"/>
+                                                <TableColumn fx:id="timeAttackPoints" prefWidth="75.0" text="Points"/>
                                             </columns>
                                         </TableView>
                                     </children>

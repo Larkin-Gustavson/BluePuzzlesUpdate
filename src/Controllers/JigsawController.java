@@ -158,8 +158,8 @@ public class JigsawController implements Initializable {
         Stack<Pair> stack = new Stack<>();
         for (Node node : anchorPane.getChildren()) {
             if (node instanceof Pane && !(node instanceof AnchorPane)) {
-                Pair<Double, Double> coords = new Pair<>(node.getLayoutX(), node.getLayoutY());
-                stack.push(coords);
+                Pair<Double, Double> coordinate = new Pair<>(node.getLayoutX(), node.getLayoutY());
+                stack.push(coordinate);
                 if (node.getRotate() % 360 != 0) {
                     System.out.println("Not yet!");
                     return;

@@ -10,6 +10,7 @@ import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
 // Test
 public class JigsawDifficultyController implements Initializable {
 
@@ -20,7 +21,7 @@ public class JigsawDifficultyController implements Initializable {
     }
 
     public static void setDifficulty(String diff) {
-        difficulty = difficulty;
+        difficulty = diff;
     }
 
     @Override
@@ -42,7 +43,7 @@ public class JigsawDifficultyController implements Initializable {
     }
 
     public void playMedium(ActionEvent actionEvent) throws Exception {
-         setDifficulty("medium");
+        setDifficulty("medium");
         // Pick a game at random
         String[] mediumGames = {"/Views/jigsaw/medium/jigsawShyGuy.fxml", "/Views/jigsaw/medium/dooplis.fxml"};
         int rand = randomGenerator(mediumGames.length) - 1;

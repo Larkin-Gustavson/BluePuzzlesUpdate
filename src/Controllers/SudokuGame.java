@@ -66,7 +66,6 @@ public class SudokuGame implements Initializable {
         }
         gt = new GameTimer(gameTime);
         gt.start();
-
     }
 
     /* Changes number by 1 */

@@ -62,9 +62,9 @@ public class LeaderboardsController implements Initializable {
     @FXML
     TableColumn<Record, String> memoryTime;
     @FXML
-    TableColumn<TARecord, String> TAUser;
+    TableColumn<TARecord, String> timeAttackUsername;
     @FXML
-    TableColumn<TARecord, String> TAPoints;
+    TableColumn<TARecord, String> timeAttackPoints;
 
 
     @Override
@@ -91,8 +91,8 @@ public class LeaderboardsController implements Initializable {
         memoryTime.setCellValueFactory(new PropertyValueFactory<Record, String>("time"));
 
         /* Time Attack */
-        TAUser.setCellValueFactory(new PropertyValueFactory<TARecord, String>("userName"));
-        TAPoints.setCellValueFactory(new PropertyValueFactory<TARecord, String>("points"));
+        timeAttackUsername.setCellValueFactory(new PropertyValueFactory<TARecord, String>("userName"));
+        timeAttackPoints.setCellValueFactory(new PropertyValueFactory<TARecord, String>("points"));
         try {
             jigsawTable.setItems(getRecords("JigsawLeaderboard"));
             hangmanTable.setItems((getRecords("HangmanLeaderboard")));

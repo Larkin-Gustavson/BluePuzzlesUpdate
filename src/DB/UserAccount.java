@@ -65,14 +65,14 @@ public class UserAccount {
         return false;
     }
 
-    public static boolean correctPassword(String userName, String password) throws SQLException {
+    public static boolean correctPassword(String username, String password) throws SQLException {
         try {
             Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD); // Establishing connection
             String select = "SELECT * FROM Accounts;"; // Select statement
             PreparedStatement statement = connection.prepareStatement(select); // Prepared Statement
             ResultSet result = statement.executeQuery(); // Initializing all users into result
             while (result.next()) {
-                if (result.getString("UserName").equals(userName)) {
+                if (result.getString("UserName").equals(username)) {
                     String inputPassword = AES.encrypt(password, "allme");
                     String dePass = result.getString("Password");
                     if (dePass.equals(inputPassword))

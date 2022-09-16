@@ -503,7 +503,7 @@
         </Label>
         <Button layoutX="39.0" layoutY="41.0" mnemonicParsing="false" onAction="#goBack" text="Back"/>
         <Button layoutX="281.0" layoutY="457.0" mnemonicParsing="false" onAction="#resetBoard" text="Reset"/>
-        <Button fx:id="hintButn" disable="true" layoutX="566.0" layoutY="457.0" mnemonicParsing="false"
+        <Button fx:id="hintButton" disable="true" layoutX="566.0" layoutY="457.0" mnemonicParsing="false"
                 onAction="#giveHint" text="Hint"/>
         <Pane fx:id="difficultyPane" layoutX="347.0" layoutY="183.0" prefHeight="200.0" prefWidth="200.0"
               style="-fx-background-color: RED;" visible="false">

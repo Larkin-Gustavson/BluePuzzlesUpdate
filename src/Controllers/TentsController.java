@@ -37,8 +37,7 @@ public class TentsController implements Initializable {
     private Text winOrLose;
     @FXML
     private Text finishTime;
-
-
+    
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         /* Makes every box except the trees empty */

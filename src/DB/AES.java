@@ -15,14 +15,14 @@ public class AES {
     private static SecretKeySpec secretKey;
     private static byte[] key;
 
-    public static void setKey(String myKey) {
+    public static void setKey(String key) {
         MessageDigest sha;
         try {
-            key = myKey.getBytes(StandardCharsets.UTF_8);
+            AES.key = key.getBytes(StandardCharsets.UTF_8);
             sha = MessageDigest.getInstance("SHA-1");
-            key = sha.digest(key);
-            key = Arrays.copyOf(key, 16);
-            secretKey = new SecretKeySpec(key, "AES");
+            AES.key = sha.digest(AES.key);
+            AES.key = Arrays.copyOf(AES.key, 16);
+            secretKey = new SecretKeySpec(AES.key, "AES");
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
