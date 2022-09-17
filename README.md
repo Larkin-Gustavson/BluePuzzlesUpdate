@@ -9,7 +9,7 @@ You interact with this game in any way that a user would use a website
 
 If you enjoyed using this app.
 You can email me at <larkingustavson@gmail.com>
-about anything you'd want to say about this program
+about anything you would want to say about this program
 or any improvements that we could make!
 Any constructive feedback would be greatly appreciated!
 We thank you in advance!
