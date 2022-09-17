@@ -8,10 +8,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Border;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -20,16 +21,29 @@ import java.util.ResourceBundle;
 public class MainMenuController implements Initializable {
 
     @FXML
-    AnchorPane anchorPaneMM;
+    private MenuItem aboutButton;
+
     @FXML
-    Button leaderboardButton;
+    private AnchorPane anchorPaneMM;
+
     @FXML
-    ImageView leftImage;
+    private Button leaderboardButton;
+
     @FXML
-    ImageView rightImage;
+    private ImageView leftImage;
+
+    @FXML
+    private Button logOut;
+
+    @FXML
+    private Button playButton;
+
+    @FXML
+    private ImageView rightImage;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
     }
 
     public void play(ActionEvent event) throws Exception {
@@ -54,6 +68,21 @@ public class MainMenuController implements Initializable {
         rightImage.setVisible(false);
     }
 
+    @FXML
+    void aboutButtonClick(ActionEvent event) {
+        Alert aboutDialog = new Alert(Alert.AlertType.INFORMATION);
+        aboutDialog.setResizable(false);
+        aboutDialog.setTitle("About");
+        aboutDialog.setHeaderText("Blue Puzzles");
+        aboutDialog.setContentText("This application, was made as a Senior Project." +
+                                   " It features games such as Hangman, Jigsaw, Sudoku, Sudoku X, Memory, and Tents." +
+                                   " All games have easy, medium, and hard difficulties." +
+                                   " Along with random level generation for the games. A user can create an account" +
+                                   " that allows there stats across all of the games to be saved" +
+                                   " and added to a leaderboard to compare against other players." +
+                                   " This application/project code was created by Larkin Gustavson, Chris Gibbone, and Abdulah Naderi.");
+        aboutDialog.showAndWait();
+    }
     @FXML
     void closeApp(ActionEvent event) {
         Platform.exit();

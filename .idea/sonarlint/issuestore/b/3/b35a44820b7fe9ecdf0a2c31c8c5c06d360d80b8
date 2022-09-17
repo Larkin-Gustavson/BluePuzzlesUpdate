@@ -1,0 +1,49 @@
+
+a	java:S112¹"FDefine and throw a dedicated exception instead of using a generic one.(³ÓŠëøÿÿÿÿ
+a	java:S112Å"FDefine and throw a dedicated exception instead of using a generic one.(Û£Åäúÿÿÿÿ
+[	java:S112Ñ"FDefine and throw a dedicated exception instead of using a generic one.(¶Öëz
+J
+java:S3740;"/Provide the parametrized type for this generic.(‹©Üøÿÿÿÿ
+F
+java:S3740¦"/Provide the parametrized type for this generic.(Ó°ß•
+J
+java:S1066|"/Merge this if statement with the enclosing one.(øÙÿÿÿÿÿÿ
+F
+java:S1066…"/Merge this if statement with the enclosing one.(Ÿ§¦•
+E
+java:S1604["(Make this anonymous inner class a lambda(é£èï8µ¼Ä´0
+E
+java:S5411k"*Use the primitive boolean expression here.(üş¦’ıÿÿÿÿ
+E
+java:S5411|"*Use the primitive boolean expression here.(øÙÿÿÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(–“´ù
+k
+java:S1149;"PReplace the synchronized class "Stack" by an unsynchronized one such as "Deque".(‹©Üøÿÿÿÿ
+e
+java:S1149F"PReplace the synchronized class "Stack" by an unsynchronized one such as "Deque".(˜øı!
+g
+java:S1149¦"PReplace the synchronized class "Stack" by an unsynchronized one such as "Deque".(Ó°ß•
+B
+java:S1125k"'Remove the unnecessary boolean literal.(üş¦’ıÿÿÿÿ
+=
+java:S1125n"'Remove the unnecessary boolean literal.(ãœ‘‘
+B
+java:S1125s"'Remove the unnecessary boolean literal.(ÔİØŠıÿÿÿÿ
+B
+java:S1125|"'Remove the unnecessary boolean literal.(øÙÿÿÿÿÿÿ
+“
+java:S1130ƒ"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(¹êöøüÿÿÿÿ
+@
+java:S2140–")Use "java.util.Random.nextInt()" instead.(ûç˜ò
+…
+java:S1130š"nRemove the declaration of thrown exception 'java.sql.SQLException', as it cannot be thrown from method's body.(šÑ´Ì
+A
+java:S1172š"*Remove this unused method parameter "win".(šÑ´Ì
+I
+java:S1172¥"2Remove this unused method parameter "actionEvent".(¤Èäˆ
+T	java:S106¬"9Replace this use of System.out or System.err by a logger.(—¹èßøÿÿÿÿ
+N	java:S106²"9Replace this use of System.out or System.err by a logger.(İ©­@
+Y
+java:S2696µ"6Make the enclosing method "static" or remove this set.(¬²¨³şÿÿÿÿ8¹éšÅ´0
+T
+java:S2696»"6Make the enclosing method "static" or remove this set.(¬–¹Ğ8ºéšÅ´0

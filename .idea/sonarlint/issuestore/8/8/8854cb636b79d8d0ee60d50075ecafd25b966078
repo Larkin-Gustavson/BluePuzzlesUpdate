@@ -1,0 +1,42 @@
+
+a	java:S112”"FDefine and throw a dedicated exception instead of using a generic one.(›ÎÎäøÿÿÿÿ
+c
+java:S11921"MDefine a constant instead of duplicating this literal "Free Flips: " 3 times.(–ñìï
+J
+java:S1066R"/Merge this if statement with the enclosing one.(¢´õûúÿÿÿÿ
+F
+java:S1066†"/Merge this if statement with the enclosing one.(”¨’©
+E
+java:S5411R"*Use the primitive boolean expression here.(¢´õûúÿÿÿÿ
+@
+java:S5411Y"*Use the primitive boolean expression here.(Áé
+E
+java:S5411["*Use the primitive boolean expression here.(Ïıû•ùÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ü‚ùıúÿÿÿÿ
+k
+java:S11496"PReplace the synchronized class "Stack" by an unsynchronized one such as "Deque".(ÎÔÅøüÿÿÿÿ
+m
+java:S3776M"RRefactor this method to reduce its Cognitive Complexity from 28 to the 15 allowed.(µã‡Öøÿÿÿÿ
+B
+java:S1125R"'Remove the unnecessary boolean literal.(¢´õûúÿÿÿÿ
+=
+java:S1125Y"'Remove the unnecessary boolean literal.(Áé
+=
+java:S1125Y"'Remove the unnecessary boolean literal.(Áé
+B
+java:S1125["'Remove the unnecessary boolean literal.(Ïıû•ùÿÿÿÿ
+B
+java:S1125["'Remove the unnecessary boolean literal.(Ïıû•ùÿÿÿÿ
+=
+java:S1125`"'Remove the unnecessary boolean literal.(ŒŒ¸
+B
+java:S1125a"'Remove the unnecessary boolean literal.(Å¾Æèûÿÿÿÿ
+=
+java:S1125c"'Remove the unnecessary boolean literal.(¹ãƒĞ
+B
+java:S1125d"'Remove the unnecessary boolean literal.(Ÿ°Ä†şÿÿÿÿ
+;
+java:S3457{"%String contains no format specifiers.(‚¸Ã
+N	java:S106{"9Replace this use of System.out or System.err by a logger.(‚¸Ã
+M
+java:S2696 "6Make the enclosing method "static" or remove this set.(—šëµ

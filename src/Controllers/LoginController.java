@@ -25,27 +25,61 @@ public class LoginController implements Initializable {
     // Stores the user in here for the program
     public static String user;
     @FXML
+    private MenuItem aboutButton;
+
+    @FXML
+    private AnchorPane anchorPane;
+
+    @FXML
     private MenuItem closeButton;
+
     @FXML
-    AnchorPane signUpPane;
+    private Label loginMessage;
+
     @FXML
-    TextField usernameField;
+    private PasswordField loginPassword;
+
     @FXML
-    TextField loginUser;
+    private TextField loginUser;
+
     @FXML
-    PasswordField passwordField;
+    private Button loginButton;
+
     @FXML
-    PasswordField rePassword;
+    private Label outputLabel;
+
     @FXML
-    PasswordField loginPassword;
+    private PasswordField passwordField;
+
     @FXML
-    Label outputLabel;
+    private PasswordField rePassword;
+
     @FXML
-    Label loginMessage;
+    private AnchorPane signUpPane;
+
+    @FXML
+    private TextField usernameField;
+
 
     @FXML
     void closeButtonClick(ActionEvent event) {
         Platform.exit();
+    }
+
+    @FXML
+    void aboutButtonClick(ActionEvent event) {
+        Alert aboutDialog = new Alert(Alert.AlertType.INFORMATION);
+        aboutDialog.setResizable(false);
+        aboutDialog.setTitle("About");
+        aboutDialog.setHeaderText("Blue Puzzles");
+        aboutDialog.setContentText("This application, was made as a Senior Project." +
+                                   " It features games such as Hangman, Jigsaw, Sudoku, Sudoku X, Memory, and Tents." +
+                                   " All games have easy, medium, and hard difficulties." +
+                                   " Along with random level generation for the games. A user can create an account" +
+                                   " that allows there stats across all of the games to be saved" +
+                                   " and added to a leaderboard to compare against other players." +
+                                   " This application/project code was created by Larkin Gustavson, Chris Gibbone, and Abdulah Naderi.");
+        aboutDialog.showAndWait();
     }
 
     @Override

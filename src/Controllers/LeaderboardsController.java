@@ -21,6 +21,7 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class LeaderboardsController implements Initializable {
@@ -106,7 +107,7 @@ public class LeaderboardsController implements Initializable {
 
     public ObservableList<Record> getRecords(String game) throws SQLException {
         ObservableList<Record> records = FXCollections.observableArrayList();
-        ArrayList<String> record = Leaderboard.getAllRecords(game);
+        List<String> record = Leaderboard.getAllRecords(game);
         for (int i = 0; i < Leaderboard.getAllRecords(game).size(); i += 3) {
             Record jr = new Record(record.get(i), record.get(i + 1), record.get(i + 2));
             records.add(jr);
@@ -118,7 +119,7 @@ public class LeaderboardsController implements Initializable {
 
     public ObservableList<TimeAttackRecord> getTARecords() throws SQLException {
         ObservableList<TimeAttackRecord> records = FXCollections.observableArrayList();
-        ArrayList<String> allRecords = TimeAttackLeaderboard.getAllRecords();
+        List<String> allRecords = TimeAttackLeaderboard.getAllRecords();
         for (int i = 0; i < TimeAttackLeaderboard.getAllRecords().size(); i += 2) {
             TimeAttackRecord jr = new TimeAttackRecord(allRecords.get(i), Integer.parseInt(allRecords.get(i + 1)));
             records.add(jr);
