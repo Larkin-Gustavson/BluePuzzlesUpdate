@@ -40,7 +40,7 @@ Larkin
 To clone and run this application, you'll need [Git](https://git-scm.com),
 [Java JDK](https://www.oracle.com/java/technologies/javase/jdk11-archive-downloads.html) (11.0.2),
 [JavaFX SDK](https://gluonhq.com/products/javafx/) (11.0.2),
-[JDCB](https://dev.mysql.com/downloads/connector/j/) (MySQL Connector),
+[JDBC](https://dev.mysql.com/downloads/connector/j/) (MySQL Connector),
 and any IDE or text editor that can run a Java program. Strongly recommended
 is [IntelliJ](https://www.jetbrains.com/idea/). From your command line, run the following commands:
 
