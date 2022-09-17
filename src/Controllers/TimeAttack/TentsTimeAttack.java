@@ -51,8 +51,8 @@ public class TentsTimeAttack implements Initializable {
         /*Makes every box except the trees empty*/
         for (Node node : gamePane.getChildren()) {
             if (node instanceof Pane && !(node.isDisable())) {
-                ImageView iv = (ImageView) ((Pane) node).getChildren().get(0);
-                iv.setVisible(false);
+                ImageView imageView = (ImageView) ((Pane) node).getChildren().get(0);
+                imageView.setVisible(false);
                 if (node.focusTraversableProperty().getValue() == true)
                     stack.push((Pane) node);
             }
@@ -64,7 +64,7 @@ public class TentsTimeAttack implements Initializable {
         for (Pane p : stack) {
             p.getChildren().get(0).setVisible(true);
         }
-        //Game Timer
+        // Game Timer
         timer = new LimitTimer(gameTime);
         timer.start();
         gameTime.textProperty().addListener(new ChangeListener<String>() {
@@ -85,7 +85,7 @@ public class TentsTimeAttack implements Initializable {
     public void giveTent(MouseEvent mouseEvent) {
         Pane box = (Pane) mouseEvent.getSource();
         ImageView imageView = (ImageView) box.getChildren().get(0);
-        //Makes tent visible and invisible when clicked
+        // Makes tent visible and invisible when clicked
         if (imageView.isVisible())
             imageView.setVisible(false);
         else imageView.setVisible(true);
@@ -109,10 +109,10 @@ public class TentsTimeAttack implements Initializable {
             if (node instanceof Pane) {
                 ImageView imageView = (ImageView) ((Pane) node).getChildren().get(0);
 
-                //Checks if any box should not have a tent
+                // Checks if any box should not have a tent
                 if (imageView.isVisible() && node.focusTraversableProperty().getValue() == false && node.getId() == null)
                     return false;
-                //Checks if a box should have a tent
+                // Checks if a box should have a tent
                 if (imageView.isVisible() == false && node.focusTraversableProperty().getValue() == true && node.getId() == null)
                     return false;
 
@@ -126,7 +126,7 @@ public class TentsTimeAttack implements Initializable {
     }
 
     public void showWinScreen(boolean win) throws SQLException {
-        winScreen.setVisible(true); //set win screen visible
+        winScreen.setVisible(true); // set win screen visible
         timer.stop(); // stop game timer
         gameTime.setDisable(true);
         for (Node node : anchorPane.getChildren())
@@ -147,10 +147,10 @@ public class TentsTimeAttack implements Initializable {
     }
 
     public void playAgain(ActionEvent actionEvent) throws Exception {
-        //Pick a game at random
+        // Pick a game at random
         String[] easyGames = {"/Views/tents/tentsTemplate1.fxml"};
         int rand = randomGenerator(1) - 1;
-        //Load the game
+        // Load the game
         Parent page = FXMLLoader.load(getClass().getResource(easyGames[rand]));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();

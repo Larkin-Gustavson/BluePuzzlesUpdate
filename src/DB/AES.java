@@ -1,4 +1,4 @@
-/* AES class courtesy of howtodoinjava.com */
+/* AES class courtesy of https://howtodoinjava.com/java/java-security/java-aes-encryption-example/ */
 package DB;
 
 import javax.crypto.Cipher;
@@ -9,7 +9,6 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.Base64;
 
-//
 public class AES {
 
     private static SecretKeySpec secretKey;

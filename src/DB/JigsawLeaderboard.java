@@ -4,10 +4,9 @@ import Controllers.JigsawDifficultyController;
 
 import java.sql.*;
 import java.util.ArrayList;
-
+import java.util.List;
 
 public class JigsawLeaderboard {
-    // Test
     private static final String URL = "jdbc:mysql://bluepuzzles.c6g1bhjsrnsm.us-east-2.rds.amazonaws.com/BLUE_PUZZLES";
     private static final String USERNAME = "bluepuzzles";
     private static final String PASSWORD = "bluepuzzles123";
@@ -38,7 +37,7 @@ public class JigsawLeaderboard {
 
     public static String getTime(String user, String difficulty) throws SQLException {
         try {
-            ArrayList<String> records = new ArrayList<>();
+            List<String> records = new ArrayList<>();
             Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD); // Establishing connection
             String select = "SELECT * FROM JigsawLeaderboard"; // Select statement
             PreparedStatement statement = connection.prepareStatement(select); // Prepared Statement
@@ -72,19 +71,19 @@ public class JigsawLeaderboard {
         return "";
     }
 
-    public static ArrayList<String> getAllRecords() throws SQLException {
-        ArrayList<String> al = new ArrayList<>();
+    public static List<String> getAllRecords() throws SQLException {
+        ArrayList<String> records = new ArrayList<>();
         Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD); // Establishing connection
         String select = "SELECT * FROM JigsawLeaderboard ORDER BY Difficulty, Time"; // Select statement
         PreparedStatement statement = connection.prepareStatement(select); // Prepared Statement
         ResultSet result = statement.executeQuery(); // Initializing all users into result
 
         while (result.next()) {
-            al.add(result.getString("UserName"));
-            al.add(result.getString("Difficulty"));
-            al.add(result.getString("Time"));
+            records.add(result.getString("UserName"));
+            records.add(result.getString("Difficulty"));
+            records.add(result.getString("Time"));
         }
 
-        return al;
+        return records;
     }
 }

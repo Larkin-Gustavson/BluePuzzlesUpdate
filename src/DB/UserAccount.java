@@ -1,11 +1,8 @@
 package DB;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class UserAccount {
     private static final String URL = "jdbc:mysql://bluepuzzles.c6g1bhjsrnsm.us-east-2.rds.amazonaws.com/BLUE_PUZZLES";
@@ -16,8 +13,8 @@ public class UserAccount {
 
     }
 
-    public static ArrayList<String> getUsers() throws SQLException {
-        ArrayList<String> records = new ArrayList<>();
+    public static List<String> getUsers() throws SQLException {
+        List<String> records = new ArrayList<>();
         Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD); // Establishing connection
         String select = "SELECT * FROM Accounts;"; // Select statement
         PreparedStatement statement = connection.prepareStatement(select); // Prepared Statement

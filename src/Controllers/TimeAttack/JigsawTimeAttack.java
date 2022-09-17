@@ -55,8 +55,8 @@ public class JigsawTimeAttack implements Initializable {
     Label gameTime;
 
 
-    Pane selected; //Current selected pane
-    Stack<Pair> original = new Stack<>(); //Winning positions
+    Pane selected; // Current selected pane
+    Stack<Pair> original = new Stack<>(); // Winning positions
     LimitTimer timer;
 
     @Override
@@ -66,7 +66,7 @@ public class JigsawTimeAttack implements Initializable {
         } catch (SQLException throwable) {
             throwable.printStackTrace();
         }
-        //Scramble pics
+        // Scramble picks
         Stack<Pane> stack = new Stack<>();
 
         for (Node node : anchorpane.getChildren())
@@ -101,7 +101,7 @@ public class JigsawTimeAttack implements Initializable {
 
     }
 
-    //Select a pane
+    // Select a pane
     public void select(MouseEvent mouseEvent) {
         Pane source = (Pane) mouseEvent.getSource();
         if (source.focusTraversableProperty().getValue() == true) {
@@ -117,7 +117,7 @@ public class JigsawTimeAttack implements Initializable {
         }
     }
 
-    //Checks if any panes are selected, returns false if none
+    // Checks if any panes are selected, returns false if none
     public boolean isSelected() {
         for (Node node : anchorpane.getChildren()) {
             if (node instanceof Pane)
@@ -127,7 +127,7 @@ public class JigsawTimeAttack implements Initializable {
         return false;
     }
 
-    //Rotate if 'r' key is pressed
+    // Rotate if 'r' key is pressed
     public void rotate(KeyEvent keyEvent) throws InterruptedException {
         if (isSelected()) {
             if (keyEvent.getCode() == KeyCode.R)
@@ -153,7 +153,7 @@ public class JigsawTimeAttack implements Initializable {
     /*Show win screen*/
     public void showWinScreen(boolean win) throws SQLException {
 
-        winScreen.setVisible(true); //set win screen visible
+        winScreen.setVisible(true); // set win screen visible
         timer.stop(); // stop game timer
         gameTime.setDisable(true);
         for (Node node : anchorpane.getChildren())
@@ -195,10 +195,10 @@ public class JigsawTimeAttack implements Initializable {
 
 
     public void playAgain(ActionEvent actionEvent) throws Exception {
-        //Pick a game at random
+        // Pick a game at random
         String[] easyGames = {"/Views/jigsaw/medium/jigsawShyGuy.fxml"};
         int rand = randomGenerator(1) - 1;
-        //Load the game
+        // Load the game
         Parent page = FXMLLoader.load(getClass().getResource(easyGames[rand]));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();

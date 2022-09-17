@@ -1,8 +1,8 @@
 package Controllers;
 
 import DB.Record;
-import DB.TARecord;
 import DB.TimeAttackLeaderboard;
+import DB.TimeAttackRecord;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -36,7 +36,7 @@ public class LeaderboardsController implements Initializable {
     @FXML
     TableView<Record> memoryTable;
     @FXML
-    TableView<TARecord> TATable;
+    TableView<TimeAttackRecord> timeAttackTable;
     @FXML
     TableColumn<Record, String> jigsawUser;
     @FXML
@@ -62,9 +62,9 @@ public class LeaderboardsController implements Initializable {
     @FXML
     TableColumn<Record, String> memoryTime;
     @FXML
-    TableColumn<TARecord, String> timeAttackUsername;
+    TableColumn<TimeAttackRecord, String> timeAttackUsername;
     @FXML
-    TableColumn<TARecord, String> timeAttackPoints;
+    TableColumn<TimeAttackRecord, String> timeAttackPoints;
 
 
     @Override
@@ -91,16 +91,16 @@ public class LeaderboardsController implements Initializable {
         memoryTime.setCellValueFactory(new PropertyValueFactory<Record, String>("time"));
 
         /* Time Attack */
-        timeAttackUsername.setCellValueFactory(new PropertyValueFactory<TARecord, String>("userName"));
-        timeAttackPoints.setCellValueFactory(new PropertyValueFactory<TARecord, String>("points"));
+        timeAttackUsername.setCellValueFactory(new PropertyValueFactory<TimeAttackRecord, String>("userName"));
+        timeAttackPoints.setCellValueFactory(new PropertyValueFactory<TimeAttackRecord, String>("points"));
         try {
             jigsawTable.setItems(getRecords("JigsawLeaderboard"));
             hangmanTable.setItems((getRecords("HangmanLeaderboard")));
             tentsTable.setItems((getRecords("TentsLeaderboard")));
             memoryTable.setItems(getRecords("MemoryLeaderboard"));
-            TATable.setItems(getTARecords());
+            timeAttackTable.setItems(getTARecords());
         } catch (SQLException e) {
-
+            e.printStackTrace();
         }
     }
 
@@ -116,14 +116,13 @@ public class LeaderboardsController implements Initializable {
         return records;
     }
 
-    public ObservableList<TARecord> getTARecords() throws SQLException {
-        ObservableList<TARecord> records = FXCollections.observableArrayList();
-        ArrayList<String> record = TimeAttackLeaderboard.getAllRecords();
+    public ObservableList<TimeAttackRecord> getTARecords() throws SQLException {
+        ObservableList<TimeAttackRecord> records = FXCollections.observableArrayList();
+        ArrayList<String> allRecords = TimeAttackLeaderboard.getAllRecords();
         for (int i = 0; i < TimeAttackLeaderboard.getAllRecords().size(); i += 2) {
-            TARecord jr = new TARecord(record.get(i), Integer.parseInt(record.get(i + 1)));
+            TimeAttackRecord jr = new TimeAttackRecord(allRecords.get(i), Integer.parseInt(allRecords.get(i + 1)));
             records.add(jr);
         }
-
 
         return records;
     }

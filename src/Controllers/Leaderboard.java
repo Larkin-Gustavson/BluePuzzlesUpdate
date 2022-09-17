@@ -2,6 +2,7 @@ package Controllers;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class Leaderboard {
@@ -37,7 +38,7 @@ public class Leaderboard {
 
     public static String getTime(String game, String username, String difficulty) throws SQLException {
         try {
-            ArrayList<String> records = new ArrayList<>();
+            List<String> records = new ArrayList<>();
             Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD); // Establishing connection
             String select = "SELECT * FROM " + game; // Select statement
             PreparedStatement statement = connection.prepareStatement(select); // Prepared Statement
@@ -54,7 +55,7 @@ public class Leaderboard {
 
     public static String getBestTime(String game, String username, String difficulty) throws SQLException {
         try {
-            ArrayList<String> records = new ArrayList<>();
+            List<String> records = new ArrayList<>();
             Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD); // Establishing connection
             String select = "SELECT * FROM  " + game +
                             " WHERE UserName=\"" + username + "\" AND Difficulty=\"" + difficulty + "\""; // Select statement
@@ -71,8 +72,8 @@ public class Leaderboard {
         return "";
     }
 
-    public static ArrayList<String> getAllRecords(String game) throws SQLException {
-        ArrayList<String> al = new ArrayList<>();
+    public static List<String> getAllRecords(String game) throws SQLException {
+        List<String> al = new ArrayList<>();
         Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD); // Establishing connection
         String select = "SELECT * FROM " + game + " ORDER BY Difficulty, Time"; // Select statement
         PreparedStatement statement = connection.prepareStatement(select); // Prepared Statement
@@ -86,5 +87,4 @@ public class Leaderboard {
 
         return al;
     }
-
 }

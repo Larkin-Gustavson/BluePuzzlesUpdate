@@ -23,7 +23,6 @@ import java.util.Collections;
 import java.util.ResourceBundle;
 import java.util.Stack;
 
-// Test
 public class MemoryController implements Initializable {
 
     @FXML

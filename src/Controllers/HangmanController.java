@@ -25,11 +25,11 @@ import misc.MyLabel;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.ResourceBundle;
 
 public class HangmanController implements Initializable {
-    // Test
     @FXML
     AnchorPane hangmanAnchorPane;
     @FXML
@@ -59,16 +59,16 @@ public class HangmanController implements Initializable {
     private TextArea hintsTextArea;
     @FXML
     private Button hintButton;
-    private final ArrayList<String> schoolHints = new ArrayList<>();
-    private final ArrayList<String> laundryHints = new ArrayList<>();
-    private final ArrayList<String> houseHints = new ArrayList<>();
-    private final ArrayList<String> gameBoyAdvancedHints = new ArrayList<>();
-    private final ArrayList<String> amazingHints = new ArrayList<>();
-    private final ArrayList<String> educationalHints = new ArrayList<>();
-    private final ArrayList<String> puzzleHints = new ArrayList<>();
-    private final ArrayList<String> bluePuzzleHints = new ArrayList<>();
-    private final ArrayList<String> smokeHints = new ArrayList<>();
-    private final ArrayList<String> mapleSyrupHints = new ArrayList<>();
+    private final List<String> schoolHints = new ArrayList<>();
+    private final List<String> laundryHints = new ArrayList<>();
+    private final List<String> houseHints = new ArrayList<>();
+    private final List<String> gameBoyAdvancedHints = new ArrayList<>();
+    private final List<String> amazingHints = new ArrayList<>();
+    private final List<String> educationalHints = new ArrayList<>();
+    private final List<String> puzzleHints = new ArrayList<>();
+    private final List<String> bluePuzzleHints = new ArrayList<>();
+    private final List<String> smokeHints = new ArrayList<>();
+    private final List<String> mapleSyrupHints = new ArrayList<>();
 
 
     @Override
@@ -173,7 +173,7 @@ public class HangmanController implements Initializable {
             Leaderboard.insertNewUser("HangmanLeaderboard", LoginController.user, gameTime.getText(),
                     HangmanDifficultyController.getDifficulty());
         } catch (SQLException e) {
-
+            e.printStackTrace();
         }
         for (Node node : hangmanAnchorPane.getChildren())
             if (node instanceof Button)
@@ -210,7 +210,7 @@ public class HangmanController implements Initializable {
     }
 
     @FXML
-    void hintButtonClicked(MouseEvent event) throws Exception {
+    void hintButtonClicked(MouseEvent event) {
         Random randomHintGenerator = new Random();
 
         putHintsInArrayLists(); // filling the ArrayLists with the hints in them for each of the possible words

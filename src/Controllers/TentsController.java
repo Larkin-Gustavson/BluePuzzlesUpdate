@@ -20,7 +20,6 @@ import misc.GameTimer;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-// Test
 
 public class TentsController implements Initializable {
 
@@ -37,7 +36,7 @@ public class TentsController implements Initializable {
     private Text winOrLose;
     @FXML
     private Text finishTime;
-    
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         /* Makes every box except the trees empty */

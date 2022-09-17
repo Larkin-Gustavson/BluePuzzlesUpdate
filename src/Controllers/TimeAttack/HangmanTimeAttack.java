@@ -63,7 +63,7 @@ public class HangmanTimeAttack implements Initializable {
     String[] words = {"School", "Laundry", "House", "Gameboy Advanced", "Amazing", "Educational", "Puzzle",
             "Blue Puzzles", "Smoke", "Maple Syrup"};
     String word;
-    LimitTimer timer; //Timer
+    LimitTimer timer; // Timer
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -74,7 +74,7 @@ public class HangmanTimeAttack implements Initializable {
         }
         /*Select a rand word from the array*/
         int pick = randomGenerator(words.length - 1);
-        word = words[pick].toUpperCase(); //the word
+        word = words[pick].toUpperCase(); // the word
         System.out.println(word);
 
         /*Positions the word*/
@@ -118,7 +118,7 @@ public class HangmanTimeAttack implements Initializable {
         source.setDisable(true);
         Paint pain = Color.GREY;
         source.setFill(pain);
-        char guess = source.getText().charAt(0); //guessed letter
+        char guess = source.getText().charAt(0); // guessed letter
         /*Changes to word*/
         boolean guessRight = false;
         for (Node node : wordPane.getChildren()) {
@@ -133,7 +133,7 @@ public class HangmanTimeAttack implements Initializable {
         }
         if (!guessRight)
             wrongGuess();
-    } //End of Method
+    } // End of Method
 
     /*Determines if the game is won*/
     public boolean gameWon() {

@@ -29,7 +29,7 @@ import java.util.Stack;
 
 public class SudokuTimeAttack implements Initializable {
 
-    //Main AnchorPane
+    // Main AnchorPane
     @FXML
     AnchorPane anchorpane;
     @FXML
@@ -52,7 +52,7 @@ public class SudokuTimeAttack implements Initializable {
     static int totalPoints = 0;
     LimitTimer timer;
 
-    //Sets up the board
+    // Sets up the board
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) throws RuntimeException {
         difficultyPane.setVisible(true);
@@ -61,7 +61,7 @@ public class SudokuTimeAttack implements Initializable {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        //Initializes all labels into a 2d array
+        // Initializes all labels into a 2d array
         int row = 0;
         int column = -1;
         int count = 1;
@@ -265,7 +265,7 @@ public class SudokuTimeAttack implements Initializable {
         difficulty = 1;
         difficultyPane.setVisible(false);
         if (!difficultyPane.isVisible()) {
-            //Fills out sudoku board
+            // Fills out sudoku board
             for (int r = 0; r <= 6; r += 3) {
                 for (int c = 0; c <= 6; c += 3) {
                     if (fillBoxUsingStack(r, c)) {
@@ -274,7 +274,7 @@ public class SudokuTimeAttack implements Initializable {
                     }
                 }
             }
-            //Copies board full of answers to key array
+            // Copies board full of answers to key array
             for (int i = 0; i < 9; i++) {
                 for (int j = 0; j < 9; j++) {
                     String s = mat[i][j].getText();
@@ -282,7 +282,7 @@ public class SudokuTimeAttack implements Initializable {
                 }
             }
 
-            //Removes numbers
+            // Removes numbers
             remove(difficulty);
         }
     }

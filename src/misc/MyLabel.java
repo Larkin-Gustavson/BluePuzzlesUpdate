@@ -3,7 +3,6 @@ package misc;
 import javafx.scene.control.Label;
 
 public class MyLabel extends Label {
-
     private char letter;
 
     public MyLabel(char letter) {

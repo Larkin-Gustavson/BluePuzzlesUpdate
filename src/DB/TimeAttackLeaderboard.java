@@ -2,6 +2,7 @@ package DB;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class TimeAttackLeaderboard {
     private static final String URL = "jdbc:mysql://bluepuzzles.c6g1bhjsrnsm.us-east-2.rds.amazonaws.com/BLUE_PUZZLES";
@@ -44,18 +45,18 @@ public class TimeAttackLeaderboard {
         return 0;
     }
 
-    public static ArrayList<String> getAllRecords() throws SQLException {
-        ArrayList<String> al = new ArrayList<>();
+    public static List<String> getAllRecords() throws SQLException {
+        List<String> records = new ArrayList<>();
         Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD); // Establishing connection
         String select = "SELECT * FROM TimeAttackLeaderboard ORDER BY points DESC"; // Select statement
         PreparedStatement statement = connection.prepareStatement(select); // Prepared Statement
         ResultSet result = statement.executeQuery(); // Initializing all users into result
 
         while (result.next()) {
-            al.add(result.getString("Username"));
-            al.add(result.getString("points") + "");
+            records.add(result.getString("Username"));
+            records.add(result.getString("points") + "");
         }
 
-        return al;
+        return records;
     }
 }

@@ -21,7 +21,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.Stack;
 
-//
 public class SudokuGame implements Initializable {
 
     // Main AnchorPane
@@ -35,7 +34,7 @@ public class SudokuGame implements Initializable {
     Button hintButton;
     @FXML
     Text gameTime;
-    GameTimer gt;
+    GameTimer timer;
     // Sudoku Board
     private Label[][] mat = new Label[9][9];
     private Label[][] key = new Label[9][9];
@@ -64,8 +63,8 @@ public class SudokuGame implements Initializable {
 
             }
         }
-        gt = new GameTimer(gameTime);
-        gt.start();
+        timer = new GameTimer(gameTime);
+        timer.start();
     }
 
     /* Changes number by 1 */
