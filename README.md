@@ -9,8 +9,8 @@ You interact with this game in any way that a user would use a website
 
 If you enjoyed using this application.
 You can email me at <larkingustavson@gmail.com>
-about anything you would want us to implement 
-or suggestions for improvements that we could make 
+about anything you would want us to implement
+or suggestions for improvements that we could make
 would be greatly appreciated!
 We thank you in advance!
 
@@ -28,7 +28,8 @@ Larkin
     - Sudoku
     - Sudoku X
     - Tents
-* All games, as this app is a GUI (Graphical User Interface) are completely displayed through a visual medium to the user.
+* All games, as this app is a GUI (Graphical User Interface) are completely displayed through a visual medium to the
+  user.
 * The ability to play on Easy, Medium, or Hard difficulty
 * Random level generation
 * Leaderboards
