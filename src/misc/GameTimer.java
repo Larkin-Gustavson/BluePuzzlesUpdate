@@ -8,7 +8,6 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class GameTimer extends TimerTask {
-
     Timer timer;
     Label gameTime; // Label that changes
     Text gameTimeText;

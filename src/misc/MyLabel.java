@@ -18,6 +18,4 @@ public class MyLabel extends Label {
     public void showLetter() {
         this.setText(letter + "");
     }
-
-
 }

@@ -53,7 +53,7 @@ public class Leaderboard {
         return "";
     }
 
-    public static String getBestTime(String game, String username, String difficulty) throws SQLException {
+    public static String getBestTime(String game, String username, String difficulty) {
         try {
             List<String> records = new ArrayList<>();
             Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD); // Establishing connection

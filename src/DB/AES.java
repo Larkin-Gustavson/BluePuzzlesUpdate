@@ -10,7 +10,6 @@ import java.util.Arrays;
 import java.util.Base64;
 
 public class AES {
-
     private static SecretKeySpec secretKey;
     private static byte[] key;
 

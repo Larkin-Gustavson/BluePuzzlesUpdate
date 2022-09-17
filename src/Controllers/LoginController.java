@@ -21,7 +21,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class LoginController implements Initializable {
-
     // Stores the user in here for the program
     public static String user;
     @FXML
@@ -146,7 +145,6 @@ public class LoginController implements Initializable {
          *  at least one upper case letter, does not allow special characters
          *  (!@#$%^&*(),.<>+?|{}\=~`), does not allow any sort of whitespace,
          *  and the passwords need to be between 8 - 15 characters long.
-         *
          */
         String regex = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=[^!@#$%^&*(),.<>+?|{}\\\\=~`]+$)(?=\\S+$).{8,15}$";
 
@@ -199,10 +197,9 @@ public class LoginController implements Initializable {
      * @return true - if the username is valid (if it doesn't exist already).
      * <br></br>
      * false - if the username is not valid (if the username already exists).
-     * @throws SQLException if the query is not able to execute.
      */
 
-    public boolean validateUsername(String username) throws SQLException {
+    public boolean validateUsername(String username) {
         String output = "";
         try {
             if (UserAccount.userExist(username)) {

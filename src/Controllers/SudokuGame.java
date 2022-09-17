@@ -22,7 +22,6 @@ import java.util.ResourceBundle;
 import java.util.Stack;
 
 public class SudokuGame implements Initializable {
-
     // Main AnchorPane
     @FXML
     AnchorPane anchorpane;

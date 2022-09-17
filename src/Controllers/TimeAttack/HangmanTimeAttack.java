@@ -31,7 +31,6 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class HangmanTimeAttack implements Initializable {
-
     @FXML
     AnchorPane hangmanAnchorPane;
     @FXML
@@ -85,7 +84,7 @@ public class HangmanTimeAttack implements Initializable {
             MyLabel label = new MyLabel(word.charAt(i));
             label.setFont(new Font("System", 30));
             wordPane.getChildren().add(label);
-            if (rand == 1) label.showLetter(); //Shows letter
+            if (rand == 1) label.showLetter(); // Shows letter
             label.relocate(10.0 + pos, 5);
             pos += 40;
         }

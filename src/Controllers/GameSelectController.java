@@ -16,7 +16,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class GameSelectController implements Initializable {
-
     @FXML
     ImageView sudokuImage;
     @FXML
@@ -83,7 +82,6 @@ public class GameSelectController implements Initializable {
 
     /* Hangman methods */
     public void playHangman(ActionEvent actionEvent) throws Exception {
-
         Parent page = FXMLLoader.load(getClass().getResource("/Views/hangmanDifficulty.fxml"));
 
         Scene scene = new Scene(page, 900, 600);

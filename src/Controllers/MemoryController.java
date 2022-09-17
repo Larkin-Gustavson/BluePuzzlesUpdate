@@ -24,7 +24,6 @@ import java.util.ResourceBundle;
 import java.util.Stack;
 
 public class MemoryController implements Initializable {
-
     @FXML
     AnchorPane gamePane;
     @FXML

@@ -32,7 +32,6 @@ import java.util.ResourceBundle;
 import java.util.Stack;
 
 public class JigsawTimeAttack implements Initializable {
-
     @FXML
     ImageView check1;
     @FXML
@@ -151,7 +150,7 @@ public class JigsawTimeAttack implements Initializable {
     }
 
     /*Show win screen*/
-    public void showWinScreen(boolean win) throws SQLException {
+    public void showWinScreen(boolean win) {
 
         winScreen.setVisible(true); // set win screen visible
         timer.stop(); // stop game timer

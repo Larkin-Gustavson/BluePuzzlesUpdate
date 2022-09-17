@@ -45,7 +45,7 @@ public class SudokuTimeAttack implements Initializable {
     @FXML
     Text highScore;
 
-    //Sudoku Board
+    // Sudoku Board
     private Label[][] mat = new Label[9][9];
     private Label[][] key = new Label[9][9];
     private int difficulty;
@@ -58,8 +58,8 @@ public class SudokuTimeAttack implements Initializable {
         difficultyPane.setVisible(true);
         try {
             highScore.setText("High Score: " + TimeAttackLeaderboard.getHighScore(LoginController.user));
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException throwable) {
+            throwable.printStackTrace();
         }
         // Initializes all labels into a 2d array
         int row = 0;

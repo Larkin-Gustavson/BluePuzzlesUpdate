@@ -22,7 +22,6 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class TentsController implements Initializable {
-
     @FXML
     private AnchorPane gamePane;
     @FXML

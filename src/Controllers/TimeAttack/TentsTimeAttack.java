@@ -29,7 +29,6 @@ import java.util.ResourceBundle;
 import java.util.Stack;
 
 public class TentsTimeAttack implements Initializable {
-
     @FXML
     private AnchorPane gamePane;
     @FXML
@@ -125,7 +124,7 @@ public class TentsTimeAttack implements Initializable {
 
     }
 
-    public void showWinScreen(boolean win) throws SQLException {
+    public void showWinScreen(boolean win) {
         winScreen.setVisible(true); // set win screen visible
         timer.stop(); // stop game timer
         gameTime.setDisable(true);
