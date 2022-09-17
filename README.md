@@ -10,8 +10,8 @@ You interact with this game in any way that a user would use a website
 If you enjoyed using this application.
 You can email me at <larkingustavson@gmail.com>
 about anything you would want us to implement 
-or suggestions for improvements that we could make!
-Any constructive feedback would be greatly appreciated!
+or suggestions for improvements that we could make 
+would be greatly appreciated!
 We thank you in advance!
 
 Sincerely,
