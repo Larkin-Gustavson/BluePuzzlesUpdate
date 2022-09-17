@@ -1,7 +1,7 @@
 # Blue Puzzles
 
 Blue Puzzles is an application that comprises a collection of puzzles.
-These games include Hangman, Jigsaw, Sudoku, Sudoku X, and Tents.
+These games include Hangman, Jigsaw, Sudoku, Sudoku X, Memory, and Tents.
 This application is a GUI based application,
 as such all parts of this application are entirely visual.
 You interact with this game in any way that a user would use a website
