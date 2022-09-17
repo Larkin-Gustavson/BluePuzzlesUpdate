@@ -12,7 +12,7 @@ You can email me at <larkingustavson@gmail.com>
 about anything you'd want to say about this program
 or any improvements that we could make!
 Any constructive feedback would be greatly appreciated!
-I thank you in advance!
+We thank you in advance!
 
 Sincerely,
 
