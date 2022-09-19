@@ -18,7 +18,7 @@ Sincerely,
 
 Larkin
 
-![BluePuzzlesMainMenuScreenshot](https://user-images.githubusercontent.com/70110395/190716727-3bfc4394-9b9e-4598-a10e-1c25c763fa79.png)
+![BluePuzzlesMainMenuScreenshot](https://user-images.githubusercontent.com/70110395/191117256-f0338d06-f882-4302-b3de-77114f1c3a62.png)
 
 ## Key Features
 
