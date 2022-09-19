@@ -1,22 +1,22 @@
 
-`	java:S112s"FDefine and throw a dedicated exception instead of using a generic one.(³ÓŠëøÿÿÿÿ
-`	java:S112|"FDefine and throw a dedicated exception instead of using a generic one.(Û£Åäúÿÿÿÿ
+`	java:S112r"FDefine and throw a dedicated exception instead of using a generic one.(³ÓŠëøÿÿÿÿ
+`	java:S112{"FDefine and throw a dedicated exception instead of using a generic one.(Û£Åäúÿÿÿÿ
 @
-java:S5411T"*Use the primitive boolean expression here.(­ƒ»§
+java:S5411S"*Use the primitive boolean expression here.(­ƒ»§
 ?
-java:S5411W"*Use the primitive boolean expression here.(»í»}
+java:S5411V"*Use the primitive boolean expression here.(»í»}
 t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ü‚ùýúÿÿÿÿ
 ]
-java:S1126<"BReplace this if-then-else statement by a single method invocation.(Š‘ùÂùÿÿÿÿ
+java:S1126;"BReplace this if-then-else statement by a single method invocation.(Š‘ùÂùÿÿÿÿ
 H
-java:S1172C"2Remove this unused method parameter "actionEvent".(·ˆÒ«
+java:S1172B"2Remove this unused method parameter "actionEvent".(·ˆÒ«
 G
-java:S1172N"2Remove this unused method parameter "actionEvent".(²ÕÀ9
+java:S1172M"2Remove this unused method parameter "actionEvent".(²ÕÀ9
 =
-java:S1125T"'Remove the unnecessary boolean literal.(­ƒ»§
+java:S1125S"'Remove the unnecessary boolean literal.(­ƒ»§
 <
-java:S1125W"'Remove the unnecessary boolean literal.(»í»}
+java:S1125V"'Remove the unnecessary boolean literal.(»í»}
 <
-java:S1125W"'Remove the unnecessary boolean literal.(»í»}
+java:S1125V"'Remove the unnecessary boolean literal.(»í»}
 @
-java:S2140‰")Use "java.util.Random.nextInt()" instead.(ûç˜ò
+java:S2140ˆ")Use "java.util.Random.nextInt()" instead.(ûç˜ò

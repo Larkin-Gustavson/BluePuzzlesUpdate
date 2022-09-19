@@ -97,3 +97,37 @@ D
 src/Views/login.fxml,d\9\d94f3c811113fa65db404fbb46333b4431b98905
 G
 src/Views/mainmenu.fxml,9\5\954f02703ed8da12843f2fbec33b8fca64c87f5d
+H
+src/META-INF/MANIFEST.MF,e\4\e4b1fd2293ba1e598e6bec4e0ee3b6b6851eb5a2
+V
+&src/Controllers/HangmanController.java,8\7\87122d725a892f02693a6a34f3d6b4c891fcd525
+`
+0src/Controllers/HangmanDifficultyController.java,1\6\168dabb8bad658e628cb4b3c1fc70e02e1f3b598
+U
+%src/Controllers/JigsawController.java,c\0\c0748d8e8c0f34bb7b140a25596eb3d8cbd6cdf8
+_
+/src/Controllers/JigsawDifficultyController.java,1\5\150f9fb0d24ea1e6c7d0e29b0a627b9310f2ef15
+W
+'src/Controllers/MainMenuController.java,a\d\ad24d3b3c907071abb1e6e84d25b1dc28d1543f2
+?
+src/DB/AES.java,4\5\456ae18859dce1e8d25c3ad18a9a9fb727387d7b
+Y
+)src/Controllers/GameSelectController.java,8\4\84198fcdc92d95da15688755ba988b2253c3a05a
+`
+0src/Controllers/TimeAttack/JigsawTimeAttack.java,b\3\b35a44820b7fe9ecdf0a2c31c8c5c06d360d80b8
+P
+ src/Controllers/Leaderboard.java,b\3\b3dda92a7ffe2e10ba02a63a8b65bc6530de92f1
+[
++src/Controllers/LeaderboardsController.java,3\c\3cf9575a34d8091b2e43dc1404fa61fcad37c3ee
+T
+$src/Controllers/LoginController.java,c\d\cd40a910707b17672350cd74010eff60af1bd3d6
+U
+%src/Controllers/MemoryController.java,8\8\8854cb636b79d8d0ee60d50075ecafd25b966078
+O
+src/Controllers/SudokuGame.java,e\e\ee2f89689a58adc077b843978e7c49e32da6596d
+`
+0src/Controllers/TimeAttack/SudokuTimeAttack.java,1\6\166c56beaf540b2d3f6b00cb6ef0c0e62baf3cb7
+T
+$src/Controllers/TentsController.java,0\3\03fc7dae893bddf6808194e323a6aa28ce8aa270
+_
+/src/Controllers/TimeAttack/TentsTimeAttack.java,a\5\a519a4b6845c3fec92ae1bff692b6e8053b7c0fb

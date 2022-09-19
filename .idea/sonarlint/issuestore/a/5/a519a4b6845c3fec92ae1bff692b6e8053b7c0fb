@@ -1,40 +1,40 @@
 
-a	java:S112Š"FDefine and throw a dedicated exception instead of using a generic one.(³ÓŠëøÿÿÿÿ
-a	java:S112•"FDefine and throw a dedicated exception instead of using a generic one.(Û£Åäúÿÿÿÿ
-[	java:S112¥"FDefine and throw a dedicated exception instead of using a generic one.(¶Öëz
+a	java:S112‰"FDefine and throw a dedicated exception instead of using a generic one.(³ÓŠëøÿÿÿÿ
+a	java:S112”"FDefine and throw a dedicated exception instead of using a generic one.(Û£Åäúÿÿÿÿ
+[	java:S112¤"FDefine and throw a dedicated exception instead of using a generic one.(¶Öëz
 >
-java:S1604F"(Make this anonymous inner class a lambda(é£èï
+java:S1604E"(Make this anonymous inner class a lambda(é£èï
 E
-java:S54118"*Use the primitive boolean expression here.(øÙÿÿÿÿÿÿ
+java:S54117"*Use the primitive boolean expression here.(øÙÿÿÿÿÿÿ
 @
-java:S5411q"*Use the primitive boolean expression here.(­ƒ»§
+java:S5411p"*Use the primitive boolean expression here.(­ƒ»§
 ?
-java:S5411t"*Use the primitive boolean expression here.(»í»}
+java:S5411s"*Use the primitive boolean expression here.(»í»}
 o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(–“´ù
 e
-java:S11492"PReplace the synchronized class "Stack" by an unsynchronized one such as "Deque".(˜øı!
+java:S11491"PReplace the synchronized class "Stack" by an unsynchronized one such as "Deque".(˜øı!
 B
-java:S11258"'Remove the unnecessary boolean literal.(øÙÿÿÿÿÿÿ
-S	java:S106?"9Replace this use of System.out or System.err by a logger.(‰É†şÿÿÿÿ
+java:S11257"'Remove the unnecessary boolean literal.(øÙÿÿÿÿÿÿ
+S	java:S106>"9Replace this use of System.out or System.err by a logger.(‰É†şÿÿÿÿ
 ]
-java:S1126Y"BReplace this if-then-else statement by a single method invocation.(Š‘ùÂùÿÿÿÿ
+java:S1126X"BReplace this if-then-else statement by a single method invocation.(Š‘ùÂùÿÿÿÿ
 H
-java:S1172`"2Remove this unused method parameter "actionEvent".(·ˆÒ«
+java:S1172_"2Remove this unused method parameter "actionEvent".(·ˆÒ«
+Š
+java:S1130j"nRemove the declaration of thrown exception 'java.sql.SQLException', as it cannot be thrown from method's body.(²ÕÀ98ªí¾Ş´0
 G
-java:S1172k"2Remove this unused method parameter "actionEvent".(²ÕÀ9
+java:S1172j"2Remove this unused method parameter "actionEvent".(²ÕÀ9
 =
-java:S1125q"'Remove the unnecessary boolean literal.(­ƒ»§
+java:S1125p"'Remove the unnecessary boolean literal.(­ƒ»§
 <
-java:S1125t"'Remove the unnecessary boolean literal.(»í»}
+java:S1125s"'Remove the unnecessary boolean literal.(»í»}
 <
-java:S1125t"'Remove the unnecessary boolean literal.(»í»}
+java:S1125s"'Remove the unnecessary boolean literal.(»í»}
 X
-java:S2696z"6Make the enclosing method "static" or remove this set.(¬²¨³şÿÿÿÿ8ˆôÅ´0
-…
-java:S1130€"nRemove the declaration of thrown exception 'java.sql.SQLException', as it cannot be thrown from method's body.(šÑ´Ì
-A
-java:S1172€"*Remove this unused method parameter "win".(šÑ´Ì
+java:S2696y"6Make the enclosing method "static" or remove this set.(¬²¨³şÿÿÿÿ8ˆôÅ´0
+E
+java:S1172"*Remove this unused method parameter "win".(§šÛüÿÿÿÿ
 T
-java:S2696Œ"6Make the enclosing method "static" or remove this set.(¬–¹Ğ8‰ôÅ´0
+java:S2696‹"6Make the enclosing method "static" or remove this set.(¬–¹Ğ8‰ôÅ´0
 @
-java:S2140¢")Use "java.util.Random.nextInt()" instead.(ûç˜ò
+java:S2140¡")Use "java.util.Random.nextInt()" instead.(ûç˜ò

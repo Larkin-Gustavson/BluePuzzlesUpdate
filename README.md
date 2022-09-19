@@ -38,7 +38,8 @@ Larkin
 
 ## How To Use
 
-To clone and run this application, you'll need [Git](https://git-scm.com),
+To clone and run this application, you'll need
+[Git](https://git-scm.com),
 [Java JDK](https://www.oracle.com/java/technologies/javase/jdk11-archive-downloads.html) (11.0.2),
 [JavaFX SDK](https://gluonhq.com/products/javafx/) (11.0.2),
 [JDBC](https://dev.mysql.com/downloads/connector/j/) (MySQL Connector),
