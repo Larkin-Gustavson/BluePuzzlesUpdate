@@ -47,7 +47,7 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <Button id="loginbtn" layoutX="419.0" layoutY="468.0" mnemonicParsing="false" onAction="#SignUp" style="-fx-background-color: #3D94F6; -fx-font-size: 20px; -fx-padding: 10px; -fx-text-alignment: center; -fx-background-radius: 45px;" text="Sign up" textFill="#101ac2">
+        <Button id="loginbtn" layoutX="419.0" layoutY="468.0" mnemonicParsing="false" onAction="#signUp" style="-fx-background-color: #3D94F6; -fx-font-size: 20px; -fx-padding: 10px; -fx-text-alignment: center; -fx-background-radius: 45px;" text="Sign up" textFill="#101ac2">
             <effect>
                 <DropShadow />
             </effect>

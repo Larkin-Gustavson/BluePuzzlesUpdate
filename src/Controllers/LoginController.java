@@ -59,7 +59,6 @@ public class LoginController implements Initializable {
     @FXML
     private TextField usernameField;
 
-
     @FXML
     void closeButtonClick(ActionEvent event) {
         Platform.exit();
@@ -114,7 +113,7 @@ public class LoginController implements Initializable {
     }
 
     /* Sign up for new Account */
-    public void SignUp(ActionEvent actionEvent) {
+    public void signUp(ActionEvent actionEvent) {
         signUpPane.setVisible(true);
     }
 
@@ -198,7 +197,6 @@ public class LoginController implements Initializable {
      * <br></br>
      * false - if the username is not valid (if the username already exists).
      */
-
     public boolean validateUsername(String username) {
         String output = "";
         try {

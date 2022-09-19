@@ -93,8 +93,6 @@ w
 G.idea/sonarlint/issuestore/5/5/55d2640459af48e8f040f63d99f8fb4d13de007e,7\4\74c37c3f40291402493cdcf16e7db68a221f5ded
 w
 G.idea/sonarlint/issuestore/d/a/dabbce49f2e7b8e0bbd4f2bb37279c2e7721c329,d\e\def202b42f2a621b18ff53ed0d2f2cff675cda02
-D
-src/Views/login.fxml,d\9\d94f3c811113fa65db404fbb46333b4431b98905
 G
 src/Views/mainmenu.fxml,9\5\954f02703ed8da12843f2fbec33b8fca64c87f5d
 H
@@ -119,8 +117,6 @@ P
  src/Controllers/Leaderboard.java,b\3\b3dda92a7ffe2e10ba02a63a8b65bc6530de92f1
 [
 +src/Controllers/LeaderboardsController.java,3\c\3cf9575a34d8091b2e43dc1404fa61fcad37c3ee
-T
-$src/Controllers/LoginController.java,c\d\cd40a910707b17672350cd74010eff60af1bd3d6
 U
 %src/Controllers/MemoryController.java,8\8\8854cb636b79d8d0ee60d50075ecafd25b966078
 O
