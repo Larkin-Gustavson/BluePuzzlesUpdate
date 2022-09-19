@@ -27,6 +27,7 @@ Larkin
     - Jigsaw
     - Sudoku
     - Sudoku X
+    - Memory
     - Tents
 * All games, as this app is a GUI (Graphical User Interface) are completely displayed through a visual medium to the
   user.
