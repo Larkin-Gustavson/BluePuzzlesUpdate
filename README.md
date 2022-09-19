@@ -84,4 +84,4 @@ MIT
 
 > GitHub [@Larkin-Gustavson](https://github.com/Larkin-Gustavson) &nbsp;&middot;&nbsp;
 > GitHub [@abdulnad](https://github.com/abdulnad) &nbsp;&middot;&nbsp;
-> GitHub [@Chris115329](https://github.com/Chris115329) &nbsp;&middot;&nbsp;
+> GitHub [@Chris115329](https://github.com/Chris115329)
