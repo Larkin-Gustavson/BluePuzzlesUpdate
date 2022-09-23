@@ -12,7 +12,6 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Border;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -75,7 +74,7 @@ public class MainMenuController implements Initializable {
         aboutDialog.setTitle("About");
         aboutDialog.setHeaderText("Blue Puzzles");
         aboutDialog.setContentText("This application, was made as a Senior Project." +
-                                   " It features games such as Hangman, Jigsaw, Sudoku, Sudoku X, Memory, and Tents." +
+                                   " It features games such as Hangman, Jigsaw, Sudoku, Sudoku X, Memory, TimeAttack, and Tents." +
                                    " All games have easy, medium, and hard difficulties." +
                                    " Along with random level generation for the games. A user can create an account" +
                                    " that allows there stats across all of the games to be saved" +

@@ -39,8 +39,8 @@ public class UserAccount {
                 System.out.println("Username already exists");
             else {
                 statement.setString(1, newUser);
-                String pass = AES.encrypt(newPassword, "allme");
-                statement.setString(2, pass);
+                String password = AES.encrypt(newPassword, "allme");
+                statement.setString(2, password);
                 statement.executeUpdate();
             }
         } catch (SQLException e) {

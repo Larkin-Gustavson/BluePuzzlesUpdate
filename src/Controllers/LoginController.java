@@ -9,11 +9,16 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.control.Tooltip;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -71,7 +76,7 @@ public class LoginController implements Initializable {
         aboutDialog.setTitle("About");
         aboutDialog.setHeaderText("Blue Puzzles");
         aboutDialog.setContentText("This application, was made as a Senior Project." +
-                                   " It features games such as Hangman, Jigsaw, Sudoku, Sudoku X, Memory, and Tents." +
+                                   " It features games such as Hangman, Jigsaw, Sudoku, Sudoku X, Memory, TimeAttack, and Tents." +
                                    " All games have easy, medium, and hard difficulties." +
                                    " Along with random level generation for the games. A user can create an account" +
                                    " that allows there stats across all of the games to be saved" +
@@ -82,7 +87,7 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        final Tooltip usernameTooltip = new Tooltip();
+        Tooltip usernameTooltip = new Tooltip();
         usernameTooltip.setText("Username must have at least \n" +
                                 "- 8 characters, \n" +
                                 "- 1 Capital Letter, \n" +
