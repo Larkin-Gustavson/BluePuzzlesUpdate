@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.*?>
 
 <AnchorPane fx:id="anchorPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.JigsawController">
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.JigsawController">
     <children>
         <Pane layoutX="663.0" layoutY="300.0" onKeyPressed="#rotate" onMouseClicked="#select" prefHeight="200.0"
               prefWidth="200.0" style="-fx-border-color: BLACK;">

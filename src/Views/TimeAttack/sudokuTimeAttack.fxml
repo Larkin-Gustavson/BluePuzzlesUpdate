@@ -13,7 +13,7 @@
 
 <AnchorPane fx:id="anchorpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
             prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="Controllers.TimeAttack.SudokuTimeAttack">
+            fx:controller="controllers.timeattack.SudokuTimeAttack">
    <children>
       <ImageView fitHeight="332.0" fitWidth="341.0" layoutX="281.0" layoutY="116.0" pickOnBounds="true"
                  preserveRatio="true">

@@ -6,7 +6,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.*?>
 <AnchorPane fx:id="anchorPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.JigsawController">
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.JigsawController">
     <children>
         <Button fx:id="button" focusTraversable="false" layoutX="596.0" layoutY="477.0" mnemonicParsing="false"
                 onAction="#checkWin" text="Check"/>
