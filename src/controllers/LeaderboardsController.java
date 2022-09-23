@@ -25,46 +25,45 @@ import java.util.ResourceBundle;
 
 public class LeaderboardsController implements Initializable {
     @FXML
-    AnchorPane mainAnchor;
+    private AnchorPane mainAnchor;
     @FXML
-    TableView<Record> jigsawTable;
+    private TableView<Record> jigsawTable;
     @FXML
-    TableView<Record> hangmanTable;
+    private TableView<Record> hangmanTable;
     @FXML
-    TableView<Record> tentsTable;
+    private TableView<Record> tentsTable;
     @FXML
-    TableView<Record> memoryTable;
+    private TableView<Record> memoryTable;
     @FXML
-    TableView<TimeAttackRecord> timeAttackTable;
+    private TableView<TimeAttackRecord> timeAttackTable;
     @FXML
-    TableColumn<Record, String> jigsawUser;
+    private TableColumn<Record, String> jigsawUser;
     @FXML
-    TableColumn<Record, String> jigsawDifficulty;
+    private TableColumn<Record, String> jigsawDifficulty;
     @FXML
-    TableColumn<Record, String> jigsawTime;
+    private TableColumn<Record, String> jigsawTime;
     @FXML
-    TableColumn<Record, String> hangmanUser;
+    private TableColumn<Record, String> hangmanUser;
     @FXML
-    TableColumn<Record, String> hangmanDifficulty;
+    private TableColumn<Record, String> hangmanDifficulty;
     @FXML
-    TableColumn<Record, String> hangmanTime;
+    private TableColumn<Record, String> hangmanTime;
     @FXML
-    TableColumn<Record, String> tentsUser;
+    private TableColumn<Record, String> tentsUser;
     @FXML
-    TableColumn<Record, String> tentsDifficulty;
+    private TableColumn<Record, String> tentsDifficulty;
     @FXML
-    TableColumn<Record, String> tentsTime;
+    private TableColumn<Record, String> tentsTime;
     @FXML
-    TableColumn<Record, String> memoryUser;
+    private TableColumn<Record, String> memoryUser;
     @FXML
-    TableColumn<Record, String> memoryDifficulty;
+    private TableColumn<Record, String> memoryDifficulty;
     @FXML
-    TableColumn<Record, String> memoryTime;
+    private TableColumn<Record, String> memoryTime;
     @FXML
-    TableColumn<TimeAttackRecord, String> timeAttackUsername;
+    private TableColumn<TimeAttackRecord, String> timeAttackUsername;
     @FXML
-    TableColumn<TimeAttackRecord, String> timeAttackPoints;
-
+    private TableColumn<TimeAttackRecord, String> timeAttackPoints;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -96,7 +95,7 @@ public class LeaderboardsController implements Initializable {
             hangmanTable.setItems((getRecords("HangmanLeaderboard")));
             tentsTable.setItems((getRecords("TentsLeaderboard")));
             memoryTable.setItems(getRecords("MemoryLeaderboard"));
-            timeAttackTable.setItems(getTARecords());
+            timeAttackTable.setItems(getTimeAttackRecords());
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -110,11 +109,10 @@ public class LeaderboardsController implements Initializable {
             records.add(jr);
         }
 
-
         return records;
     }
 
-    public ObservableList<TimeAttackRecord> getTARecords() throws SQLException {
+    public ObservableList<TimeAttackRecord> getTimeAttackRecords() throws SQLException {
         ObservableList<TimeAttackRecord> records = FXCollections.observableArrayList();
         List<String> allRecords = TimeAttackLeaderboard.getAllRecords();
         for (int i = 0; i < TimeAttackLeaderboard.getAllRecords().size(); i += 2) {

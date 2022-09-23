@@ -17,42 +17,48 @@ import java.util.ResourceBundle;
 
 public class GameSelectController implements Initializable {
     @FXML
-    ImageView sudokuImage;
+    private ImageView sudokuImage;
     @FXML
-    ImageView sudokuImage2;
+    private ImageView sudokuImage2;
     @FXML
-    ImageView hangmanImage;
+    private ImageView hangmanImage;
     @FXML
-    ImageView hangmanImage2;
+    private ImageView hangmanImage2;
     @FXML
-    ImageView shyguy1;
+    private ImageView shyguy1;
     @FXML
-    ImageView shyguy2;
+    private ImageView shyguy2;
     @FXML
-    ImageView tents1;
+    private ImageView tents1;
     @FXML
-    ImageView tents2;
+    private ImageView tents2;
     @FXML
-    ImageView timeAttack1;
+    private ImageView timeAttack1;
     @FXML
-    ImageView timeAttack2;
+    private ImageView timeAttack2;
     @FXML
-    ImageView memory1;
+    private ImageView memory1;
     @FXML
-    ImageView memory2;
+    private ImageView memory2;
     @FXML
-    Text hangmanText;
+    private Text hangmanText;
     @FXML
-    Text sudokuText;
+    private Text sudokuText;
     @FXML
-    Text jigsawText;
+    private Text jigsawText;
     @FXML
-    Text tentsText;
+    private Text tentsText;
     @FXML
-    Text memoryText;
+    private Text memoryText;
     @FXML
-    Text timeAttackText;
-    public static int totalPoints;
+    private Text timeAttackText;
+    private static int totalPoints;
+    public static int getTotalPoints() {
+        return totalPoints;
+    }
+    public static void setTotalPoints(int totalPoints) {
+        GameSelectController.totalPoints = totalPoints;
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -83,7 +89,6 @@ public class GameSelectController implements Initializable {
     /* Hangman methods */
     public void playHangman(ActionEvent actionEvent) throws Exception {
         Parent page = FXMLLoader.load(getClass().getResource("/Views/hangmanDifficulty.fxml"));
-
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -141,7 +146,7 @@ public class GameSelectController implements Initializable {
         stage.show();
     }
 
-    int randomGenerator(int number) {
+    private int randomGenerator(int number) {
         return (int) Math.floor((Math.random() * number + 1));
     }
 
@@ -159,7 +164,6 @@ public class GameSelectController implements Initializable {
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
-
     }
 
     public void showTents(MouseEvent mouseEvent) {

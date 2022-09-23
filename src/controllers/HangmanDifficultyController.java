@@ -24,8 +24,8 @@ public class HangmanDifficultyController {
         return difficulty;
     }
 
-    public static void setDifficulty(String diff) {
-        difficulty = diff;
+    public static void setDifficulty(String difficulty) {
+        HangmanDifficultyController.difficulty = difficulty;
     }
 
     @FXML

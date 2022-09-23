@@ -30,33 +30,33 @@ import java.util.Stack;
 public class SudokuTimeAttack implements Initializable {
     // Main AnchorPane
     @FXML
-    AnchorPane anchorpane;
+    private AnchorPane anchorpane;
     @FXML
-    Pane difficultyPane;
+    private Pane difficultyPane;
     @FXML
-    Pane winScreen;
+    private Pane winScreen;
     @FXML
-    Pane loseScreen;
+    private Pane loseScreen;
     @FXML
-    Text gameTime;
+    private Text gameTime;
     @FXML
-    Text points;
+    private Text points;
     @FXML
-    Text highScore;
+    private Text highScore;
 
     // Sudoku Board
     private Label[][] mat = new Label[9][9];
     private Label[][] key = new Label[9][9];
     private int difficulty;
-    static int totalPoints = 0;
-    LimitTimer timer;
+    private static int totalPoints = 0;
+    private LimitTimer timer;
 
     // Sets up the board
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) throws RuntimeException {
         difficultyPane.setVisible(true);
         try {
-            highScore.setText("High Score: " + TimeAttackLeaderboard.getHighScore(LoginController.user));
+            highScore.setText("High Score: " + TimeAttackLeaderboard.getHighScore(LoginController.getUser()));
         } catch (SQLException throwable) {
             throwable.printStackTrace();
         }
@@ -74,10 +74,8 @@ public class SudokuTimeAttack implements Initializable {
                     column = -1;
                     row++;
                 }
-
             }
         }
-
     }
 
     /*Changes number by 1*/
@@ -95,13 +93,11 @@ public class SudokuTimeAttack implements Initializable {
                 source.setText(num + "");
                 source.setTextFill(Color.DODGERBLUE);
             }
-
         }
-
     }
 
     /*randomly generated number between 1 and the number passed in*/
-    int randomGenerator(int number) {
+    private int randomGenerator(int number) {
         return (int) Math.floor((Math.random() * number + 1));
     }
 
@@ -220,7 +216,6 @@ public class SudokuTimeAttack implements Initializable {
             coli++;
         }
         return true;
-
     }
 
     /*Each box has a chance of being removed depending on number represents difficulty
@@ -237,8 +232,8 @@ public class SudokuTimeAttack implements Initializable {
     }
 
     public void goBack(ActionEvent event) throws Exception {
-        TimeAttackLeaderboard.insertNewUser(LoginController.user, GameSelectController.totalPoints);
-        GameSelectController.totalPoints = 0;
+        TimeAttackLeaderboard.insertNewUser(LoginController.getUser(), GameSelectController.getTotalPoints());
+        GameSelectController.setTotalPoints(0);
         Parent page = FXMLLoader.load(getClass().getResource("/Views/game_select.fxml"));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -246,9 +241,8 @@ public class SudokuTimeAttack implements Initializable {
         stage.show();
     }
 
-
     public void setEasy(ActionEvent actionEvent) {
-        points.setText("Points: " + GameSelectController.totalPoints);
+        points.setText("Points: " + GameSelectController.getTotalPoints());
         timer = new LimitTimer(gameTime);
         timer.start();
         gameTime.textProperty().addListener(new ChangeListener<String>() {
@@ -286,13 +280,11 @@ public class SudokuTimeAttack implements Initializable {
         }
     }
 
-
     public void checkWin(ActionEvent actionEvent) {
         if (isSolved()) {
             winScreen.setVisible(true);
             timer.stop();
-            GameSelectController.totalPoints++;
-
+            GameSelectController.setTotalPoints(GameSelectController.getTotalPoints() + 1);
         }
     }
 

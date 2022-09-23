@@ -25,22 +25,21 @@ import java.util.Stack;
 
 public class MemoryController implements Initializable {
     @FXML
-    AnchorPane gamePane;
+    private AnchorPane gamePane;
     @FXML
-    AnchorPane winScreen;
+    private AnchorPane winScreen;
     @FXML
-    AnchorPane difficultySelect;
+    private AnchorPane difficultySelect;
     @FXML
-    Text gameTime;
+    private Text gameTime;
     @FXML
-    Text finishTime;
+    private Text finishTime;
     @FXML
-    Text freeFlips;
+    private Text freeFlips;
     private GameTimer timer;
-    Pane firstCard;
-    static String difficulty = "";
+    private Pane firstCard;
+    private static String difficulty = "";
     private int numberOfFreeFlips = 0;
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         timer = new GameTimer(gameTime);
@@ -51,7 +50,6 @@ public class MemoryController implements Initializable {
 
     public void randomize() {
         Stack<Pair<Double, Double>> layouts = new Stack<>();
-
 
         for (Node node : gamePane.getChildren()) {
             if (node instanceof Pane && !(node instanceof AnchorPane)) {
@@ -72,9 +70,7 @@ public class MemoryController implements Initializable {
         }
     }
 
-
     public void flipCard(MouseEvent mouseEvent) {
-
         Pane pane = (Pane) mouseEvent.getSource();
         for (Node node : gamePane.getChildren()) { // Unflips any unmatched card
             if (node instanceof Pane && !(node instanceof AnchorPane))
@@ -116,14 +112,12 @@ public class MemoryController implements Initializable {
         if (isWon()) {
             showWinScreen();
             try {
-                Leaderboard.insertNewUser("MemoryLeaderboard", LoginController.user, gameTime.getText(),
+                Leaderboard.insertNewUser("MemoryLeaderboard", LoginController.getUser(), gameTime.getText(),
                         difficulty);
             } catch (SQLException e) {
                 System.out.printf("ERROR");
             }
-
         }
-
     }
 
     // Checks if game is won

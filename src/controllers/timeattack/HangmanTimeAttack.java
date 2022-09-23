@@ -58,16 +58,16 @@ public class HangmanTimeAttack implements Initializable {
     @FXML
     private Label gameTime;
 
-    int lives = 1;
-    String[] words = {"School", "Laundry", "House", "Gameboy Advanced", "Amazing", "Educational", "Puzzle",
+    private int lives = 1;
+    private final String[] words = {"School", "Laundry", "House", "Gameboy Advanced", "Amazing", "Educational", "Puzzle",
             "Blue Puzzles", "Smoke", "Maple Syrup"};
-    String word;
-    LimitTimer timer; // Timer
+    private String word;
+    private LimitTimer timer; // Timer
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
-            highScore.setText("High Score: " + TimeAttackLeaderboard.getHighScore(LoginController.user));
+            highScore.setText("High Score: " + TimeAttackLeaderboard.getHighScore(LoginController.getUser()));
         } catch (SQLException throwable) {
             throwable.printStackTrace();
         }
@@ -88,7 +88,7 @@ public class HangmanTimeAttack implements Initializable {
             label.relocate(10.0 + pos, 5);
             pos += 40;
         }
-        points.setText("Points: " + GameSelectController.totalPoints);
+        points.setText("Points: " + GameSelectController.getTotalPoints());
         timer = new LimitTimer(gameTime);
         timer.start();
         gameTime.textProperty().addListener(new ChangeListener<String>() {
@@ -103,11 +103,9 @@ public class HangmanTimeAttack implements Initializable {
         });
     }
 
-
-    int randomGenerator(int number) {
+    private int randomGenerator(int number) {
         return (int) Math.floor((Math.random() * number + 1));
     }
-
 
     public void doSomething(MouseEvent mouseEvent) {
         /*Changes to letter clicked*/
@@ -168,7 +166,7 @@ public class HangmanTimeAttack implements Initializable {
     }
 
     public void showWinScreen(boolean win) {
-        GameSelectController.totalPoints++;
+        GameSelectController.setTotalPoints(GameSelectController.getTotalPoints() + 1);
         winScreen.setVisible(true);
         timer.stop();
 
@@ -191,8 +189,8 @@ public class HangmanTimeAttack implements Initializable {
     }
 
     public void goBack(ActionEvent actionEvent) throws Exception {
-        TimeAttackLeaderboard.insertNewUser(LoginController.user, GameSelectController.totalPoints);
-        GameSelectController.totalPoints = 0;
+        TimeAttackLeaderboard.insertNewUser(LoginController.getUser(), GameSelectController.getTotalPoints());
+        GameSelectController.setTotalPoints(0);
         Parent page = FXMLLoader.load(getClass().getResource("/Views/game_select.fxml"));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -208,7 +206,6 @@ public class HangmanTimeAttack implements Initializable {
         stage.show();
     }
 
-
     public void goNext(ActionEvent actionEvent) throws Exception {
         Parent page = FXMLLoader.load(getClass().getResource("/Views/TimeAttack/jigsaw1TimeAttack.fxml"));
         Scene scene = new Scene(page, 900, 600);
@@ -217,6 +214,3 @@ public class HangmanTimeAttack implements Initializable {
         stage.show();
     }
 }
-
-
-

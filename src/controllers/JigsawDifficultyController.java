@@ -13,15 +13,12 @@ import java.util.ResourceBundle;
 
 public class JigsawDifficultyController implements Initializable {
     private static String difficulty;
-
     public static String getDifficulty() {
         return difficulty;
     }
-
-    public static void setDifficulty(String diff) {
-        difficulty = diff;
+    public static void setDifficulty(String difficulty) {
+        JigsawDifficultyController.difficulty = difficulty;
     }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -66,7 +63,7 @@ public class JigsawDifficultyController implements Initializable {
         stage.show();
     }
 
-    int randomGenerator(int number) {
+    private int randomGenerator(int number) {
         return (int) Math.floor((Math.random() * number + 1));
     }
 

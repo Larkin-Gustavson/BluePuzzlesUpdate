@@ -27,7 +27,7 @@ import java.util.regex.Pattern;
 
 public class LoginController implements Initializable {
     // Stores the user in here for the program
-    public static String user;
+    private static String user;
     @FXML
     private MenuItem aboutButton;
     @FXML
@@ -52,6 +52,14 @@ public class LoginController implements Initializable {
     private AnchorPane signUpPane;
     @FXML
     private TextField usernameField;
+
+    public static String getUser() {
+        return user;
+    }
+
+    public static void setUser(String user) {
+        LoginController.user = user;
+    }
 
     @FXML
     void closeButtonClick(ActionEvent event) {
@@ -90,7 +98,7 @@ public class LoginController implements Initializable {
     @FXML /* Move onto main menu */
     public void login(ActionEvent event) throws Exception {
         if (UserAccount.userExist(loginUser.getText()) && UserAccount.correctPassword(loginUser.getText(), loginPassword.getText())) { // if the user entered a correct username and password, do the following
-            user = loginUser.getText(); // Stores the username
+            setUser(loginUser.getText()); // Stores the username
             Parent page = FXMLLoader.load(getClass().getResource("/Views/mainmenu.fxml")); // load the main menu after a successful login
             Scene scene = new Scene(page, 900, 600);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

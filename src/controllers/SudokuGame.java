@@ -24,16 +24,16 @@ import java.util.Stack;
 public class SudokuGame implements Initializable {
     // Main AnchorPane
     @FXML
-    AnchorPane anchorpane;
+    private AnchorPane anchorpane;
     @FXML
-    Pane difficultyPane;
+    private Pane difficultyPane;
     @FXML
-    Text numHints;
+    private Text numHints;
     @FXML
-    Button hintButton;
+    private Button hintButton;
     @FXML
-    Text gameTime;
-    GameTimer timer;
+    private Text gameTime;
+    private GameTimer timer;
     // Sudoku Board
     private Label[][] mat = new Label[9][9];
     private Label[][] key = new Label[9][9];
@@ -59,7 +59,6 @@ public class SudokuGame implements Initializable {
                     column = -1;
                     row++;
                 }
-
             }
         }
         timer = new GameTimer(gameTime);
@@ -81,13 +80,11 @@ public class SudokuGame implements Initializable {
                 source.setText(num + "");
                 source.setTextFill(Color.DODGERBLUE);
             }
-
         }
-
     }
 
     /* Randomly generated number between 1 and number */
-    int randomGenerator(int number) {
+    private int randomGenerator(int number) {
         return (int) Math.floor((Math.random() * number + 1));
     }
 
@@ -206,7 +203,6 @@ public class SudokuGame implements Initializable {
             coli++;
         }
         return true;
-
     }
 
     /*  Each box has a chance of being removed depending on number represents difficulty
@@ -318,7 +314,6 @@ public class SudokuGame implements Initializable {
                     key[i][j] = new Label(s);
                 }
             }
-
 
             // Removes numbers
             remove(difficulty);

@@ -28,29 +28,28 @@ import java.util.Stack;
 
 public class JigsawController implements Initializable {
     @FXML
-    ImageView check1;
+    private ImageView check1;
     @FXML
-    Pane gamePane;
+    private Pane gamePane;
     @FXML
-    Pane pane1;
+    private Pane pane1;
     @FXML
-    AnchorPane anchorPane;
+    private AnchorPane anchorPane;
     @FXML
-    AnchorPane winScreen;
+    private AnchorPane winScreen;
     @FXML
-    Button button;
+    private Button button;
     @FXML
-    Text winOrLose;
+    private Text winOrLose;
     @FXML
-    Text finishTime;
+    private Text finishTime;
     @FXML
-    Text bestTime;
+    private Text bestTime;
     @FXML
-    Label gameTime;
-
-    Pane selected; // Current selected pane
-    Stack<Pair> original = new Stack<>(); // Winning positions
-    GameTimer timer;
+    private Label gameTime;
+    private Pane selected; // Current selected pane
+    private Stack<Pair> original = new Stack<>(); // Winning positions
+    private GameTimer timer;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -78,11 +77,10 @@ public class JigsawController implements Initializable {
         timer = new GameTimer(gameTime);
         timer.start();
         try {
-            bestTime.setText("Best Time: " + Leaderboard.getBestTime("JigsawLeaderboard", LoginController.user, JigsawDifficultyController.getDifficulty()));
+            bestTime.setText("Best Time: " + Leaderboard.getBestTime("JigsawLeaderboard", LoginController.getUser(), JigsawDifficultyController.getDifficulty()));
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     // Select a pane
@@ -95,7 +93,6 @@ public class JigsawController implements Initializable {
             source.setFocusTraversable(true);
             source.setStyle("-fx-border-color: red");
             selected = source;
-
         } else if (isSelected() == true) {
             swapPanes(source, selected);
         }
@@ -130,7 +127,7 @@ public class JigsawController implements Initializable {
         pane2.setStyle("-fx-border-color: black");
     }
 
-    int randomGenerator(int number) {
+    private int randomGenerator(int number) {
         return (int) Math.floor((Math.random() * number + 1));
     }
 
@@ -142,7 +139,7 @@ public class JigsawController implements Initializable {
             winOrLose.setText("You lost!");
         winScreen.setVisible(true); // set win screen visible
         finishTime.setText(gameTime.getText()); // reveal finishing game time
-        Leaderboard.insertNewUser("JigsawLeaderboard", LoginController.user, gameTime.getText(),
+        Leaderboard.insertNewUser("JigsawLeaderboard", LoginController.getUser(), gameTime.getText(),
                 JigsawDifficultyController.getDifficulty());
         timer.stop(); // stop game timer
         gameTime.setDisable(true);
@@ -179,7 +176,6 @@ public class JigsawController implements Initializable {
         stage.show();
         timer.stop();
     }
-
 
     public void playAgain(ActionEvent actionEvent) throws Exception {
         // Pick a game at random

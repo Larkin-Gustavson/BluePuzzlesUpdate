@@ -29,7 +29,7 @@ public class TentsController implements Initializable {
     @FXML
     private AnchorPane anchorPane;
     @FXML
-    Label gameTime;
+    private Label gameTime;
     private GameTimer timer;
     @FXML
     private Text winOrLose;
@@ -91,7 +91,6 @@ public class TentsController implements Initializable {
         }
         showWinScreen(true);
         return true;
-
     }
 
     public void showWinScreen(boolean win) throws SQLException {
@@ -101,7 +100,7 @@ public class TentsController implements Initializable {
             winOrLose.setText("You lost!");
         winScreen.setVisible(true); // set win screen visible
         finishTime.setText(gameTime.getText()); // reveal finishing game time
-        Leaderboard.insertNewUser("TentsLeaderboard", LoginController.user, gameTime.getText(),
+        Leaderboard.insertNewUser("TentsLeaderboard", LoginController.getUser(), gameTime.getText(),
                 "regular");
         timer.stop(); // stop game timer
         gameTime.setDisable(true);
@@ -132,7 +131,7 @@ public class TentsController implements Initializable {
         stage.show();
     }
 
-    int randomGenerator(int number) {
+    private int randomGenerator(int number) {
         return (int) Math.floor((Math.random() * number + 1));
     }
 }

@@ -33,33 +33,33 @@ import java.util.Stack;
 
 public class JigsawTimeAttack implements Initializable {
     @FXML
-    ImageView check1;
+    private ImageView check1;
     @FXML
-    AnchorPane anchorPane;
+    private AnchorPane anchorPane;
     @FXML
-    AnchorPane winScreen;
+    private AnchorPane winScreen;
     @FXML
-    AnchorPane loseScreen;
+    private AnchorPane loseScreen;
     @FXML
-    Button button;
+    private Button button;
     @FXML
-    Text finishTime;
+    private Text finishTime;
     @FXML
-    Text bestTime;
+    private Text bestTime;
     @FXML
-    Text points;
+    private Text points;
     @FXML
-    Text highScore;
+    private Text highScore;
     @FXML
-    Label gameTime;
-    Pane selected; // Current selected pane
-    Stack<Pair> original = new Stack<>(); // Winning positions
-    LimitTimer timer;
+    private Label gameTime;
+    private Pane selected; // Current selected pane
+    private Stack<Pair> original = new Stack<>(); // Winning positions
+    private LimitTimer timer;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
-            highScore.setText("High Score: " + TimeAttackLeaderboard.getHighScore(LoginController.user));
+            highScore.setText("High Score: " + TimeAttackLeaderboard.getHighScore(LoginController.getUser()));
         } catch (SQLException throwable) {
             throwable.printStackTrace();
         }
@@ -82,7 +82,7 @@ public class JigsawTimeAttack implements Initializable {
                 swapPanes(stack.pop(), (Pane) node);
             }
         }
-        points.setText("Points: " + GameSelectController.totalPoints);
+        points.setText("Points: " + GameSelectController.getTotalPoints());
         timer = new LimitTimer(gameTime);
         timer.start();
         gameTime.textProperty().addListener(new ChangeListener<String>() {
@@ -95,7 +95,6 @@ public class JigsawTimeAttack implements Initializable {
 
             }
         });
-
     }
 
     // Select a pane
@@ -143,7 +142,7 @@ public class JigsawTimeAttack implements Initializable {
         pane2.setStyle("-fx-border-color: black");
     }
 
-    int randomGenerator(int number) {
+    private int randomGenerator(int number) {
         return (int) Math.floor((Math.random() * number + 1));
     }
 
@@ -175,13 +174,13 @@ public class JigsawTimeAttack implements Initializable {
             System.out.println("Not yet!!!");
             return;
         }
-        GameSelectController.totalPoints++;
+        GameSelectController.setTotalPoints(GameSelectController.getTotalPoints() + 1);
         showWinScreen(true);
     }
 
     public void goBack(ActionEvent actionEvent) throws Exception {
-        TimeAttackLeaderboard.insertNewUser(LoginController.user, GameSelectController.totalPoints);
-        GameSelectController.totalPoints = 0;
+        TimeAttackLeaderboard.insertNewUser(LoginController.getUser(), GameSelectController.getTotalPoints());
+        GameSelectController.setTotalPoints(0);
         Parent page = FXMLLoader.load(getClass().getResource("/Views/jigsawDifficulty.fxml"));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -189,7 +188,6 @@ public class JigsawTimeAttack implements Initializable {
         stage.show();
         timer.stop();
     }
-
 
     public void playAgain(ActionEvent actionEvent) throws Exception {
         // Pick a game at random

@@ -38,7 +38,7 @@ public class TentsTimeAttack implements Initializable {
     @FXML
     private AnchorPane loseScreen;
     @FXML
-    Label gameTime;
+    private Label gameTime;
     private LimitTimer timer;
     @FXML
     private Text points;
@@ -75,8 +75,7 @@ public class TentsTimeAttack implements Initializable {
 
             }
         });
-        points.setText("Points: " + GameSelectController.totalPoints);
-
+        points.setText("Points: " + GameSelectController.getTotalPoints());
     }
 
     /*Box clicked then give it a tent*/
@@ -117,10 +116,9 @@ public class TentsTimeAttack implements Initializable {
 
             }
         }
-        GameSelectController.totalPoints++;
+        GameSelectController.setTotalPoints(GameSelectController.getTotalPoints() + 1);
         showWinScreen(true);
         return true;
-
     }
 
     public void showWinScreen(boolean win) {
@@ -132,10 +130,9 @@ public class TentsTimeAttack implements Initializable {
                 node.setDisable(true);
     }
 
-
     public void goBack(ActionEvent actionEvent) throws Exception {
-        TimeAttackLeaderboard.insertNewUser(LoginController.user, GameSelectController.totalPoints);
-        GameSelectController.totalPoints = 0;
+        TimeAttackLeaderboard.insertNewUser(LoginController.getUser(), GameSelectController.getTotalPoints());
+        GameSelectController.setTotalPoints(0);
         Parent page = FXMLLoader.load(getClass().getResource("/Views/game_select.fxml"));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -156,7 +153,7 @@ public class TentsTimeAttack implements Initializable {
         stage.show();
     }
 
-    int randomGenerator(int number) {
+    private int randomGenerator(int number) {
         return (int) Math.floor((Math.random() * number + 1));
     }
 

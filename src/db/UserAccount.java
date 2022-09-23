@@ -9,17 +9,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserAccount {
-    private static final String URL = "jdbc:mysql://bluepuzzles.c6g1bhjsrnsm.us-east-2.rds.amazonaws.com/BLUE_PUZZLES";
-    private static final String USERNAME = "bluepuzzles";
-    private static final String PASSWORD = "bluepuzzles123";
-
     public UserAccount() {
 
     }
 
     public static List<String> getUsers() throws SQLException {
         List<String> records = new ArrayList<>();
-        Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD); // Establishing connection
+        Connection connection = DriverManager.getConnection(DbConfig.URL, DbConfig.USERNAME, DbConfig.PASSWORD); // Establishing connection
         String select = "SELECT * FROM Accounts;"; // Select statement
         PreparedStatement statement = connection.prepareStatement(select); // Prepared Statement
         ResultSet result = statement.executeQuery(); // Initializing all users into result
@@ -31,7 +27,7 @@ public class UserAccount {
     }
 
     public static void insertNewUser(String newUser, String newPassword) throws SQLException {
-        Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD); // Establishing connection
+        Connection connection = DriverManager.getConnection(DbConfig.URL, DbConfig.USERNAME, DbConfig.PASSWORD); // Establishing connection
         String insert = "INSERT INTO Accounts (UserName,Password) VALUES(?,?);"; // Select statement
         PreparedStatement statement = connection.prepareStatement(insert);
         try {
@@ -49,9 +45,8 @@ public class UserAccount {
         }
     }
 
-
     public static boolean userExist(String newUser) throws SQLException {
-        Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD); // Establishing connection
+        Connection connection = DriverManager.getConnection(DbConfig.URL, DbConfig.USERNAME, DbConfig.PASSWORD); // Establishing connection
         String select = "SELECT * FROM Accounts;"; // Select statement
         PreparedStatement statement = connection.prepareStatement(select); // Prepared Statement
         ResultSet result = statement.executeQuery(); // Initializing all users into result
@@ -68,7 +63,7 @@ public class UserAccount {
 
     public static boolean correctPassword(String username, String password) throws SQLException {
         try {
-            Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD); // Establishing connection
+            Connection connection = DriverManager.getConnection(DbConfig.URL, DbConfig.USERNAME, DbConfig.PASSWORD); // Establishing connection
             String select = "SELECT * FROM Accounts;"; // Select statement
             PreparedStatement statement = connection.prepareStatement(select); // Prepared Statement
             ResultSet result = statement.executeQuery(); // Initializing all users into result

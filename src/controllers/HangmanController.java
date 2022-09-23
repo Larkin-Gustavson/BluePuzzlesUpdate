@@ -31,30 +31,30 @@ import java.util.ResourceBundle;
 
 public class HangmanController implements Initializable {
     @FXML
-    AnchorPane hangmanAnchorPane;
+    private AnchorPane hangmanAnchorPane;
     @FXML
-    Pane hangmanBody;
+    private Pane hangmanBody;
     @FXML
-    Pane guessWordPane;
+    private Pane guessWordPane;
     @FXML
-    Pane wordPane;
+    private Pane wordPane;
     @FXML
-    Pane winScreen;
+    private Pane winScreen;
     @FXML
-    TextField guessWordField;
+    private TextField guessWordField;
     @FXML
-    Text livesText;
+    private Text livesText;
     @FXML
-    Text winOrLose;
+    private Text winOrLose;
     @FXML
-    Text finishTime;
+    private Text finishTime;
     @FXML
-    Label gameTime;
-    int lives = 6;
-    String[] words = {"School", "Laundry", "House", "Gameboy Advanced", "Amazing", "Educational", "Puzzle",
+    private Label gameTime;
+    private int lives = 6;
+    private final String[] words = {"School", "Laundry", "House", "Gameboy Advanced", "Amazing", "Educational", "Puzzle",
             "Blue Puzzles", "Smoke", "Maple Syrup"};
-    String word;
-    GameTimer timer; // Timer
+    private String word;
+    private GameTimer timer; // Timer
     @FXML
     private TextArea hintsTextArea;
     @FXML
@@ -69,7 +69,6 @@ public class HangmanController implements Initializable {
     private final List<String> bluePuzzleHints = new ArrayList<>();
     private final List<String> smokeHints = new ArrayList<>();
     private final List<String> mapleSyrupHints = new ArrayList<>();
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -90,18 +89,16 @@ public class HangmanController implements Initializable {
         timer = new GameTimer(gameTime);
         timer.start();
 
-        System.out.println(LoginController.user);
+        System.out.println(LoginController.getUser());
 
         hintsTextArea.setEditable(false); // ensuring that the user cannot type into the area where there is a textbox
         hintsTextArea.setWrapText(true); // wraps the text onto the next line
         hintsTextArea.deselect(); // making sure that the textbox is not selected when the game loads
     }
 
-
-    int randomGenerator(int number) {
+    private int randomGenerator(int number) {
         return (int) Math.floor((Math.random() * number + 1));
     }
-
 
     public void doSomething(MouseEvent mouseEvent) {
         /* Changes to letter clicked */
@@ -158,7 +155,6 @@ public class HangmanController implements Initializable {
             wrongGuess();
             guessWordField.clear();
         }
-
     }
 
     public void showWinScreen(boolean win) {
@@ -170,7 +166,7 @@ public class HangmanController implements Initializable {
         finishTime.setText(timer.toString());
         timer.stop();
         try {
-            Leaderboard.insertNewUser("HangmanLeaderboard", LoginController.user, gameTime.getText(),
+            Leaderboard.insertNewUser("HangmanLeaderboard", LoginController.getUser(), gameTime.getText(),
                     HangmanDifficultyController.getDifficulty());
         } catch (SQLException e) {
             e.printStackTrace();
@@ -531,7 +527,6 @@ public class HangmanController implements Initializable {
 
                 System.out.println(hint);
             }
-
         }
         hintButton.setDisable(true); // disable the hint button once it has been clicked, to prevent users from both getting more hints then they were supposed to and to make sure the text area looks readable
     }
@@ -591,6 +586,3 @@ public class HangmanController implements Initializable {
         mapleSyrupHints.add("This has sugar in it.");
     }
 }
-
-
-

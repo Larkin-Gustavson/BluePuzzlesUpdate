@@ -2,18 +2,18 @@ package db;
 
 import controllers.JigsawDifficultyController;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class JigsawLeaderboard {
-    private static final String URL = "jdbc:mysql://bluepuzzles.c6g1bhjsrnsm.us-east-2.rds.amazonaws.com/BLUE_PUZZLES";
-    private static final String USERNAME = "bluepuzzles";
-    private static final String PASSWORD = "bluepuzzles123";
-
     public static void insertNewUser(String newUser, String newTime, String difficulty) throws SQLException {
         try {
-            Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD); // Establishing connection
+            Connection connection = DriverManager.getConnection(DbConfig.URL, DbConfig.USERNAME, DbConfig.PASSWORD); // Establishing connection
             String insert = "INSERT INTO JigsawLeaderboard (UserName,Time,Difficulty) VALUES(?, ?, ?)"; // Select statement
             PreparedStatement statement = connection.prepareStatement(insert);
             statement.setString(1, newUser);
@@ -22,7 +22,7 @@ public class JigsawLeaderboard {
             statement.executeUpdate();
         } catch (SQLException e) {
             System.out.println("gotta update");
-            Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD); // Establishing connection
+            Connection connection = DriverManager.getConnection(DbConfig.URL, DbConfig.USERNAME, DbConfig.PASSWORD); // Establishing connection
             String update = "Update JigsawLeaderboard SET Time = ?" +
                             "WHERE UserName = ? AND Time >= ? AND DIFFICULTY = ?";
             PreparedStatement statement = connection.prepareStatement(update);
@@ -38,7 +38,7 @@ public class JigsawLeaderboard {
     public static String getTime(String user, String difficulty) throws SQLException {
         try {
             List<String> records = new ArrayList<>();
-            Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD); // Establishing connection
+            Connection connection = DriverManager.getConnection(DbConfig.URL, DbConfig.USERNAME, DbConfig.PASSWORD); // Establishing connection
             String select = "SELECT * FROM JigsawLeaderboard"; // Select statement
             PreparedStatement statement = connection.prepareStatement(select); // Prepared Statement
             ResultSet result = statement.executeQuery(); // Initializing all users into result
@@ -55,7 +55,7 @@ public class JigsawLeaderboard {
     public static String getBestTime(String user, String difficulty) throws SQLException {
         try {
             ArrayList<String> records = new ArrayList<>();
-            Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD); // Establishing connection
+            Connection connection = DriverManager.getConnection(DbConfig.URL, DbConfig.USERNAME, DbConfig.PASSWORD); // Establishing connection
             String select = "SELECT * FROM JigsawLeaderboard " +
                             "WHERE UserName=\"" + user + "\" AND Difficulty=\"" + difficulty + "\""; // Select statement
             PreparedStatement statement = connection.prepareStatement(select); // Prepared Statement
@@ -73,7 +73,7 @@ public class JigsawLeaderboard {
 
     public static List<String> getAllRecords() throws SQLException {
         ArrayList<String> records = new ArrayList<>();
-        Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD); // Establishing connection
+        Connection connection = DriverManager.getConnection(DbConfig.URL, DbConfig.USERNAME, DbConfig.PASSWORD); // Establishing connection
         String select = "SELECT * FROM JigsawLeaderboard ORDER BY Difficulty, Time"; // Select statement
         PreparedStatement statement = connection.prepareStatement(select); // Prepared Statement
         ResultSet result = statement.executeQuery(); // Initializing all users into result
