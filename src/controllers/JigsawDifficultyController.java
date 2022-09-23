@@ -27,7 +27,7 @@ public class JigsawDifficultyController implements Initializable {
     public void playEasy(ActionEvent actionEvent) throws Exception {
         setDifficulty("easy");
         // Pick a game at random
-        String[] easyGames = {"/Views/jigsaw/easy/jigsaw.fxml", "/Views/jigsaw/easy/skull.fxml"};
+        String[] easyGames = {"/views/jigsaw/easy/jigsaw.fxml", "/views/jigsaw/easy/skull.fxml"};
         int rand = randomGenerator(easyGames.length) - 1;
         // Load the game
         Parent page = FXMLLoader.load(getClass().getResource(easyGames[rand]));
@@ -40,7 +40,7 @@ public class JigsawDifficultyController implements Initializable {
     public void playMedium(ActionEvent actionEvent) throws Exception {
         setDifficulty("medium");
         // Pick a game at random
-        String[] mediumGames = {"/Views/jigsaw/medium/jigsawShyGuy.fxml", "/Views/jigsaw/medium/dooplis.fxml"};
+        String[] mediumGames = {"/views/jigsaw/medium/jigsawShyGuy.fxml", "/views/jigsaw/medium/dooplis.fxml"};
         int rand = randomGenerator(mediumGames.length) - 1;
         // Load the game
         Parent page = FXMLLoader.load(getClass().getResource(mediumGames[rand]));
@@ -53,7 +53,7 @@ public class JigsawDifficultyController implements Initializable {
     public void playHard(ActionEvent actionEvent) throws Exception {
         setDifficulty("hard");
         // Pick a game at random
-        String[] hardGames = {"/Views/jigsaw/hard/jigsawEagle.fxml"};
+        String[] hardGames = {"/views/jigsaw/hard/jigsawEagle.fxml"};
         int rand = randomGenerator(1) - 1;
         // Load the game
         Parent page = FXMLLoader.load(getClass().getResource(hardGames[rand]));
@@ -69,7 +69,7 @@ public class JigsawDifficultyController implements Initializable {
 
     /* Go back to Game Selection */
     public void goBack(ActionEvent actionEvent) throws Exception {
-        Parent page = FXMLLoader.load(getClass().getResource("/Views/game_select.fxml"));
+        Parent page = FXMLLoader.load(getClass().getResource("/views/game_select.fxml"));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);

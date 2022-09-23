@@ -169,7 +169,7 @@ public class JigsawController implements Initializable {
     }
 
     public void goBack(ActionEvent actionEvent) throws Exception {
-        Parent page = FXMLLoader.load(getClass().getResource("/Views/jigsawDifficulty.fxml"));
+        Parent page = FXMLLoader.load(getClass().getResource("/views/jigsawDifficulty.fxml"));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -179,7 +179,7 @@ public class JigsawController implements Initializable {
 
     public void playAgain(ActionEvent actionEvent) throws Exception {
         // Pick a game at random
-        String[] easyGames = {"/Views/jigsaw/medium/jigsawShyGuy.fxml"};
+        String[] easyGames = {"/views/jigsaw/medium/jigsawShyGuy.fxml"};
         int rand = randomGenerator(1) - 1;
         // Load the game
         Parent page = FXMLLoader.load(getClass().getResource(easyGames[rand]));

@@ -234,7 +234,7 @@ public class SudokuTimeAttack implements Initializable {
     public void goBack(ActionEvent event) throws Exception {
         TimeAttackLeaderboard.insertNewUser(LoginController.getUser(), GameSelectController.getTotalPoints());
         GameSelectController.setTotalPoints(0);
-        Parent page = FXMLLoader.load(getClass().getResource("/Views/game_select.fxml"));
+        Parent page = FXMLLoader.load(getClass().getResource("/views/game_select.fxml"));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -293,7 +293,7 @@ public class SudokuTimeAttack implements Initializable {
     }
 
     public void goNext(ActionEvent event) throws Exception {
-        Parent page = FXMLLoader.load(getClass().getResource("/Views/TimeAttack/hangmanTimeAttack.fxml"));
+        Parent page = FXMLLoader.load(getClass().getResource("/views/timeattack/hangmanTimeAttack.fxml"));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);

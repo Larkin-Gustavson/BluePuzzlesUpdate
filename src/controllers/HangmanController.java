@@ -190,7 +190,7 @@ public class HangmanController implements Initializable {
     }
 
     public void goBack(ActionEvent actionEvent) throws Exception {
-        Parent page = FXMLLoader.load(getClass().getResource("/Views/hangmanDifficulty.fxml"));
+        Parent page = FXMLLoader.load(getClass().getResource("/views/hangmanDifficulty.fxml"));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -198,7 +198,7 @@ public class HangmanController implements Initializable {
     }
 
     public void playAgain(ActionEvent actionEvent) throws Exception {
-        Parent page = FXMLLoader.load(getClass().getResource("/Views/hangman.fxml"));
+        Parent page = FXMLLoader.load(getClass().getResource("/views/hangman.fxml"));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);

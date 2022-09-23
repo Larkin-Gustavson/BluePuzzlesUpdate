@@ -111,7 +111,7 @@ public class TentsController implements Initializable {
 
 
     public void goBack(ActionEvent actionEvent) throws Exception {
-        Parent page = FXMLLoader.load(getClass().getResource("/Views/game_select.fxml"));
+        Parent page = FXMLLoader.load(getClass().getResource("/views/game_select.fxml"));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -121,7 +121,7 @@ public class TentsController implements Initializable {
 
     public void playAgain(ActionEvent actionEvent) throws Exception {
         // Pick a game at random
-        String[] easyGames = {"/Views/tents/tentsTemplate1.fxml"};
+        String[] easyGames = {"/views/tents/tentsTemplate1.fxml"};
         int rand = randomGenerator(1) - 1;
         // Load the game
         Parent page = FXMLLoader.load(getClass().getResource(easyGames[rand]));

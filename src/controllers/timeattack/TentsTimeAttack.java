@@ -133,7 +133,7 @@ public class TentsTimeAttack implements Initializable {
     public void goBack(ActionEvent actionEvent) throws Exception {
         TimeAttackLeaderboard.insertNewUser(LoginController.getUser(), GameSelectController.getTotalPoints());
         GameSelectController.setTotalPoints(0);
-        Parent page = FXMLLoader.load(getClass().getResource("/Views/game_select.fxml"));
+        Parent page = FXMLLoader.load(getClass().getResource("/views/game_select.fxml"));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -143,7 +143,7 @@ public class TentsTimeAttack implements Initializable {
 
     public void playAgain(ActionEvent actionEvent) throws Exception {
         // Pick a game at random
-        String[] easyGames = {"/Views/tents/tentsTemplate1.fxml"};
+        String[] easyGames = {"/views/tents/tentsTemplate1.fxml"};
         int rand = randomGenerator(1) - 1;
         // Load the game
         Parent page = FXMLLoader.load(getClass().getResource(easyGames[rand]));
@@ -158,7 +158,7 @@ public class TentsTimeAttack implements Initializable {
     }
 
     public void goNext(ActionEvent actionEvent) throws Exception {
-        Parent page = FXMLLoader.load(getClass().getResource("/Views/TimeAttack/SudokuTimeAttack.fxml"));
+        Parent page = FXMLLoader.load(getClass().getResource("/views/timeattack/sudokuTimeAttack.fxml"));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);

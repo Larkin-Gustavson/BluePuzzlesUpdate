@@ -41,7 +41,7 @@ public class MainMenuController implements Initializable {
     }
 
     public void play(ActionEvent event) throws Exception {
-        Parent page = FXMLLoader.load(getClass().getResource("/Views/game_select.fxml"));
+        Parent page = FXMLLoader.load(getClass().getResource("/views/game_select.fxml"));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -83,7 +83,7 @@ public class MainMenuController implements Initializable {
     }
 
     public void logOut(ActionEvent actionEvent) throws Exception {
-        Parent page = FXMLLoader.load(getClass().getResource("/Views/login.fxml"));
+        Parent page = FXMLLoader.load(getClass().getResource("/views/login.fxml"));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -91,7 +91,7 @@ public class MainMenuController implements Initializable {
     }
 
     public void showLeaderboard(ActionEvent actionEvent) throws Exception {
-        Parent page = FXMLLoader.load(getClass().getResource("/Views/leaderboards.fxml"));
+        Parent page = FXMLLoader.load(getClass().getResource("/views/leaderboards.fxml"));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);

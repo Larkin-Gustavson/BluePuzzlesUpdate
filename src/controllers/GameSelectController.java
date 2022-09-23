@@ -67,7 +67,7 @@ public class GameSelectController implements Initializable {
 
     /* Sudoku Methods */
     public void playSudoku(ActionEvent actionEvent) throws Exception {
-        Parent page = FXMLLoader.load(getClass().getResource("/Views/sudokuboard.fxml"));
+        Parent page = FXMLLoader.load(getClass().getResource("/views/sudokuboard.fxml"));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -88,7 +88,7 @@ public class GameSelectController implements Initializable {
 
     /* Hangman methods */
     public void playHangman(ActionEvent actionEvent) throws Exception {
-        Parent page = FXMLLoader.load(getClass().getResource("/Views/hangmanDifficulty.fxml"));
+        Parent page = FXMLLoader.load(getClass().getResource("/views/hangmanDifficulty.fxml"));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -109,7 +109,7 @@ public class GameSelectController implements Initializable {
 
     /* Jigsaw Methods */
     public void playJigsaw(ActionEvent actionEvent) throws Exception {
-        Parent page = FXMLLoader.load(getClass().getResource("/Views/jigsawDifficulty.fxml"));
+        Parent page = FXMLLoader.load(getClass().getResource("/views/jigsawDifficulty.fxml"));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -129,7 +129,7 @@ public class GameSelectController implements Initializable {
     }
 
     public void goBack(ActionEvent actionEvent) throws Exception {
-        Parent page = FXMLLoader.load(getClass().getResource("/Views/mainmenu.fxml"));
+        Parent page = FXMLLoader.load(getClass().getResource("/views/mainmenu.fxml"));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -137,7 +137,7 @@ public class GameSelectController implements Initializable {
     }
 
     public void playTents(ActionEvent actionEvent) throws Exception {
-        String[] games = {"/Views/tents/tentsTemplate1.fxml", "/Views/tents/tentsTemplate2.fxml"};
+        String[] games = {"/views/tents/tentsTemplate1.fxml", "/views/tents/tentsTemplate2.fxml"};
         int rand = randomGenerator(games.length) - 1;
         Parent page = FXMLLoader.load(getClass().getResource(games[rand]));
         Scene scene = new Scene(page, 900, 600);
@@ -151,7 +151,7 @@ public class GameSelectController implements Initializable {
     }
 
     public void playTimeAttack(ActionEvent actionEvent) throws Exception {
-        Parent page = FXMLLoader.load(getClass().getResource("/Views/TimeAttack/sudokuTimeAttack.fxml"));
+        Parent page = FXMLLoader.load(getClass().getResource("/views/timeattack/sudokuTimeAttack.fxml"));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -159,7 +159,7 @@ public class GameSelectController implements Initializable {
     }
 
     public void playMemory(ActionEvent actionEvent) throws Exception {
-        Parent page = FXMLLoader.load(getClass().getResource("/Views/memory.fxml"));
+        Parent page = FXMLLoader.load(getClass().getResource("/views/memory.fxml"));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);

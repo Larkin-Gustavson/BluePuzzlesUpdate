@@ -181,7 +181,7 @@ public class JigsawTimeAttack implements Initializable {
     public void goBack(ActionEvent actionEvent) throws Exception {
         TimeAttackLeaderboard.insertNewUser(LoginController.getUser(), GameSelectController.getTotalPoints());
         GameSelectController.setTotalPoints(0);
-        Parent page = FXMLLoader.load(getClass().getResource("/Views/jigsawDifficulty.fxml"));
+        Parent page = FXMLLoader.load(getClass().getResource("/views/jigsawDifficulty.fxml"));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -191,7 +191,7 @@ public class JigsawTimeAttack implements Initializable {
 
     public void playAgain(ActionEvent actionEvent) throws Exception {
         // Pick a game at random
-        String[] easyGames = {"/Views/jigsaw/medium/jigsawShyGuy.fxml"};
+        String[] easyGames = {"/views/jigsaw/medium/jigsawShyGuy.fxml"};
         int rand = randomGenerator(1) - 1;
         // Load the game
         Parent page = FXMLLoader.load(getClass().getResource(easyGames[rand]));
@@ -202,7 +202,7 @@ public class JigsawTimeAttack implements Initializable {
     }
 
     public void goNext(ActionEvent actionEvent) throws Exception {
-        Parent page = FXMLLoader.load(getClass().getResource("/Views/TimeAttack/TentsTimeAttack.fxml"));
+        Parent page = FXMLLoader.load(getClass().getResource("/views/timeattack/tentsTimeAttack.fxml"));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);

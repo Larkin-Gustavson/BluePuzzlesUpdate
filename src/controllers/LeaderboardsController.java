@@ -124,7 +124,7 @@ public class LeaderboardsController implements Initializable {
     }
 
     public void goBack(ActionEvent actionEvent) throws Exception {
-        Parent page = FXMLLoader.load(getClass().getResource("/Views/mainmenu.fxml"));
+        Parent page = FXMLLoader.load(getClass().getResource("/views/mainmenu.fxml"));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);

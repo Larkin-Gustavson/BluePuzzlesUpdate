@@ -191,7 +191,7 @@ public class HangmanTimeAttack implements Initializable {
     public void goBack(ActionEvent actionEvent) throws Exception {
         TimeAttackLeaderboard.insertNewUser(LoginController.getUser(), GameSelectController.getTotalPoints());
         GameSelectController.setTotalPoints(0);
-        Parent page = FXMLLoader.load(getClass().getResource("/Views/game_select.fxml"));
+        Parent page = FXMLLoader.load(getClass().getResource("/views/game_select.fxml"));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -199,7 +199,7 @@ public class HangmanTimeAttack implements Initializable {
     }
 
     public void playAgain(ActionEvent actionEvent) throws Exception {
-        Parent page = FXMLLoader.load(getClass().getResource("/Views/hangman.fxml"));
+        Parent page = FXMLLoader.load(getClass().getResource("/views/hangman.fxml"));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -207,7 +207,7 @@ public class HangmanTimeAttack implements Initializable {
     }
 
     public void goNext(ActionEvent actionEvent) throws Exception {
-        Parent page = FXMLLoader.load(getClass().getResource("/Views/TimeAttack/jigsaw1TimeAttack.fxml"));
+        Parent page = FXMLLoader.load(getClass().getResource("/views/timeattack/jigsaw1TimeAttack.fxml"));
         Scene scene = new Scene(page, 900, 600);
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);

@@ -99,7 +99,7 @@ public class LoginController implements Initializable {
     public void login(ActionEvent event) throws Exception {
         if (UserAccount.userExist(loginUser.getText()) && UserAccount.correctPassword(loginUser.getText(), loginPassword.getText())) { // if the user entered a correct username and password, do the following
             setUser(loginUser.getText()); // Stores the username
-            Parent page = FXMLLoader.load(getClass().getResource("/Views/mainmenu.fxml")); // load the main menu after a successful login
+            Parent page = FXMLLoader.load(getClass().getResource("/views/mainmenu.fxml")); // load the main menu after a successful login
             Scene scene = new Scene(page, 900, 600);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
